@@ -1,11 +1,6 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
-canvas.width = tileSize * yoko;
-canvas.height = tileSize * tate;
-
 const keys = {};
-
 let highlightTile = null;
 
 document.addEventListener("keydown", (e) => {
@@ -17,7 +12,30 @@ document.addEventListener("keyup", (e) => {
 
 window.addEventListener("resize",resize);
 
-resize();
+//PC
+document.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    highlightTile = getTileFromXY(mouseX, mouseY);
+});
+
+//スマホ
+canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    const mouseX = touch.clientX - rect.left;
+    const mouseY = touch.clientY - rect.top;
+
+    highlightTile = getTileFromXY(mouseX, mouseY);
+});
+
+canvas.addEventListener("click", () => {
+    if(!highlightTile) return;
+    map[highlightTile.y][highlightTile.x] = 2;
+});
 
 function resize(){
     tileSize = calcTileSize();
@@ -32,8 +50,6 @@ function calcTileSize(){
     return Math.min(sizeX, sizeY);
 }
 
-
-
 function getTileFromXY(x, y){
     const tileX = Math.floor(x / tileSize);
     const tileY = Math.floor(y / tileSize);
@@ -45,30 +61,6 @@ function getTileFromXY(x, y){
     return { x: tileX, y: tileY };
 }
 
-//PC
-document.addEventListener("mousemove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    highlightTile = getTileFromXY(mouseX, mouseY);
-});
-
-canvas.addEventListener("click", () => {
-    if(!highlightTile) return;
-    map[highlightTile.y][highlightTile.x] = 1;
-});
-
-//スマホ
-canvas.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches[0];
-    const mouseX = touch.clientX - rect.left;
-    const mouseY = touch.clientY - rect.top;
-
-    highlightTile = getTileFromXY(mouseX, mouseY);
-});
 
 function drawGrid() {
     ctx.strokeStyle = "#444";
@@ -103,13 +95,19 @@ function drawHighLight(){
     );
 }
 
+function drawTower(x, y){
+    ctx.beginPath();
+    ctx.arc(x,y,tileSize * 0.35,0,Math.PI * 2);
+    ctx.fill();
+}
+
 function drawMap(){
     for(let y = 0;y < tate;y++){
         for(let x = 0;x < yoko;x++){
-            if(map[y][x] === 0){
-                ctx.fillStyle = "#003300";
+            if(map[y][x] != 1){
+                ctx.fillStyle = "#008800";
             }
-            else if(map[y][x] === 1){
+            else{
                 ctx.fillStyle = "#ffffff";
             }
 
@@ -119,6 +117,11 @@ function drawMap(){
                 tileSize,
                 tileSize
             );
+
+            if(map[y][x] === 2){
+                ctx.fillStyle = "#ffff00"
+                drawTower(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
+            }
         }
     }
 }
@@ -132,5 +135,7 @@ function loop(){
 
     requestAnimationFrame(loop);
 }
+
+resize();
 
 loop();
