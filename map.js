@@ -1,6 +1,6 @@
-const tileSize = 40;
 const yoko = 20;
 const tate = 12;
+let tileSize;
 
 const map = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],

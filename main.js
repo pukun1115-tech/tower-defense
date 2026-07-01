@@ -15,6 +15,25 @@ document.addEventListener("keyup", (e) => {
     keys[e.code] = false;
 });
 
+window.addEventListener("resize",resize);
+
+resize();
+
+function resize(){
+    tileSize = calcTileSize();
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+function calcTileSize(){
+    const sizeX = Math.floor(window.innerWidth / yoko);
+    const sizeY = Math.floor(window.innerHeight / tate);
+
+    return Math.min(sizeX, sizeY);
+}
+
+
+
 function getTileFromXY(x, y){
     const tileX = Math.floor(x / tileSize);
     const tileY = Math.floor(y / tileSize);
