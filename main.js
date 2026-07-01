@@ -104,11 +104,13 @@ function drawTower(x, y){
 function drawMap(){
     for(let y = 0;y < tate;y++){
         for(let x = 0;x < yoko;x++){
-            if(map[y][x] != 1){
-                ctx.fillStyle = "#008800";
-            }
-            else{
-                ctx.fillStyle = "#ffffff";
+            swich(map[y][x]){
+                case 0:
+                    ctx.fillStyle = "#008800";
+                    break;
+                case 1:
+                    ctx.fillStyle = "#ffffff";
+                    break;
             }
 
             ctx.fillRect(
