@@ -34,7 +34,7 @@ canvas.addEventListener("touchmove", (e) => {
 
 canvas.addEventListener("click", () => {
     if(!highlightTile) return;
-    map[highlightTile.y][highlightTile.x] = 2;
+    tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 function resize(){
@@ -118,7 +118,7 @@ function drawMap(){
                 tileSize
             );
 
-            if(map[y][x] === 2){
+            if(tower[y][x] === 2){
                 ctx.fillStyle = "#ffff00"
                 drawTower(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
             }
