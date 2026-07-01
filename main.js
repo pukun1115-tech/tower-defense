@@ -118,7 +118,7 @@ function drawMap(){
                 tileSize
             );
 
-            if(tower[y][x] === 2){
+            if(tower[y][x] != 0){
                 ctx.fillStyle = "#ffff00"
                 drawTower(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
             }
