@@ -37,8 +37,8 @@ function resize(){
         window.innerHeight / (tate * tileSize + menuTate)
     );
     
-    tileSize *= scale;
-    menuTate *= scale;
+    tileSize = tileSize * scale;
+    menuTate = menuTate * scale;
     
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
