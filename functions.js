@@ -1,6 +1,6 @@
-function drawCircle(x, y, size){
+function drawCircle(x, y, r, ctx){
     ctx.beginPath();
-    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.arc(x, y, r, 0, Math.PI * 2);
     ctx.fill();
 }
 

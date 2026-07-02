@@ -1,6 +1,7 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 let highlightTile = null;
+const enemies = [];
 
 window.addEventListener("resize",resize);
 
@@ -24,7 +25,7 @@ canvas.addEventListener("touchmove", (e) => {
     highlightTile = getTileFromXY(mouseX, mouseY);
 });
 
-canvas.addEventListener("click", () => {
+canvas.addEventListener("pointerdown", () => {
     if(!highlightTile) return;
     if(map[highlightTile.y][highlightTile.x] != 3) return;
     tower[highlightTile.y][highlightTile.x] = 1;
@@ -48,16 +49,11 @@ function drawMap(){
                     break;
             }
 
-            ctx.fillRect(
-                x * tileSize,
-                y * tileSize,
-                tileSize,
-                tileSize
-            );
+            ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
 
             if(tower[y][x] != 0){
                 ctx.fillStyle = "#ffff00";
-                drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8);
+                drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
             }
         }
     }
@@ -73,6 +69,13 @@ function drawMenu(){
     );
 }
 
+function updateEnemies(ctx){
+    for(const e of enemies){
+        e.update();
+        e.draw(ctx);
+    }
+}
+
 function loop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
@@ -80,6 +83,7 @@ function loop(){
     drawGrid();
     drawHighLight();
     drawMenu();
+    updateEnemies(ctx);
 
     requestAnimationFrame(loop);
 }
