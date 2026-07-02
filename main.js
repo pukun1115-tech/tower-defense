@@ -41,7 +41,7 @@ function resize(){
     tileSize = 20;
     tileSize = tileSize * Math.min(
         window.innerWidth / (yoko * tileSize),
-        window.innerHeight / (tate * tileSize + menuSize)
+        window.innerHeight / (tate * tileSize + menuTate)
         );
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
