@@ -1,14 +1,6 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const keys = {};
 let highlightTile = null;
-
-document.addEventListener("keydown", (e) => {
-    keys[e.code] = true;
-});
-document.addEventListener("keyup", (e) => {
-    keys[e.code] = false;
-});
 
 window.addEventListener("resize",resize);
 
@@ -55,7 +47,7 @@ function getTileFromXY(x, y){
         return null;
     }
 
-    return { x: tileX, y: tileY };
+    return {x: tileX, y: tileY};
 }
 
 
@@ -83,7 +75,7 @@ function drawGrid() {
 function drawHighLight(){
     if(!highlightTile) return;
     //if(map[highlightTile.y][highlightTile.x])
-    ctx.fillStyle = "#0000ff80"
+    ctx.fillStyle = "#0000ff80";
     ctx.fillRect(
         highlightTile.x * tileSize,
         highlightTile.y * tileSize,
@@ -107,9 +99,6 @@ function drawMap(){
                     break;
                 case 1:
                     ctx.fillStyle = "#ffffff";
-                    break;
-                default:
-                    ctx.fillStyle = "#008800";
                     break;
             }
 
@@ -150,5 +139,4 @@ function loop(){
 }
 
 resize();
-
 loop();
