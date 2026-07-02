@@ -1,36 +1,3 @@
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-let highlightTile = null;
-const enemies = [];
-
-window.addEventListener("resize",resize);
-
-//PC
-document.addEventListener("mousemove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    highlightTile = getTileFromXY(mouseX, mouseY);
-});
-
-//スマホ
-canvas.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches[0];
-    const mouseX = touch.clientX - rect.left;
-    const mouseY = touch.clientY - rect.top;
-
-    highlightTile = getTileFromXY(mouseX, mouseY);
-});
-
-canvas.addEventListener("pointerdown", () => {
-    if(!highlightTile) return;
-    if(map[highlightTile.y][highlightTile.x] != 3) return;
-    tower[highlightTile.y][highlightTile.x] = 1;
-});
-
 function drawMap(){
     for(let y = 0;y < tate;y++){
         for(let x = 0;x < yoko;x++){
@@ -60,7 +27,7 @@ function drawMap(){
 }
 
 function drawMenu(){
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "#222";
     ctx.fillRect(
         0,
         tate * tileSize,
