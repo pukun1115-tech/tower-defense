@@ -1,7 +1,7 @@
 const yoko = 20;
 const tate = 12;
 let tileSize;
-const menuTate;
+let menuTate;
 
 const map = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
