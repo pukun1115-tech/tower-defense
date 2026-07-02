@@ -131,8 +131,8 @@ function drawMap(){
 function drawMenu(){
     ctx.fillStyle = "#000000";
     ctx.fillRect(
-        tate * tileSize,
         0,
+        tate * tileSize,
         yoko * tileSize,
         menuTate
     );
