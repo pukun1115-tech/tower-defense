@@ -43,6 +43,8 @@ function resize(){
         window.innerWidth / (yoko * tileSize),
         window.innerHeight / (tate * tileSize)
         );
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
 function getTileFromXY(x, y){
