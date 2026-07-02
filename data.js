@@ -7,6 +7,10 @@ const ctx = canvas.getContext("2d");
 let menuTate;
 let lineWidth;
 let highlightTile = null;
+//money
+let money = 100;
+//wave
+let wave = 0;
 //map
 const yoko = 20;
 const tate = 12;

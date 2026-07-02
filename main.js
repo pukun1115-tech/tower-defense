@@ -43,6 +43,10 @@ function updateEnemies(ctx){
     }
 }
 
+function drawMoney(){
+    //ctx.fillStyle
+}
+
 function loop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
