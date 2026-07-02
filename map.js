@@ -1,6 +1,6 @@
 const yoko = 20;
 const tate = 12;
-let tileSize = 20;//基準
+let tileSize;//基準
 const menuTate = 80;
 
 const map = [
