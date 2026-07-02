@@ -104,7 +104,7 @@ function drawTower(x, y){
 function drawMap(){
     for(let y = 0;y < tate;y++){
         for(let x = 0;x < yoko;x++){
-            swich(map[y][x]){
+            switch(map[y][x]){
                 case 0:
                     ctx.fillStyle = "#008800";
                     break;
