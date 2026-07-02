@@ -19,6 +19,7 @@ document.addEventListener("mousemove", (e) => {
     const mouseY = e.clientY - rect.top;
 
     highlightTile = getTileFromXY(mouseX, mouseY);
+    tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 //スマホ
