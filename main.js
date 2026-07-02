@@ -18,8 +18,8 @@ document.addEventListener("mousemove", (e) => {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    //highlightTile = getTileFromXY(mouseX, mouseY);
-    //tower[highlightTile.y][highlightTile.x] = 2;
+    highlightTile = getTileFromXY(mouseX, mouseY);
+    tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 //スマホ
@@ -31,7 +31,7 @@ canvas.addEventListener("touchmove", (e) => {
     const mouseY = touch.clientY - rect.top;
 
     highlightTile = getTileFromXY(mouseX, mouseY);
-    tower[highlightTile.y][highlightTile.x] = 2;
+    //tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 canvas.addEventListener("click", () => {
