@@ -111,6 +111,9 @@ function drawMap(){
                 case 1:
                     ctx.fillStyle = "#ffffff";
                     break;
+                default:
+                    ctx.fillStyle = "#008800";
+                    break;
             }
 
             ctx.fillRect(
@@ -121,7 +124,7 @@ function drawMap(){
             );
 
             if(tower[y][x] != 0){
-                ctx.fillStyle = "#ffff00"
+                ctx.fillStyle = "#ffff00";
                 drawTower(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
             }
         }
