@@ -26,74 +26,9 @@ canvas.addEventListener("touchmove", (e) => {
 
 canvas.addEventListener("click", () => {
     if(!highlightTile) return;
-    tower[highlightTile.y][highlightTile.x] = 2;
+    if(map[highlightTile.y][highlightTile.x] != 3) return;
+    tower[highlightTile.y][highlightTile.x] = 1;
 });
-
-function resize(){
-    tileSize = 20;
-    menuTate = 80;
-    const scale = Math.min(
-        window.innerWidth / (yoko * tileSize),
-        window.innerHeight / (tate * tileSize + menuTate)
-    );
-    
-    tileSize = tileSize * scale;
-    menuTate = menuTate * scale;
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-function getTileFromXY(x, y){
-    const tileX = Math.floor(x / tileSize);
-    const tileY = Math.floor(y / tileSize);
-
-    if(tileX < 0 || tileX >= yoko || tileY < 0 || tileY >= tate){
-        return null;
-    }
-
-    return {x: tileX, y: tileY};
-}
-
-
-function drawGrid() {
-    ctx.strokeStyle = "#444";
-    ctx.lineWidth = 2;
-
-    //縦
-    for (let x = 0; x <= yoko; x++) {
-        ctx.beginPath();
-        ctx.moveTo(x * tileSize, 0);
-        ctx.lineTo(x * tileSize, tate * tileSize    );
-        ctx.stroke();
-    }
-
-    //横
-    for (let y = 0; y <= tate; y++) {
-        ctx.beginPath();
-        ctx.moveTo(0, y * tileSize);
-        ctx.lineTo(yoko * tileSize, y * tileSize);
-        ctx.stroke();
-    }
-}
-
-function drawHighLight(){
-    if(!highlightTile) return;
-    //if(map[highlightTile.y][highlightTile.x])
-    ctx.fillStyle = "#0000ff80";
-    ctx.fillRect(
-        highlightTile.x * tileSize,
-        highlightTile.y * tileSize,
-        tileSize,
-        tileSize
-    );
-}
-
-function drawTower(x, y){
-    ctx.beginPath();
-    ctx.arc(x,y,tileSize * 0.35,0,Math.PI * 2);
-    ctx.fill();
-}
 
 function drawMap(){
     for(let y = 0;y < tate;y++){
@@ -104,6 +39,12 @@ function drawMap(){
                     break;
                 case 1:
                     ctx.fillStyle = "#ffffff";
+                    break;
+                case 2:
+                    ctx.fillStyle = "#aa4400";
+                    break;
+                case 3:
+                    ctx.fillStyle = "#000000";
                     break;
             }
 
@@ -116,7 +57,7 @@ function drawMap(){
 
             if(tower[y][x] != 0){
                 ctx.fillStyle = "#ffff00";
-                drawTower(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
+                drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8);
             }
         }
     }
