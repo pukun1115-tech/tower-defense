@@ -19,7 +19,6 @@ document.addEventListener("mousemove", (e) => {
     const mouseY = e.clientY - rect.top;
 
     highlightTile = getTileFromXY(mouseX, mouseY);
-    tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 //スマホ
@@ -31,7 +30,6 @@ canvas.addEventListener("touchmove", (e) => {
     const mouseY = touch.clientY - rect.top;
 
     highlightTile = getTileFromXY(mouseX, mouseY);
-    //tower[highlightTile.y][highlightTile.x] = 2;
 });
 
 canvas.addEventListener("click", () => {
@@ -84,7 +82,7 @@ function drawGrid() {
 
 function drawHighLight(){
     if(!highlightTile) return;
-
+    //if(map[highlightTile.y][highlightTile.x])
     ctx.fillStyle = "#0000ff80"
     ctx.fillRect(
         highlightTile.x * tileSize,
@@ -130,12 +128,23 @@ function drawMap(){
     }
 }
 
+function drawMenu(){
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(
+        tate * tileSize,
+        0,
+        yoko * tileSize,
+        menuTate
+    );
+}
+
 function loop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     drawMap();
     drawGrid();
     drawHighLight();
+    drawMenu();
 
     requestAnimationFrame(loop);
 }
