@@ -38,16 +38,12 @@ canvas.addEventListener("click", () => {
 });
 
 function resize(){
-    tileSize = calcTileSize();
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-function calcTileSize(){
-    const sizeX = Math.floor(window.innerWidth / yoko);
-    const sizeY = Math.floor(window.innerHeight / tate);
-
-    return Math.min(sizeX, sizeY);
+    tileSize = 20;
+    tileSize = tileSize *
+        Math.min(
+            window.innerWidth / (yoko * tileSize),
+            window.innerHeight / (tate * tileSize)
+        );
 }
 
 function getTileFromXY(x, y){
