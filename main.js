@@ -31,10 +31,15 @@ canvas.addEventListener("click", () => {
 
 function resize(){
     tileSize = 20;
-    tileSize = tileSize * Math.min(
+    menuTate = 80;
+    const scale = Math.min(
         window.innerWidth / (yoko * tileSize),
         window.innerHeight / (tate * tileSize + menuTate)
-        );
+    );
+    
+    tileSize *= scale;
+    menuTate *= scale;
+    
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
