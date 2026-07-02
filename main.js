@@ -44,7 +44,9 @@ function updateEnemies(ctx){
 }
 
 function drawMoney(){
-    //ctx.fillStyle
+    ctx.fillStyle = "#00ff00";
+    ctx.font ="20px sans-serif";
+    ctx.fillText("💰" + money, 10, 20);
 }
 
 function loop(){
@@ -54,6 +56,7 @@ function loop(){
     drawGrid();
     drawHighLight();
     drawMenu();
+    drawMoney();
     updateEnemies(ctx);
 
     requestAnimationFrame(loop);
