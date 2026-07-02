@@ -39,10 +39,9 @@ canvas.addEventListener("click", () => {
 
 function resize(){
     tileSize = 20;
-    tileSize = tileSize *
-        Math.min(
-            window.innerWidth / (yoko * tileSize),
-            window.innerHeight / (tate * tileSize)
+    tileSize = tileSize * Math.min(
+        window.innerWidth / (yoko * tileSize),
+        window.innerHeight / (tate * tileSize)
         );
 }
 
