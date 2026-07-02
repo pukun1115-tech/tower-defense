@@ -30,7 +30,6 @@ canvas.addEventListener("touchmove", (e) => {
     const mouseY = touch.clientY - rect.top;
 
     highlightTile = getTileFromXY(mouseX, mouseY);
-    if(!highlightTile) return;
     tower[highlightTile.y][highlightTile.x] = 2;
 });
 
