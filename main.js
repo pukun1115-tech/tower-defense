@@ -56,7 +56,7 @@ function spawnEnemy() {
         2,
         20,
         "blue",
-        0,
+        0.01,
         0.2
     );
 
