@@ -52,8 +52,8 @@ function drawMoney() {
 
 function spawnEnemy() {
     const e = new enemy(
-        1,
-        2,
+        0,
+        0,
         20,
         "blue",
         0.01,
