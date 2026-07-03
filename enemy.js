@@ -2,8 +2,8 @@ class enemy {
     constructor(tileX, tileY, hp, color, speed, size) {
         this.alive = true;
 
-        this.tileX = tileX;
-        this.tileY = tileY;
+        this.x = tileX + 0.5;
+        this.y = tileY + 0.5;
 
         this.dir = "right";
 
@@ -15,10 +15,10 @@ class enemy {
     update() {
         if (!this.alive) return;
 
-        if (this.dir === "right") this.tileX += this.speed;
-        if (this.dir === "left") this.tileX -= this.speed;
-        if (this.dir === "down") this.tileY += this.speed;
-        if (this.dir === "up") this.tileY -= this.speed;
+        if (this.dir === "right") this.x += this.speed;
+        if (this.dir === "left") this.x -= this.speed;
+        if (this.dir === "down") this.y += this.speed;
+        if (this.dir === "up") this.y -= this.speed;
 
         if (this.hp <= 0) {
             this.alive = false;
@@ -27,6 +27,6 @@ class enemy {
     }
     draw(ctx) {
         ctx.fillStyle = this.color;
-        drawCircle((this.tileX + 0.5) * tileSize, (this.tileY + 0.5) * tileSize, this.size * tileSize, ctx);
+        drawCircle(this.x * tileSize, this.y * tileSize, this.size * tileSize, ctx);
     }
 }
