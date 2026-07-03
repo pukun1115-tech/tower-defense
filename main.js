@@ -1,7 +1,7 @@
-function drawMap(){
-    for(let y = 0;y < tate;y++){
-        for(let x = 0;x < yoko;x++){
-            switch(map[y][x]){
+function drawMap() {
+    for (let y = 0; y < tate; y++) {
+        for (let x = 0; x < yoko; x++) {
+            switch (map[y][x]) {
                 case 0:
                     ctx.fillStyle = "#008800";
                     break;
@@ -18,7 +18,7 @@ function drawMap(){
 
             ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
 
-            if(tower[y][x] != 0){
+            if (tower[y][x] != 0) {
                 ctx.fillStyle = "#ffff00";
                 drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
             }
@@ -26,7 +26,7 @@ function drawMap(){
     }
 }
 
-function drawMenu(){
+function drawMenu() {
     ctx.fillStyle = "#222";
     ctx.fillRect(
         0,
@@ -36,27 +36,42 @@ function drawMenu(){
     );
 }
 
-function updateEnemies(ctx){
-    for(const e of enemies){
+function updateEnemies(ctx) {
+    for (const e of enemies) {
         e.update();
         e.draw(ctx);
     }
 }
 
-function drawMoney(){
-    ctx.fillStyle = "#00ff00";
-    ctx.font ="20px sans-serif";
-    ctx.fillText("💰" + money, 10, 20);
+function drawMoney() {
+    ctx.fillStyle = "#dddd00";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.textBaseline = "top";
+    ctx.fillText("💰" + money, 0, tate * tileSize);
 }
 
-function loop(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+function spawnEnemy() {
+    const e = new enemy(
+        1,
+        2,
+        20,
+        "blue",
+        0,
+        0.2
+    );
+
+    enemies.push(e);
+}
+
+function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawMap();
     drawGrid();
     drawHighLight();
     drawMenu();
     drawMoney();
+    spawnEnemy();
     updateEnemies(ctx);
 
     requestAnimationFrame(loop);

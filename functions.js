@@ -1,40 +1,41 @@
-function drawCircle(x, y, r, ctx){
+function drawCircle(x, y, r, ctx) {
     ctx.beginPath();
     ctx.arc(x, y, r, 0, Math.PI * 2);
     ctx.fill();
 }
 
-function resize(){
+function resize() {
     tileSize = 20;
     menuTate = 80;
     lineWidth = 1;
+    fontSize = 15;
     const scale = Math.min(
         window.innerWidth / (yoko * tileSize),
         window.innerHeight / (tate * tileSize + menuTate * 2)
     );
-    
+
     tileSize = tileSize * scale;
     menuTate = menuTate * scale;
     lineWidth = lineWidth * scale;
+    fontSize = fontSize * scale;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 
-function getTileFromXY(x, y){
+function getTileFromXY(x, y) {
     const tileX = Math.floor(x / tileSize);
     const tileY = Math.floor(y / tileSize);
 
-    if(tileX < 0 || tileX >= yoko || tileY < 0 || tileY >= tate){
+    if (tileX < 0 || tileX >= yoko || tileY < 0 || tileY >= tate) {
         return null;
     }
 
-    return {x: tileX, y: tileY};
+    return { x: tileX, y: tileY };
 }
 
-function drawHighLight(){
-    if(!highlightTile) return;
-    //if(map[highlightTile.y][highlightTile.x])
+function drawHighLight() {
+    if (!highlightTile) return;
     ctx.fillStyle = "#0000ff80";
     ctx.fillRect(
         highlightTile.x * tileSize,
@@ -45,14 +46,14 @@ function drawHighLight(){
 }
 
 function drawGrid() {
-    ctx.strokeStyle = "#444";
+    ctx.strokeStyle = "#404040";
     ctx.lineWidth = lineWidth;
 
     //縦
     for (let x = 0; x <= yoko; x++) {
         ctx.beginPath();
         ctx.moveTo(x * tileSize, 0);
-        ctx.lineTo(x * tileSize, tate * tileSize    );
+        ctx.lineTo(x * tileSize, tate * tileSize);
         ctx.stroke();
     }
 

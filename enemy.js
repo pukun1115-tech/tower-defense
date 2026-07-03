@@ -1,25 +1,25 @@
 class enemy {
-    constructor(x, y, hp, color, speed, size){
+    constructor(tileX, tileY, hp, color, speed, size) {
         this.alive = true;
-        this.x = x;
-        this.y = y;
+
+        this.tileX = tileX;
+        this.tileY = tileY;
+
         this.hp = hp;
         this.color = color;
         this.speed = speed;
         this.size = size;
     }
-    update(){
-        if(!this.alive) return;
+    update() {
+        if (!this.alive) return;
 
-        //何か
-
-        if(this.hp <= 0){
+        if (this.hp <= 0) {
             this.alive = false;
             return;
         }
     }
-    draw(ctx){
+    draw(ctx) {
         ctx.fillStyle = this.color;
-        drawCircle(this.x, this.y, this.size, ctx);
+        drawCircle((this.tileX + 0.5) * tileSize, (this.tileY + 0.5) * tileSize, this.size * tileSize, ctx);
     }
 }
