@@ -1,4 +1,4 @@
-//グローバル変数
+//グローバル変数???
 
 //canvas
 const canvas = document.getElementById("canvas");
