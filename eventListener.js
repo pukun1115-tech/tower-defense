@@ -12,10 +12,7 @@ document.addEventListener("pointermove", (e) => {
 //スマホ
 canvas.addEventListener("touchmove", (e) => {
     e.preventDefault();
-},
-    {
-        passive: false
-    });
+});
 
 //タップ
 canvas.addEventListener("pointerdown", () => {
