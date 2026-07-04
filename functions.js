@@ -4,6 +4,14 @@ function drawCircle(x, y, r, ctx) {
     ctx.fill();
 }
 
+function tileHighlight(e) {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    highlightTile = getTileFromXY(mouseX, mouseY);
+}
+
 function resize() {
     tileSize = 20;
     menuTate = 80;

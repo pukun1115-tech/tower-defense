@@ -1,13 +1,7 @@
 window.addEventListener("resize", resize);
 
 //PC
-document.addEventListener("pointermove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    highlightTile = getTileFromXY(mouseX, mouseY);
-});
+document.addEventListener("pointermove", tileHighlight);
 
 //スマホ
 canvas.addEventListener("touchmove", (e) => {
@@ -15,7 +9,9 @@ canvas.addEventListener("touchmove", (e) => {
 });
 
 //タップ
-canvas.addEventListener("pointerdown", () => {
+canvas.addEventListener("pointerdown", (e) => {
+    tileHighlight(e);
+
     if (!highlightTile) return;
     if (map[highlightTile.y][highlightTile.x] != 3) return;
     tower[highlightTile.y][highlightTile.x] = 1;
