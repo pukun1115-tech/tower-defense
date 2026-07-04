@@ -13,7 +13,9 @@ canvas.addEventListener("pointerdown", (e) => {
 
 canvas.addEventListener("pointermove", (e) => {
     e.preventDefault();
-    tileHighlight(e);
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
 
     //動いたらドラッグ
     if (Math.abs(e.clientX - startX) > 15 || Math.abs(e.clientY - startY) > 15) {
@@ -24,9 +26,6 @@ canvas.addEventListener("pointermove", (e) => {
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
 
-    if (moved) return;//動いたならタップではない
-
-    tileHighlight(e);
     if (!highlightTile) return;
     map[highlightTile.y][highlightTile.x] = 3;
 });
