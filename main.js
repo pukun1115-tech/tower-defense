@@ -51,7 +51,7 @@ function drawMoney() {
 }
 
 function spawnEnemy() {
-    if (time % 120 !== 0) return;
+    if (time % /*フレーム数*/120 !== 0) return;
 
     const e = new enemy(
         0,
