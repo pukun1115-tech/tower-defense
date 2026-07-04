@@ -7,6 +7,7 @@ canvas.addEventListener("pointermove", (e) => {
 
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
+    tileHighlight(e);
 
     if (!highlightTile) return;
     map[highlightTile.y][highlightTile.x] = 3;
