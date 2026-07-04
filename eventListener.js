@@ -17,6 +17,8 @@ canvas.addEventListener("pointermove", (e) => {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
+    highlightTile = getTileFromXY(mouseX, mouseY);
+
     //動いたらドラッグ
     if (Math.abs(e.clientX - startX) > 15 || Math.abs(e.clientY - startY) > 15) {
         moved = true;
