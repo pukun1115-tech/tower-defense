@@ -2,7 +2,7 @@
 //https://github.com/pukun1115-tech/tower-defense.git
 
 /*基本情報*/
-//座標はtileSizeにかけてcanvas座標にする
+//座標はtileSizeにかけてcanvas座標にするww
 
 /*マップ*/
 0//緑は地面
