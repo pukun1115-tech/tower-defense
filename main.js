@@ -76,6 +76,7 @@ function loop() {
     drawMoney();
     spawnEnemy();
     updateEnemies(ctx);
+    updateMoney(null);
 
     requestAnimationFrame(loop);
 }
