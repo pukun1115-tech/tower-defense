@@ -13,6 +13,5 @@ canvas.addEventListener("pointerdown", (e) => {
     tileHighlight(e);
 
     if (!highlightTile) return;
-    if (map[highlightTile.y][highlightTile.x] != 3) return;
-    tower[highlightTile.y][highlightTile.x] = 1;
+    map[highlightTile.y][highlightTile.x] = 3;
 });

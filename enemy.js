@@ -72,10 +72,16 @@ class enemy {
                 this.dir = "up";
             }
             else if (!isDownWall) {
-                //
+                this.nextTileX = this.x;
+                this.nextTileY = this.y + 1;
+
+                this.dir = "down";
             }
             else if (!isLeftWall) {
-                //
+                this.nextTileX = this.x - 1;
+                this.nextTileY = this.y;
+
+                this.dir = "left";
             }
         }
 
