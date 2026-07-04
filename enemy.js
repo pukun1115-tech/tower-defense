@@ -11,11 +11,11 @@ class enemy {
         this.hp = hp;
         this.color = color;
         this.speed = speed;
-        this.size = size;
+        this.size = size;//tileSizeの何倍の半径?
     }
 
     update() {
-        if (!this.alive) return;
+        if (!this.alive) return;//死...
 
         if (this.x === this.nextTileX && this.y === this.nextTileY) {
             const tileX = Math.floor(this.x);
