@@ -4,8 +4,8 @@ class enemy {
 
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
-        this.dir = "right";
-        this.nextTileX = this.x + 1;
+        this.dir = null;
+        this.nextTileX = this.x;
         this.nextTileY = this.y;
 
         this.hp = hp;
@@ -16,6 +16,28 @@ class enemy {
 
     update() {
         if (!this.alive) return;
+
+        if (this.x === this.nextTileX && this.y === this.nextTileY) {
+            const tileX = Math.floor(this.x);
+            const tileY = Math.floor(this.y);
+
+            const goalX = 19;
+            const goalY = 7;
+
+            const path = bfs(tileX, tileY, goalX, goalY);
+
+            if (path && path.length > 1) {
+                const next = path[1];//次,0は今の場所
+
+                this.nextTileX = next.x + 0.5;
+                this.nextTileY = next.y + 0.5;
+
+                if (next.x > tileX) this.dir = "right";
+                if (next.x < tileX) this.dir = "left";
+                if (next.y > tileY) this.dir = "down";
+                if (next.y < tileY) this.dir = "up";
+            }
+        }
 
         if (this.dir === "right") {
             if (this.nextTileX <= this.x + this.speed) {
@@ -47,28 +69,6 @@ class enemy {
             }
             else {
                 this.y -= this.speed;
-            }
-        }
-
-        if (this.x === this.nextTileX && this.y === this.nextTileY) {
-            const tileX = Math.floor(this.x);
-            const tileY = Math.floor(this.y);
-
-            const goalX = 19;
-            const goalY = 7;
-
-            const path = bfs(tileX, tileY, goalX, goalY);
-
-            if (path && path.length > 1) {
-                const next = path[1];//次,0は今の場所
-
-                this.nextTileX = next.x + 0.5;
-                this.nextTileY = next.y + 0.5;
-
-                if (next.x > tileX) this.dir = "right";
-                if (next.x < tileX) this.dir = "left";
-                if (next.y > tileY) this.dir = "down";
-                if (next.y < tileY) this.dir = "up";
             }
         }
 

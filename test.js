@@ -1,1 +1,3 @@
-console.log(undefined !== 0);
+let a = 0;
+a++;
+console.log(a);

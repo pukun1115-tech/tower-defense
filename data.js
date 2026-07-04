@@ -8,6 +8,8 @@ let menuTate;
 let lineWidth;
 let highlightTile = null;
 let fontSize;
+//時間
+let time = 0;
 //money
 let money = 100;
 //wave

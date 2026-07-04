@@ -51,9 +51,11 @@ function drawMoney() {
 }
 
 function spawnEnemy() {
+    if (time % 120 !== 0) return;
+
     const e = new enemy(
         0,
-        6,
+        7,
         20,
         "blue",
         0.01,
@@ -64,6 +66,7 @@ function spawnEnemy() {
 }
 
 function loop() {
+    time++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawMap();
