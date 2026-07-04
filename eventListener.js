@@ -5,7 +5,7 @@ canvas.addEventListener("pointermove", (e) => {
     tileHighlight(e);
 });
 
-canvas.addEventListener("pointerdown", (e) => {
+canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
 
     if (!highlightTile) return;
