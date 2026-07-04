@@ -1,15 +1,12 @@
 window.addEventListener("resize", resize);
 
-//PC
-document.addEventListener("pointermove", tileHighlight);
-
-//スマホ
-canvas.addEventListener("touchmove", (e) => {
+canvas.addEventListener("pointermove", (e) => {
     e.preventDefault();
+    tileHighlight(e);
 });
 
-//タップ
 canvas.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
     tileHighlight(e);
 
     if (!highlightTile) return;
