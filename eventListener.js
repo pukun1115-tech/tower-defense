@@ -29,5 +29,7 @@ canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
 
     if (!highlightTile) return;
+
+    if (map[highlightTile.y][highlightTile.x] !== 0) return;
     map[highlightTile.y][highlightTile.x] = 3;
 });
