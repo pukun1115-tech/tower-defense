@@ -58,6 +58,25 @@ class enemy {
             const isLeftWall = (map[tileY][tileX - 1] != 0);
             const isDownWall = (map[tileY + 1][tileX] != 0);
             const isUpWall = (map[tileY - 1][tileX] != 0);
+
+            if (!isRightWall) {
+                this.nextTileX = this.x + 1;
+                this.nextTileY = this.y;
+
+                this.dir = "right";
+            }
+            else if (!isUpWall) {
+                this.nextTileX = this.x;
+                this.nextTileY = this.y - 1;
+
+                this.dir = "up";
+            }
+            else if (!isDownWall) {
+                //
+            }
+            else if (!isLeftWall) {
+                //
+            }
         }
 
         if (this.hp <= 0) {
