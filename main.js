@@ -87,6 +87,11 @@ function drawKabeButton() {
     ctx.fillText("壁", tileSize * 5, (tate + 3) * tileSize);
 }
 
+function drawTowerButton() {
+    ctx.fillStyle = "#0000ff";
+    ctx.fillRect(tileSize * 7, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
+}
+
 function loop() {
     time++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -99,6 +104,7 @@ function loop() {
     drawMoney();
     drawMoneyButton();
     drawKabeButton();
+    drawTowerButton();
 
     spawnEnemy();
     updateEnemies(ctx);
