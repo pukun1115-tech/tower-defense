@@ -50,8 +50,13 @@ function drawMoney() {
     ctx.fillText("💰" + money, 0, tate * tileSize);
 }
 
+function drawButton() {
+    ctx.fillStyle ="#ffffff";
+    ctx.fillRect(0, (tate + 1) * tileSize, 2 * tileSize, tileSize);
+}
+
 function spawnEnemy() {
-    if (time % /*フレーム数*/120 !== 0) return;
+    if (time % /*フレーム数*/80 !== 0) return;
 
     const e = new enemy(
         0,
@@ -74,6 +79,7 @@ function loop() {
     drawHighLight();
     drawMenu();
     drawMoney();
+    drawButton();
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);
