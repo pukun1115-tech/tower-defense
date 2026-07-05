@@ -53,6 +53,11 @@ function drawMoney() {
 function drawButton() {
     ctx.fillStyle ="#ffffff";
     ctx.fillRect(0.5 * tileSize, (tate + 1) * tileSize, 2 * tileSize, tileSize);
+    /*
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.textBaseline = "top";
+    ctx.fiilText
+    */
 }
 
 function spawnEnemy() {
