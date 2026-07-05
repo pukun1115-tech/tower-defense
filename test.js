@@ -1,3 +1,1 @@
-let a = 0;
-a++;
-console.log(a);
+console.log(3 / 2);

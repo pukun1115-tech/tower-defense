@@ -9,6 +9,8 @@ canvas.addEventListener("pointerdown", (e) => {
     moved = false;
     startX = e.clientX;
     startY = e.clientY;
+
+    highlightTile = getTileFromXY(startX, startY);
 })
 
 canvas.addEventListener("pointermove", (e) => {

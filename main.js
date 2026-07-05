@@ -26,14 +26,19 @@ function drawMap() {
     }
 }
 
-function drawMenu() {
-    ctx.fillStyle = "#222";
-    ctx.fillRect(
-        0,
-        tate * tileSize,
-        yoko * tileSize,
-        menuTate
+function spawnEnemy() {
+    if (time % /*フレーム数*/40/*に一体*/ !== 0) return;
+
+    const e = new enemy(
+        0,//x
+        7,//y
+        20,//hp
+        "blue",//color
+        0.02,//speed
+        0.3//size
     );
+
+    enemies.push(e);
 }
 
 function updateEnemies(ctx) {
@@ -43,36 +48,43 @@ function updateEnemies(ctx) {
     }
 }
 
+function drawMenu() {
+    ctx.fillStyle = "#222";
+    ctx.fillRect(
+        0,
+        tate * tileSize,
+        yoko * tileSize,
+        menuTate
+    );
+}
 function drawMoney() {
     ctx.fillStyle = "#dddd00";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.textBaseline = "top";
-    ctx.fillText("💰" + money, 0, tate * tileSize);
+    ctx.textAlign = "center";
+    ctx.fillText("$" + money, tileSize, tate * tileSize);
 }
 
-function drawButton() {
-    ctx.fillStyle ="#ffffff";
-    ctx.fillRect(0.5 * tileSize, (tate + 1) * tileSize, 2 * tileSize, tileSize);
-    /*
+function drawMoneyButton() {
+    ctx.fillStyle = "#dddd00";
+    ctx.fillRect(tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
+
+    ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.textBaseline = "top";
-    ctx.fiilText
-    */
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText("お金", tileSize * 2, (tate + 3) * tileSize);
 }
 
-function spawnEnemy() {
-    if (time % /*フレーム数*/80 !== 0) return;
+function drawKabeButton() {
+    ctx.fillStyle = "#00dd00";
+    ctx.fillRect(tileSize * 4, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
 
-    const e = new enemy(
-        0,
-        7,
-        20,
-        "blue",
-        0.01,
-        0.2
-    );
-
-    enemies.push(e);
+    ctx.fillStyle = "#000000";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText("壁", tileSize * 5, (tate + 3) * tileSize);
 }
 
 function loop() {
@@ -82,9 +94,12 @@ function loop() {
     drawMap();
     drawGrid();
     drawHighLight();
+
     drawMenu();
     drawMoney();
-    drawButton();
+    drawMoneyButton();
+    drawKabeButton();
+
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);

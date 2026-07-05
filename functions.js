@@ -11,7 +11,7 @@ function resize() {
     fontSize = 15;
     const scale = Math.min(
         window.innerWidth / (yoko * tileSize),
-        window.innerHeight / (tate * tileSize + menuTate * 2)
+        window.innerHeight / (tate * tileSize + menuTate)
     );
 
     tileSize = tileSize * scale;
