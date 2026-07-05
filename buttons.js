@@ -37,7 +37,7 @@ function drawSaveButton() {
 function drawResetButton() {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect( tileSize * 15, (tate + 2.5) * tileSize, tile * 2, tileSize);
-
+}
 function onMoneyButtonClick() { }
 function onKabeButtonClick() { }
 function onTowerButtonClick() { }
