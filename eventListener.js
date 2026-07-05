@@ -1,34 +1,32 @@
-let startX = 0;
-let startY = 0;
-let moved = false;
+let pointerX = null;
+let pointerY = null;
+let isPointerDown = false;
 
 window.addEventListener("resize", resize);
 
 canvas.addEventListener("pointerdown", (e) => {
     e.preventDefault();
-    moved = false;
-    startX = e.clientX;
-    startY = e.clientY;
+    const rect = canvas.getBoundingClientRect();
+    isPointerDown = true;
+    pointerX = e.clientX - rect.left;
+    pointerY = e.clientY - rect.top;
 
-    highlightTile = getTileFromXY(startX, startY);
+    highlightTile = getTileFromXY(pointerX, pointerY);
 })
 
 canvas.addEventListener("pointermove", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
 
-    highlightTile = getTileFromXY(mouseX, mouseY);
+    pointerX = e.clientX - rect.left;
+    pointerY = e.clientY - rect.top;
 
-    //動いたらドラッグ
-    if (Math.abs(e.clientX - startX) > 15 || Math.abs(e.clientY - startY) > 15) {
-        moved = true;
-    }
+    highlightTile = getTileFromXY(pointerX, pointerY);
 });
 
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
+    isPointerDown = false;
 
     if (!highlightTile) return;
 
