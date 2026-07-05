@@ -52,7 +52,7 @@ function drawMoney() {
 
 function drawButton() {
     ctx.fillStyle ="#ffffff";
-    ctx.fillRect(0, (tate + 1) * tileSize, 2 * tileSize, tileSize);
+    ctx.fillRect(0.5 * tileSize, (tate + 1) * tileSize, 2 * tileSize, tileSize);
 }
 
 function spawnEnemy() {
