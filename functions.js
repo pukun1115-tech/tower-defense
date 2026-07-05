@@ -68,7 +68,7 @@ function drawGrid() {
 
 function updateMoney(m) {
     if (m === null) {
-        if (time % 5 !== 0) return;
+        if (time % 12 !== 0) return;
         money++;
         return;
     }

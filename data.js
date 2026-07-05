@@ -11,7 +11,7 @@ let fontSize;
 //時間
 let time = 0;
 //money
-let money = 100;
+let money = 500;
 //wave
 let wave = 0;
 //map
