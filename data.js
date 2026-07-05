@@ -35,8 +35,8 @@ const map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
-const yoko = map[0].length;
-const tate = map.length;
+const yoko = map[0].length;//20
+const tate = map.length;//15
 //tower
 const tower = Array.from({ length: tate }, () => Array(yoko).fill(0));
 //enemy
