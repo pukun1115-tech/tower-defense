@@ -8,6 +8,10 @@ let menuTate;
 let lineWidth;
 let highlightTile = null;
 let fontSize;
+//menu
+let mode = "menu";
+let kabeSyurui = 1;
+let moneyLevel = 0;
 //時間
 let time = 0;
 //money
