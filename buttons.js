@@ -33,12 +33,12 @@ function drawSaveButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("SAVE", tileSize * 11, (tate + 3) * tileSize);
 }
-/*
+
 function drawResetButton() {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(tileSize * 15, (tate + 2.5) * tileSize, tileSize * 2, tileSize);
 }
-*/
+
 
 //function onMoneyButtonClick() { }
 //function onKabeButtonClick() { }
