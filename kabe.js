@@ -1,5 +1,5 @@
 function kabeCheck() {
-  if(!pointerDown) return;
+  if(!isPointerDown) return;
 
   highlightTile = getTileFromXY(pointerX, pointerY);
 }
