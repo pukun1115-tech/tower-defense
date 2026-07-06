@@ -60,7 +60,7 @@ function drawMenu() {
     drawKabeButton();
     drawTowerButton();
     drawSaveButton();
-    drawResetButton();
+    //drawResetButton();
 }
 function drawMoney() {
     ctx.fillStyle = "#dddd00";
