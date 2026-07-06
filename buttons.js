@@ -5,6 +5,7 @@ function drawMoneyButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("お金", tileSize * 2, (tate + 3) * tileSize);
+    
     onMoneyButtonClick();
 }
 
@@ -15,6 +16,8 @@ function drawKabeButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壁", tileSize * 5, (tate + 3) * tileSize);
+    
+    onKabeButtonClick();
 }
 
 function drawTowerButton() {
@@ -36,13 +39,13 @@ function drawSaveButton() {
 function drawResetButton() {
     //
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(15 * tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
+    ctx.fillRect(15 * tileSize, (tate + 2.5) * tileSize, 3 * tileSize, tileSize);
     //
 }
 
 
 function onMoneyButtonClick() {
-    if(!isPointerDown)return;
+    if(!isPointerDown) return;
     if(
         pointerX > tileSize &&
         pointerX < 3 * tileSize &&
@@ -52,6 +55,15 @@ function onMoneyButtonClick() {
         updateMoney(1);
     }
 }
-function onKabeButtonClick() { }
+function onKabeButtonClick() {
+    if(!isPointerDown) return;
+    if(
+        pointerX > 4 * tileSize &&
+        pointerX < 6 * tileSize &&
+        pointerY < (tate + 2.5) * tileSize &&
+        pointerY > (tate + 3.5) * tileSize
+    ){
+    }
+}
 function onTowerButtonClick() { }
 function onSaveButton() { }
