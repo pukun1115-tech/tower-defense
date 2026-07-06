@@ -50,12 +50,7 @@ function updateEnemies(ctx) {
 
 function drawMenu() {
     ctx.fillStyle = "#222";
-    ctx.fillRect(
-        0,
-        tate * tileSize,
-        yoko * tileSize,
-        menuTate
-    );
+    ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
@@ -65,6 +60,7 @@ function drawMenu() {
     drawKabeButton();
     drawTowerButton();
     drawSaveButton();
+    drawResetButton();
 }
 function drawMoney() {
     ctx.fillStyle = "#dddd00";
