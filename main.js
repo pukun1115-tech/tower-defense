@@ -81,6 +81,8 @@ function loop() {
 
     drawMenu();
 
+    kabeCheck();
+
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);
