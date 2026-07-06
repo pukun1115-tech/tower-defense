@@ -5,6 +5,7 @@ function drawMoneyButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("お金", tileSize * 2, (tate + 3) * tileSize);
+    onMoneyButtonClick();
 }
 
 function drawKabeButton() {
