@@ -36,7 +36,7 @@ function drawSaveButton() {
 function drawResetButton() {
     //
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(tileSize * 15, (tate + 2.5) * tileSize, tileSize * 2, tileSize);
+    ctx.fillRect(15 * tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
     //
 }
 
@@ -44,10 +44,10 @@ function drawResetButton() {
 function onMoneyButtonClick() {
     if(!isPointerDown)return;
     if(
-        pointerX >= tileSize &&
-        pointerX <= tileSize * 3 &&
-        pointerY >= (tate + 2.5) * tileSize &&
-        pointerY <= (tate + 3.5)
+        pointerX > tileSize &&
+        pointerX < 3 * tileSize &&
+        pointerY > (tate + 2.5) * tileSize &&
+        pointerY < (tate + 3.5) * tileSize
     ){
         updateMoney(114514);
     }
