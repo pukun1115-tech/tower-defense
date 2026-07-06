@@ -52,11 +52,11 @@ function drawMenu() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
-    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
 
     drawMoney();
     
-    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
     
     drawMoneyButton();
     drawKabeButton();
