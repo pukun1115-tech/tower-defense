@@ -24,7 +24,6 @@ function drawTowerButton() {
     ctx.font = `${fontSize * 0.8}px sans-serif`;
     ctx.fillText("タワー", tileSize * 8, (tate + 3) * tileSize);
 }
-
 function drawSaveButton() {
     ctx.fillStyle = "#ff0000";
     ctx.fillRect(tileSize * 10, (tate + 2.5) * tileSize, tileSize * 2, tileSize);
@@ -33,11 +32,11 @@ function drawSaveButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("SAVE", tileSize * 11, (tate + 3) * tileSize);
 }
-
-
 function drawResetButton() {
+    //
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(tileSize * 15, (tate + 2.5) * tileSize, tileSize * 2, tileSize);
+    //
 }
 
 
