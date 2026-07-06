@@ -52,10 +52,12 @@ function drawMenu() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
-    ctx.textBaseline = "middle";
     ctx.textAlign = "center";
 
     drawMoney();
+    
+    ctx.textBaseline = "middle";
+    
     drawMoneyButton();
     drawKabeButton();
     drawTowerButton();
@@ -63,9 +65,10 @@ function drawMenu() {
     drawResetButton();
 }
 function drawMoney() {
-    ctx.fillStyle = "#dddd00";
+    ctx.fillStyle = "#dd0";
+    ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("$" + money, tileSize * (yoko - 1), (tate + 0.5) * tileSize);
+    ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
 }
 
 function loop() {
