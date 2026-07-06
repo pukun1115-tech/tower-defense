@@ -41,7 +41,7 @@ function drawResetButton() {
 }
 
 
-//function onMoneyButtonClick() { }
-//function onKabeButtonClick() { }
-//function onTowerButtonClick() { }
-//function onSaveButton() { }
+function onMoneyButtonClick() { }
+function onKabeButtonClick() { }
+function onTowerButtonClick() { }
+function onSaveButton() { }
