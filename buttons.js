@@ -44,11 +44,11 @@ function drawResetButton() {
 function onMoneyButtonClick() {
     if(
         pointerX >= tileSize &&
-        ponterX <= tileSize * 3 &&
+        pointerX <= tileSize * 3 &&
         pointerY >= (tate + 2.5) * tileSize &&
         pointerY <= (tate + 3.5)
     ){
-        updateMoney(100);
+        updateMoney(114514);
     }
 }
 function onKabeButtonClick() { }
