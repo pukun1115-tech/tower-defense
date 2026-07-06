@@ -55,9 +55,9 @@ function drawMenu() {
     ctx.textBaseline = "middle";
 
     drawMoney();
-    
+
     ctx.textAlign = "center";
-    
+
     drawMoneyButton();
     drawKabeButton();
     drawTowerButton();
@@ -81,7 +81,7 @@ function loop() {
 
     drawMenu();
 
-    kabeCheck();
+    highlightCheck();
 
     spawnEnemy();
     updateEnemies(ctx);
