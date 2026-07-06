@@ -5,8 +5,6 @@ function drawMoneyButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("お金", tileSize * 2, (tate + 3) * tileSize);
-
-    onMoneyButtonClick();
 }
 
 function drawKabeButton() {
@@ -16,8 +14,6 @@ function drawKabeButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壁", tileSize * 5, (tate + 3) * tileSize);
-
-    onKabeButtonClick();
 }
 
 function drawTowerButton() {
@@ -49,7 +45,6 @@ function drawResetButton() {
 
 
 function onMoneyButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > tileSize &&
         pointerX < 3 * tileSize &&
