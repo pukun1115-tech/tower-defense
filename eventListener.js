@@ -8,10 +8,9 @@ canvas.addEventListener("pointerdown", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
     isPointerDown = true;
+    
     pointerX = e.clientX - rect.left;
     pointerY = e.clientY - rect.top;
-
-    highlightTile = getTileFromXY(pointerX, pointerY);
 })
 
 canvas.addEventListener("pointermove", (e) => {
@@ -20,8 +19,6 @@ canvas.addEventListener("pointermove", (e) => {
 
     pointerX = e.clientX - rect.left;
     pointerY = e.clientY - rect.top;
-
-    highlightTile = getTileFromXY(pointerX, pointerY);
 });
 
 canvas.addEventListener("pointerup", (e) => {
