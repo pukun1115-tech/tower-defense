@@ -8,6 +8,10 @@ let menuTate;
 let lineWidth;
 let highlightTile = null;
 let fontSize;
+//タップ
+let pointerX = null;
+let pointerY = null;
+let isPointerDown = false;
 //menu
 let mode = "menu";
 let kabeSyurui = 1;
