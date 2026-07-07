@@ -67,29 +67,31 @@ function onKabeButtonClick() {
         mode = "kabe";
     }
 }
+
 function onTowerButtonClick() {
-    if(!isPointerDown) return;
-    if(
+    if (!isPointerDown) return;
+    if (
         pointerX > 7 * tileSize &&
         pointerX < 9 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
         mode = "tower";
+        updateMoney(1000);
     }
 }
 function onSaveButtonClick() {
-    if(!isPointerDown) return;
+    if (!isPointerDown) return;
 }
 function onResetButtonClick() {
-    if(!isPointerDown) return;
-    if(
+    if (!isPointerDown) return;
+    if (
         pointerX > 15 * tileSize &&
         pointerX < 18 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
-    ){
-        updateMoney(1);
+    ) {
+        updateMoney(100);
         resize();
     }
 }
