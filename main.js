@@ -17,8 +17,6 @@ function drawMap() {
             }
 
             ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
-
-            if (tower[y][x] != 0) {
                 
         }
     }
@@ -31,8 +29,7 @@ function drawTower() {
                 case 0:
                     break;
                 case 1:
-                    ctx.fillStyle = "#ffff00";
-                    drawCircle((x + 0.5), (y + 0.5), /*かっこに直径を入れる*/(0.8) / 2);
+                    drawCircle((x + 0.5), (y + 0.5), /*かっこに直径を入れる*/(0.8) / 2, "#ffff00");
                     break;
            }
         }
