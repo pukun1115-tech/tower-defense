@@ -1,7 +1,3 @@
-let pointerX = null;
-let pointerY = null;
-let isPointerDown = false;
-
 window.addEventListener("resize", resize);
 
 canvas.addEventListener("pointerdown", (e) => {
