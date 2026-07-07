@@ -86,6 +86,7 @@ function loop() {
     //ボタン判定
     onMoneyButtonClick();
     onKabeButtonClick();
+    onTowerButtonClick();
     onResetButtonClick();
 
     spawnEnemy();
