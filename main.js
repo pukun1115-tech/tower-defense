@@ -32,7 +32,7 @@ function drawTower() {
                     break;
                 case 1:
                     ctx.fillStyle = "#ffff00";
-                    drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
+                    drawCircle((x + 0.5), (y + 0.5), /*かっこに直径を入れる*/(0.8) / 2);
                     break;
            }
         }
