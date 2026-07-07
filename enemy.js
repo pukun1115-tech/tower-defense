@@ -79,8 +79,7 @@ class enemy {
     }
 
     draw(ctx) {
-        ctx.fillStyle = this.color;
-        drawCircle(this.x * tileSize, this.y * tileSize, this.size * tileSize, ctx);
+        drawCircle(this.x, this.y, this.size, this.color);
     }
 }
 
