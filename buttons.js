@@ -78,7 +78,9 @@ function onTowerButtonClick() {
         mode = "tower";
     }
 }
-function onSaveButtonClick() { }
+function onSaveButtonClick() {
+    if(!isPointerDown) return;
+}
 function onResetButtonClick() {
     if(!isPointerDown) return;
     if(
