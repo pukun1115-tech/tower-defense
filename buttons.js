@@ -67,7 +67,17 @@ function onKabeButtonClick() {
         mode = "kabe";
     }
 }
-function onTowerButtonClick() { }
+function onTowerButtonClick() {
+    if(!isPointerDown) return;
+    if(
+        pointerX > 7 * tileSize &&
+        pointerX < 9 * tileSize &&
+        pointerY > (tate + 2.5) * tileSize &&
+        pointerY < (tate + 3.5) * tileSize
+    ) {
+        mode = "tower";
+    }
+}
 function onSaveButtonClick() { }
 function onResetButtonClick() {
     if(!isPointerDown) return;
