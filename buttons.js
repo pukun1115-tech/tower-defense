@@ -45,6 +45,7 @@ function drawResetButton() {
 
 
 function onMoneyButtonClick() {
+    if (isPointerDown) return;
     if (
         pointerX > tileSize &&
         pointerX < 3 * tileSize &&
