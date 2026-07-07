@@ -19,12 +19,26 @@ function drawMap() {
             ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
 
             if (tower[y][x] != 0) {
-                ctx.fillStyle = "#ffff00";
-                drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
-            }
+                
         }
     }
 }
+
+function drawTower() {
+    for(let y = 0; y < tate; y++) {
+        for(let x = 0; x < yoko; x++) {
+            switch(tower[y][x]) {
+                case 0:
+                    break;
+                case 1:
+                    ctx.fillStyle = "#ffff00";
+                    drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
+                    break;
+           }
+        }
+    }
+}
+
 
 function spawnEnemy() {
     if (time % /*フレーム数*/40/*に一体*/ !== 0) return;
