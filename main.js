@@ -48,15 +48,15 @@ function updateEnemies(ctx) {
     }
 }
 
-function drawMenu() {
-    ctx.fillStyle = "#222";
-    ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
+function drawMenu(c) {
+    c.fillStyle = "#222";
+    c.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
-    ctx.textBaseline = "middle";
+    c.textBaseline = "middle";
 
-    drawMoney();
+    drawMoney(c);
 
-    ctx.textAlign = "center";
+    c.textAlign = "center";
 
     drawMoneyButton();
     drawKabeButton();
@@ -64,11 +64,11 @@ function drawMenu() {
     drawSaveButton();
     drawResetButton();
 }
-function drawMoney() {
-    ctx.fillStyle = "#dd0";
-    ctx.textAlign = "right";
-    ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
+function drawMoney(c) {
+    c.fillStyle = "#dd0";
+    c.textAlign = "right";
+    c.font = `${fontSize}px sans-serif`;
+    c.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
 }
 
 function loop() {
@@ -79,7 +79,7 @@ function loop() {
     drawGrid();
     drawHighLight();
 
-    drawMenu();
+    drawMenu(ctx);
 
     highlightCheck();
 
