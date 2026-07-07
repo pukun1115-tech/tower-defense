@@ -1,4 +1,5 @@
-function drawCircle(x, y, r) {
+function drawCircle(x, y, r, color) {
+    ctx.fillStyle = color;
     ctx.beginPath();
     ctx.arc(x * tileSize, y * tileSize, r * tileSize, 0, Math.PI * 2);
     ctx.fill();
