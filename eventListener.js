@@ -16,7 +16,8 @@ canvas.addEventListener("pointerdown", (e) => {
 canvas.addEventListener("pointermove", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
-
+    isPointerDown = true;
+    
     pointerX = e.clientX - rect.left;
     pointerY = e.clientY - rect.top;
 });
