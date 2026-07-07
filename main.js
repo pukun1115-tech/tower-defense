@@ -1,25 +1,25 @@
-function drawMap(c) {
+function drawMap() {
     for (let y = 0; y < tate; y++) {
         for (let x = 0; x < yoko; x++) {
             switch (map[y][x]) {
                 case 0:
-                    c.fillStyle = "#008800";
+                    ctx.fillStyle = "#008800";
                     break;
                 case 1:
-                    c.fillStyle = "#ffffff";
+                    ctx.fillStyle = "#ffffff";
                     break;
                 case 2:
-                    c.fillStyle = "#aa4400";
+                    ctx.fillStyle = "#aa4400";
                     break;
                 case 3:
-                    c.fillStyle = "#000000";
+                    ctx.fillStyle = "#000000";
                     break;
             }
 
-            c.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+            ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
 
             if (tower[y][x] != 0) {
-                c.fillStyle = "#ffff00";
+                ctx.fillStyle = "#ffff00";
                 drawCircle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, (tileSize / 2) * 0.8, ctx);
             }
         }
@@ -48,15 +48,15 @@ function updateEnemies(ctx) {
     }
 }
 
-function drawMenu(c) {
-    c.fillStyle = "#222";
-    c.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
+function drawMenu() {
+    ctx.fillStyle = "#222";
+    ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
-    c.textBaseline = "middle";
+    ctx.textBaseline = "middle";
 
-    drawMoney(c);
+    drawMoney();
 
-    c.textAlign = "center";
+    ctx.textAlign = "center";
 
     drawMoneyButton();
     drawKabeButton();
@@ -64,22 +64,22 @@ function drawMenu(c) {
     drawSaveButton();
     drawResetButton();
 }
-function drawMoney(c) {
-    c.fillStyle = "#dd0";
-    c.textAlign = "right";
-    c.font = `${fontSize}px sans-serif`;
-    c.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
+function drawMoney() {
+    ctx.fillStyle = "#dd0";
+    ctx.textAlign = "right";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
 }
 
 function loop() {
     time++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawMap(ctx);
+    drawMap();
     drawGrid();
     drawHighLight();
 
-    drawMenu(ctx);
+    drawMenu();
 
     highlightCheck();
 
