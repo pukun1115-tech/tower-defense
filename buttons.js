@@ -77,5 +77,6 @@ function onResetButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) *tileSize
     ){
+        resize();
     }
 }
