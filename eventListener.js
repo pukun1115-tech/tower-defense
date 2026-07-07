@@ -28,7 +28,8 @@ canvas.addEventListener("pointerup", (e) => {
     switch (mode) {
         case "menu":
             onMoneyButtonClick();
-            onMoneyButtonClick();
+            onKabeButtonClick();
+            onTowerButtonClick();
             onResetButtonClick();
             onSaveButtonClick();
             break;
