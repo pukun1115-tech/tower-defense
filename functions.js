@@ -4,6 +4,11 @@ function drawCircle(x, y, r, ctx) {
     ctx.fill();
 }
 
+function drawRect(x, y, w, h, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x * tileSize, y * tileSize, w * tileSize, h * tileSize);
+}
+
 function resize() {
     tileSize = 20;
     menuTate = 80;
@@ -36,13 +41,7 @@ function getTileFromXY(x, y) {
 
 function drawHighLight() {
     if (!highlightTile) return;
-    ctx.fillStyle = "#0000ff80";
-    ctx.fillRect(
-        highlightTile.x * tileSize,
-        highlightTile.y * tileSize,
-        tileSize,
-        tileSize
-    );
+    drawRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
 }
 
 function drawGrid() {
