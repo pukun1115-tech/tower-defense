@@ -83,12 +83,6 @@ function loop() {
 
     highlightCheck();
 
-    //ボタン判定
-    onMoneyButtonClick();
-    onKabeButtonClick();
-    onTowerButtonClick();
-    onResetButtonClick();
-
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);
