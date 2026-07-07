@@ -69,4 +69,13 @@ function onKabeButtonClick() {
 }
 function onTowerButtonClick() { }
 function onSaveButtonClick() { }
-function onResetButtonClick() { }
+function onResetButtonClick() {
+    if(!isPointerDown) return;
+    if(
+        pointerX > 15 * tileSize &&
+        pointerX > 18 * tileSize &&
+        pointerY > (tate + 2.5) * tileSize &&
+        pointerY < (tate + 3.5) *tileSize
+    ){
+    }
+}
