@@ -24,10 +24,13 @@ canvas.addEventListener("pointermove", (e) => {
 
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
-    isPointerDown = false;
 
     switch (mode) {
         case "menu":
+            onMoneyButtonClick();
+            onMoneyButtonClick();
+            onResetButtonClick();
+            onSaveButtonClick();
             break;
         case "kabe":
             placeKabeCheck();
@@ -35,4 +38,6 @@ canvas.addEventListener("pointerup", (e) => {
         case "money":
             break;
     }
+    
+    isPointerDown = false;
 });
