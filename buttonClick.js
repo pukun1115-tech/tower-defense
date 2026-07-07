@@ -36,6 +36,14 @@ function onTowerButtonClick() {
 }
 function onSaveButtonClick() {
     if (!isPointerDown) return;
+    if(
+        pointerX > 10 * tileSize &&
+        pointerX < 12 * tileSize &&
+        pointerY > (tate + 2.5) * tileSize &&
+        pointerY < (tate + 3.5) * tileSize
+    ) {
+        updateMoney(-100);
+    }
 }
 function onResetButtonClick() {
     if (!isPointerDown) return;
