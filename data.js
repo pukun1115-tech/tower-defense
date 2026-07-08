@@ -16,6 +16,8 @@ let isPointerDown = false;
 let mode = "menu";
 let kabeSyurui = 1;
 let moneyLevel = 0;
+//奥ブロック
+let oku = null;
 //時間
 let time = 0;
 //money
