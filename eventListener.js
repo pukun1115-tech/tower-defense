@@ -33,6 +33,9 @@ canvas.addEventListener("pointerup", (e) => {
         case "kabe":
             placeKabeCheck();
             break;
+        case "tower":
+            placeTowerCheck();
+            break;
         case "money":
             break;
     }
