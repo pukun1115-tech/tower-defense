@@ -45,7 +45,8 @@ function drawResetButton() {
 function drawKabe0Button() {
     drawRect(1, (tate + 0.5), 3, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
-    ctx.font = `${fontsize}px sans-serif`;
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("壊す", 2.5 * tileSize, (tate + 1) * tileSize);
 }
 
 function drawKabe2Button() {
