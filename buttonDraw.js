@@ -1,6 +1,5 @@
 function drawMoneyButton() {
-    ctx.fillStyle = "#dddd00";
-    ctx.fillRect(tileSize, (tate + 2.5) * tileSize, tileSize * 2, tileSize);
+    drawRect(1, (tate + 2.5), 2, 1, "#dddd00");
 
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
