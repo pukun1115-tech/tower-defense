@@ -53,7 +53,7 @@ function placeKabeCheck() {
 function placeTowerCheck() {
     if (!highlightTile) return;
     if (map[highlightTile.y][highlightTile.x] !== 3) return;
-    tower[highlightTile.y][highlightTile.x] = 1;
+    towers.push(new tower(highlightTile.x, highlightTile.y));
 }
 
 function drawHighLight() {
