@@ -43,7 +43,9 @@ function drawResetButton() {
 }
 
 function drawKabe0Button() {
-    drawRect(1, (tate + 0.5), 3, 1.5, "#008800");
+    drawRect(1, (tate + 0.5), 3, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.font = `${fontsize}px sans-serif`;
 }
 
 function drawKabe2Button() {
