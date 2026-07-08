@@ -50,6 +50,12 @@ function placeKabeCheck() {
     map[highlightTile.y][highlightTile.x] = 3;
 }
 
+function placeTowerCheck() {
+    if (!highlightTile) return;
+    if (map[highlightTile.y][highlightTile.x] !== 3) return;
+    tower[highlightTile.y][highlightTile.x] = 1;
+}
+
 function drawHighLight() {
     if (!highlightTile) return;
     drawRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
