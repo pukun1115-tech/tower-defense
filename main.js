@@ -22,21 +22,6 @@ function drawMap() {
     }
 }
 
-function drawTower() {
-    for(let y = 0; y < tate; y++) {
-        for(let x = 0; x < yoko; x++) {
-            switch(tower[y][x]) {
-                case 0:
-                    break;
-                case 1:
-                    drawCircle((x + 0.5), (y + 0.5), /*かっこに直径を入れる*/(0.8) / 2, "#ffff00");
-                    break;
-           }
-        }
-    }
-}
-
-
 function spawnEnemy() {
     if (time % /*フレーム数*/40/*に一体*/ !== 0) return;
 
@@ -88,7 +73,6 @@ function loop() {
 
     drawMap();
     drawGrid();
-    drawTower();
     drawHighLight();
 
     drawMenu();
