@@ -6,7 +6,7 @@ function onMoneyButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
-        updateMoney(123);
+        mode = "money";
     }
 }
 
@@ -31,7 +31,6 @@ function onTowerButtonClick() {
         pointerY < (tate + 3.5) * tileSize
     ) {
         mode = "tower";
-        updateMoney(1000);
     }
 }
 function onSaveButtonClick() {
@@ -42,7 +41,7 @@ function onSaveButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
-        updateMoney(-100);
+        //
     }
 }
 function onResetButtonClick() {
@@ -53,7 +52,6 @@ function onResetButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
-        updateMoney(100);
         resize();
     }
 }
