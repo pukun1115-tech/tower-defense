@@ -59,6 +59,10 @@ function drawMenu() {
     drawTowerButton();
     drawSaveButton();
     drawResetButton();
+
+    if (mode === "kabe") {
+        //
+    }
 }
 function drawMoney() {
     ctx.fillStyle = "#dd0";
