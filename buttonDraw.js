@@ -43,7 +43,7 @@ function drawResetButton() {
 }
 
 function drawKabe0Button() {
-    drawRect(1, (tate + 0.5), 1, 1, "#008800");
+    drawRect(1, (tate + 0.5), 3, 1.5, "#008800");
 }
 
 function drawKabe2Button() {
