@@ -46,13 +46,19 @@ function drawKabe0Button() {
     drawRect(1, (tate + 0.5), 3, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("壊す", 2.5 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText("壊す", 2 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawKabe2Button() {
-    //
+    drawRect(6, (tate + 0.5), 3, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("箱", 7 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawKabe3Button() {
-    //
+    drawRect(11, (tate + 0.5), 3, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("土台", 12 * tileSize, (tate + 1.25) * tileSize);
 }
