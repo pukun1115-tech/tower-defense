@@ -46,7 +46,7 @@ const map = [
 const yoko = map[0].length;//20
 const tate = map.length;//15
 //tower
-const tower = Array.from({ length: tate }, () => Array(yoko).fill(0));
+let tower = [];
 //enemy
 let enemies = [];
 
