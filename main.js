@@ -61,9 +61,12 @@ function drawMenu() {
     drawResetButton();
 
     if (mode === "kabe") {
-        //
+        drawKabe0Button();
+        drawKabe2Button();
+        drawKabe3Button();
     }
 }
+
 function drawMoney() {
     ctx.fillStyle = "#dd0";
     ctx.textAlign = "right";
