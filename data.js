@@ -46,7 +46,7 @@ const map = [
 const yoko = map[0].length;//20
 const tate = map.length;//15
 //tower
-let tower = [];
+let towers = [];
 //enemy
 let enemies = [];
 
