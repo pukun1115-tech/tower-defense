@@ -88,6 +88,7 @@ function loop() {
 
     drawMap();
     drawGrid();
+    drawTower();
     drawHighLight();
 
     drawMenu();
