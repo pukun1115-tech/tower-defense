@@ -3,16 +3,16 @@ function drawMap() {
         for (let x = 0; x < yoko; x++) {
             switch (map[y][x]) {
                 case 0:
-                    ctx.fillStyle = "#008800";
+                    ctx.fillStyle = "#008800";//草
                     break;
                 case 1:
-                    ctx.fillStyle = "#ffffff";
+                    ctx.fillStyle = "#ffffff";//白
                     break;
                 case 2:
-                    ctx.fillStyle = "#aa4400";
+                    ctx.fillStyle = "#aa4400";//茶色
                     break;
                 case 3:
-                    ctx.fillStyle = "#000000";
+                    ctx.fillStyle = "#000000"//黒
                     break;
             }
 
