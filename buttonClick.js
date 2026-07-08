@@ -55,3 +55,15 @@ function onResetButtonClick() {
         resize();
     }
 }
+function onKabe0ButtonClick() {
+    if (!isPointerDown) return;
+    if (
+        pointerX > tileSize &&
+        pointerX < 5 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        oku = 0;
+        updateMoney(100);
+    }
+}
