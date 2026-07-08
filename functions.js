@@ -40,6 +40,16 @@ function getTileFromXY(x, y) {
     return { x: tileX, y: tileY };
 }
 
+function highlightCheck() {
+    highlightTile = getTileFromXY(pointerX, pointerY);
+}
+
+function placeKabeCheck() {
+    if (!highlightTile) return;
+    if (map[highlightTile.y][highlightTile.x] !== 0) return;
+    map[highlightTile.y][highlightTile.x] = 3;
+}
+
 function drawHighLight() {
     if (!highlightTile) return;
     drawRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
