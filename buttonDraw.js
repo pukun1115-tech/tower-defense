@@ -41,3 +41,15 @@ function drawResetButton() {
     ctx.font = `${fontSize}px Impact`;
     ctx.fillText("Reset", 16.5 * tileSize, (tate + 3) * tileSize);
 }
+
+function drawKabe0Button() {
+    //
+}
+
+function drawKabe2Button() {
+    //
+}
+
+function drawKabe3Button() {
+    //
+}
