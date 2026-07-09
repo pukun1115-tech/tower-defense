@@ -35,6 +35,12 @@ function drawTowerButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize * 0.8}px sans-serif`;
     ctx.fillText("タワー", tileSize * 8, (tate + 3) * tileSize);
+
+    if (mode !== "tower") return;
+
+    ctx.strokeStyle = "#ffffff";
+    ctx.strokeWidth = 0.05 * tileSize;
+    ctx.strokeRect(7 * tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
 }
 
 function drawSaveButton() {
