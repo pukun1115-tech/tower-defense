@@ -31,7 +31,9 @@ canvas.addEventListener("pointerup", (e) => {
         case "menu":
             break;
         case "kabe":
-            placeKabeCheck();
+            onKabe0ButtonClick();
+            onKabe2ButtonClick();
+            onKabe3ButtonClick();
             break;
         case "tower":
             placeTowerCheck();
