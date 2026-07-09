@@ -67,3 +67,9 @@ function onKabe0ButtonClick() {
         updateMoney(100);
     }
 }
+function onKabe2ButtonClick() {
+    //
+}
+function onKane3ButtonClick() {
+    //
+}
