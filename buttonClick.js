@@ -68,7 +68,8 @@ function onKabe2ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2) * tileSize
     ) {
-        oku = 2
+        oku = 2;
+        updateMoney(-10);
     }
 }
 function onKane3ButtonClick() {
