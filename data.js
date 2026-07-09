@@ -21,7 +21,7 @@ let oku = null;
 let time = 0;
 //money
 let money = 300;
-let moneyLevel = 60;
+let moneyLevel = 2;
 //wave
 let wave = 0;
 //map
