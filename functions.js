@@ -77,8 +77,8 @@ function placeCheck() {
             money += 5;
             break;
         case 2:
-            if (money < 10) return;
-            money -= 10
+            if (money < 3) return;
+            money -= 3
             break;
         case 3:
             if (money < 15) return;
