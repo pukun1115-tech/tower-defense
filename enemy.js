@@ -96,6 +96,14 @@ class enemy {
 }
 
 function bfs(startX, startY, goalX, goalY) {
+    const pathNoBreak = bfsCore(startX, startY, goalX, goalY, false);
+    if(pathNoBreak) return pathNoBreak;
+
+    const pathBreak = bfsCore(startX, startY, goalX, goalY, true);
+    return pathBreak;
+}
+
+function bfsCore(startX, startY, goalX, goalY, canBreak) {
     const queue = [];
     const visited = Array.from({ length: tate }, () => Array(yoko).fill(false));
     const parent = Array.from({ length: tate }, () => Array(yoko).fill(null));
@@ -125,11 +133,11 @@ function bfs(startX, startY, goalX, goalY) {
 
             if (nx < 0 || nx >= yoko || ny < 0 || ny >= tate) continue;
             if (visited[ny][nx]) continue;//もう来たことがある
-            if(Math.random() > 0.1) {
+            if(!canBreak) {
                 if(!(map[ny][nx] === 0)) continue;
             }
             else {
-                if (!(map[ny][nx] === 0) && !(map[ny][nx] === 2)) continue; //箱を壊してくる 
+                if (map[ny][nx] !== 0 && map[ny][nx] !== 2) continue; //箱を壊してくる 
             }
             
             visited[ny][nx] = true;
