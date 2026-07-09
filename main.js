@@ -3,20 +3,26 @@ function drawMap() {
         for (let x = 0; x < yoko; x++) {
             switch (map[y][x]) {
                 case 0:
-                    ctx.fillStyle = "#008800";//草
+                    drawShikakuRect(x, y, 1, 1, "#008800");
                     break;
                 case 1:
-                    ctx.fillStyle = "#ffffff";//白
+                    drawShikakuRect(x, y, 1, 1, "#ffffff");
                     break;
                 case 2:
-                    ctx.fillStyle = "#aa4400";//茶色
+                    drawShikakuRect(x, y, 1, 1, "#aa4400");
                     break;
                 case 3:
-                    ctx.fillStyle = "#000000"//黒
+                    drawShikakuRect(x, y, 1, 1, "#000000");
+                    break;
+                case 4:
+                    drawShikakuRect(x, y, 1, 1, "#000000");
+                    drawCircle(x + 0.5, y + 0.5, 0.3, "#ffff00");
+                    break;
+                case 5:
+                    drawShikakuRect(x, y, 1, 1, "#000000");
+                    drawCircle(x + 0.5, y + 0.5, 0.3, "#ff00ff");
                     break;
             }
-
-            ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
 
         }
     }

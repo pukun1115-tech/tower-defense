@@ -6,7 +6,4 @@ class tower {
     update() {
         //
     }
-    draw() {
-        drawCircle(this.x, this.y, 0.4, "#ffff00");
-    }
 }
