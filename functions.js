@@ -45,18 +45,6 @@ function highlightCheck() {
 }
 
 function placeKabeCheck() {
-    /*
-    switch (map[highlightTile.y][highlightTile.x]) {
-        case 0:
-            if(oku === 0) return;
-        case 1:
-            return;
-        case 2:
-            if(oku !== 0) return;
-        case 3:
-            if(oku !== 0) return;
-    }
-    */
     updateMoney(1000);
     map[highlightTile.y][highlightTile.x] = oku;
 }
