@@ -80,11 +80,10 @@ function loop() {
 
     drawMap();
     drawGrid();
+    highlightCheck();
     drawHighLight();
 
     drawMenu();
-
-    highlightCheck();
 
     spawnEnemy();
     updateEnemies(ctx);
