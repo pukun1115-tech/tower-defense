@@ -95,7 +95,7 @@ function drawKabe2Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("箱", 7 * tileSize, (tate + 3.25) * tileSize);
-    ctx.fillText("10$", 9 * tileSize, (tate + 3.25) * tileSize);
+    ctx.fillText("3$", 9 * tileSize, (tate + 3.25) * tileSize);
 }
 
 function drawKabe3Button() {
