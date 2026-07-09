@@ -68,7 +68,14 @@ function onKabe0ButtonClick() {
     }
 }
 function onKabe2ButtonClick() {
-    //
+    if (
+        pointerX > 6 * tileSize &&
+        pointerX < 10 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        oku = 2
+    }
 }
 function onKane3ButtonClick() {
     //
