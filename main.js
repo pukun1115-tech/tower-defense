@@ -89,7 +89,7 @@ function loop() {
     updateEnemies(ctx);
     updateMoney(null);
 
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#000000";
     ctx.font = `20px sans-serif`
     ctx.fillText(oku,20,20);
 
