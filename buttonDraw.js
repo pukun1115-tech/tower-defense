@@ -4,6 +4,13 @@ function drawMoneyButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("お金", tileSize * 2, (tate + 3) * tileSize);
+    
+    if (mode !== "money") return;
+    
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
+    
 }
 
 function drawKabeButton() {
