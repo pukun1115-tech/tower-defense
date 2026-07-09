@@ -54,11 +54,7 @@ function drawMenu() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
-    ctx.textBaseline = "middle";
-
     drawMoney();
-
-    ctx.textAlign = "center";
 
     drawMoneyButton();
     drawKabeButton();
@@ -66,6 +62,9 @@ function drawMenu() {
     drawItemButton();
     drawResetButton();
     switch (mode) {
+        case "money":
+            drawMoneyLevelUpButton();
+            break;
         case "kabe":
             drawKabe0Button();
             drawKabe2Button();
@@ -73,6 +72,7 @@ function drawMenu() {
             break;
         case "tower":
             drawTower4Button();
+            drawTower5Button();
             break;
 
     }
@@ -80,6 +80,7 @@ function drawMenu() {
 
 function drawMoney() {
     ctx.fillStyle = "#dd0";
+    ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);

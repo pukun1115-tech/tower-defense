@@ -57,40 +57,35 @@ function placeCheck() {
 
     switch (map[highlightTile.y][highlightTile.x]) {
         case 0:
-            if (oku === 0) return;
+            if (oku === 0 || oku >= 4) return;//草にはタワー付きの土台と草は置けない
             break;
         case 1:
-            return;
+            return;//変更できない
         case 2:
-            if (oku !== 0) return;
+            if (oku !== 0) return;//草にするだけ
             break;
         case 3:
-            if (oku !== 0) return;
-            break;
-        case 4:
+            if (oku === 0 || oku >= 4) break;//土台は草にするかタワーを置くか
             return;
+        case 4:
         case 5:
+            if (oku === 3) break;//タワーなしの土台にしかできない
             return;
     }
-    map[highlightTile.y][highlightTile.x] = oku;
     switch (oku) {
         case 0:
-            updateMoney(5);
+            money += 5;
             break;
-        case 1:
-            updateMoney(-10);
+        case 2:
+            if (money < 10) return;
+            money -= 10
+            break;
+        case 3:
+            if (money < 15) return;
+            money -= 15;
             break;
     }
-}
-
-function placeTowerCheck() {
-    if (!highlightTile) return;
-    if (map[highlightTile.y][highlightTile.x] !== 3) return;
-
-    const t = new tower(highlightTile.x, highlightTile.y);
-    towers.push(t);
-
-    map[highlightTile.y][highlightTile.x] = 4;
+    map[highlightTile.y][highlightTile.x] = oku;
 }
 
 function drawHighLight() {
@@ -111,7 +106,7 @@ function drawGrid() {
 
 function updateMoney(m) {
     if (m === null) {
-        if (time % 12 !== 0) return;
+        if (time % moneyLevel !== 0) return;
         money++;
         return;
     }

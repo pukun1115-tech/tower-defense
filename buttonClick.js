@@ -16,6 +16,7 @@ function onKabeButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
+        oku = null;
         mode = "kabe";
     }
 }
@@ -27,6 +28,7 @@ function onTowerButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
+        oku = null;
         mode = "tower";
     }
 }
@@ -78,5 +80,26 @@ function onKabe3ButtonClick() {
         pointerY < (tate + 4) * tileSize
     ) {
         oku = 3;
+    }
+}
+function onTower4Click() {
+    if (
+        pointerX > tileSize &&
+        pointerX < 4 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 1.5) * tileSize
+    ) {
+        oku = 4;
+    }
+}
+
+function onTower5Click() {
+    if (
+        pointerX > 5 * tileSize &&
+        pointerX < 8 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 1.5) * tileSize
+    ) {
+        oku = 5;
     }
 }

@@ -15,13 +15,13 @@ let isPointerDown = false;
 //menu
 let mode = "menu";
 let kabeSyurui = 1;
-let moneyLevel = 0;
-//奥ブロック
+//置くブロック
 let oku = null;
 //時間
 let time = 0;
 //money
 let money = 300;
+let moneyLevel = 60;
 //wave
 let wave = 0;
 //map
