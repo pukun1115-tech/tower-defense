@@ -45,6 +45,7 @@ function highlightCheck() {
 }
 
 function placeKabeCheck() {
+    /*
     switch (map[highlightTile.y][highlightTile.x]) {
         case 0:
             if(oku === 0) return;
@@ -55,6 +56,7 @@ function placeKabeCheck() {
         case 3:
             if(oku !== 0) return;
     }
+    */
     map[highlightTile.y][highlightTile.x] = oku;
 }
 
