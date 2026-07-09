@@ -125,7 +125,7 @@ function bfs(startX, startY, goalX, goalY) {
 
             if (nx < 0 || nx >= yoko || ny < 0 || ny >= tate) continue;
             if (visited[ny][nx]) continue;//もう来たことがある
-            if(Math.random > 0.1) {
+            if(Math.random() > 0.1) {
                 if(!(map[ny][nx] === 0)) continue;
             }
             else {
