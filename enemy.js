@@ -43,6 +43,9 @@ class enemy {
             if (this.nextTileX <= this.x + this.speed) {
                 this.x = this.nextTileX;
             }
+            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
+            }
             else {
                 this.x += this.speed;
             }
@@ -50,6 +53,9 @@ class enemy {
         if (this.dir === "left") {
             if (this.nextTileX >= this.x - this.speed) {
                 this.x = this.nextTileX;
+            }
+            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
             }
             else {
                 this.x -= this.speed;
@@ -59,6 +65,9 @@ class enemy {
             if (this.nextTileY <= this.y + this.speed) {
                 this.y = this.nextTileY;
             }
+            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
+            }
             else {
                 this.y += this.speed;
             }
@@ -66,6 +75,9 @@ class enemy {
         if (this.dir === "up") {
             if (this.nextTileY >= this.y - this.speed) {
                 this.y = this.nextTileY;
+            }
+            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
             }
             else {
                 this.y -= this.speed;
@@ -78,7 +90,7 @@ class enemy {
         }
     }
 
-    draw(ctx) {
+    draw() {
         drawCircle(this.x, this.y, this.size, this.color);
     }
 }
@@ -113,7 +125,7 @@ function bfs(startX, startY, goalX, goalY) {
 
             if (nx < 0 || nx >= yoko || ny < 0 || ny >= tate) continue;
             if (visited[ny][nx]) continue;//もう来たことがある
-            if (map[ny][nx] !== 0) continue; // 壁は通れない
+            if (!(map[ny][nx] === 0) && !(map[ny][nx] === 2)) continue; // 壁は通れない
 
             visited[ny][nx] = true;
             parent[ny][nx] = cur;
