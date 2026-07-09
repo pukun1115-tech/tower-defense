@@ -1,5 +1,4 @@
 function onMoneyButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > tileSize &&
         pointerX < 3 * tileSize &&
@@ -11,7 +10,6 @@ function onMoneyButtonClick() {
 }
 
 function onKabeButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > 4 * tileSize &&
         pointerX < 6 * tileSize &&
@@ -23,7 +21,6 @@ function onKabeButtonClick() {
 }
 
 function onTowerButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > 7 * tileSize &&
         pointerX < 9 * tileSize &&
@@ -34,7 +31,6 @@ function onTowerButtonClick() {
     }
 }
 function onSaveButtonClick() {
-    if (!isPointerDown) return;
     if(
         pointerX > 10 * tileSize &&
         pointerX < 12 * tileSize &&
@@ -45,7 +41,6 @@ function onSaveButtonClick() {
     }
 }
 function onResetButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > 15 * tileSize &&
         pointerX < 18 * tileSize &&
@@ -56,7 +51,6 @@ function onResetButtonClick() {
     }
 }
 function onKabe0ButtonClick() {
-    if (!isPointerDown) return;
     if (
         pointerX > tileSize &&
         pointerX < 5 * tileSize &&
