@@ -78,9 +78,6 @@ function loop() {
     time++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#ffffff";
-    ctx.font = `20px sans-serif`
-    ctx.fillText(oku,20,20);
     drawMap();
     drawGrid();
     highlightCheck();
@@ -91,6 +88,10 @@ function loop() {
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = `20px sans-serif`
+    ctx.fillText(oku,20,20);
 
     requestAnimationFrame(loop);
 }
