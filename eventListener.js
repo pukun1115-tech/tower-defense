@@ -31,7 +31,7 @@ canvas.addEventListener("pointerup", (e) => {
         case "menu":
             break;
         case "kabe":
-            updateMoney(10000);
+            //ここまでok
             onKabe0ButtonClick();
             onKabe2ButtonClick();
             onKabe3ButtonClick();
