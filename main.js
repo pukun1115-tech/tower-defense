@@ -17,7 +17,7 @@ function drawMap() {
             }
 
             ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
-                
+
         }
     }
 }
@@ -88,10 +88,6 @@ function loop() {
     spawnEnemy();
     updateEnemies(ctx);
     updateMoney(null);
-
-    ctx.fillStyle = "#000000";
-    ctx.font = `20px sans-serif`
-    ctx.fillText(oku,20,20);
 
     requestAnimationFrame(loop);
 }

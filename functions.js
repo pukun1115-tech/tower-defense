@@ -45,7 +45,8 @@ function highlightCheck() {
 }
 
 function placeKabeCheck() {
-    updateMoney(1000);
+    if (!highlightTile) return;
+    if (oku === null) return;
     map[highlightTile.y][highlightTile.x] = oku;
 }
 

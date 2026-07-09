@@ -31,7 +31,7 @@ function onTowerButtonClick() {
     }
 }
 function onSaveButtonClick() {
-    if(
+    if (
         pointerX > 10 * tileSize &&
         pointerX < 12 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
@@ -58,7 +58,6 @@ function onKabe0ButtonClick() {
         pointerY < (tate + 2) * tileSize
     ) {
         oku = 0;
-        updateMoney(100);
     }
 }
 function onKabe2ButtonClick() {
@@ -69,9 +68,15 @@ function onKabe2ButtonClick() {
         pointerY < (tate + 2) * tileSize
     ) {
         oku = 2;
-        updateMoney(-10);
     }
 }
-function onKane3ButtonClick() {
-    //
+function onKabe3ButtonClick() {
+    if (
+        pointerX > 11 * tileSize &&
+        pointerX < 16 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        oku = 3;
+    }
 }
