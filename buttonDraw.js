@@ -7,7 +7,7 @@ function drawMoneyButton() {
     
     if (mode !== "money") return;
     
-    ctx.strokeStyle = "#000000";
+    ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
     
