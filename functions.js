@@ -19,7 +19,7 @@ function drawSenRect(x0, y0, x1, y1) {
 
 function resize() {
     tileSize = 20;
-    menuTate = 80;
+    menuTate = 120;
     lineWidth = 1;
     fontSize = 15;
     const scale = Math.min(
@@ -51,7 +51,7 @@ function highlightCheck() {
     highlightTile = getTileFromXY(pointerX, pointerY);
 }
 
-function placeKabeCheck() {
+function placeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
 
@@ -73,13 +73,24 @@ function placeKabeCheck() {
             return;
     }
     map[highlightTile.y][highlightTile.x] = oku;
+    switch (oku) {
+        case 0:
+            updateMoney(5);
+            break;
+        case 1:
+            updateMoney(-10);
+            break;
+    }
 }
 
 function placeTowerCheck() {
     if (!highlightTile) return;
     if (map[highlightTile.y][highlightTile.x] !== 3) return;
-    const t = new tower(highlightTile.x, higglightTile.y);
+
+    const t = new tower(highlightTile.x, highlightTile.y);
     towers.push(t);
+
+    map[highlightTile.y][highlightTile.x] = 4;
 }
 
 function drawHighLight() {

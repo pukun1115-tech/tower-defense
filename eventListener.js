@@ -25,7 +25,7 @@ canvas.addEventListener("pointerup", (e) => {
     onKabeButtonClick();
     onTowerButtonClick();
     onResetButtonClick();
-    onSaveButtonClick();
+    onItemButtonClick();
 
     switch (mode) {
         case "menu":
@@ -35,7 +35,7 @@ canvas.addEventListener("pointerup", (e) => {
             onKabe0ButtonClick();
             onKabe2ButtonClick();
             onKabe3ButtonClick();
-            placeKabeCheck();
+            placeCheck();
             break;
         case "tower":
             placeTowerCheck();

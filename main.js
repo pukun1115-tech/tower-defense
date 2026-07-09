@@ -36,7 +36,7 @@ function spawnEnemy() {
         7,//y
         20,//hp
         "blue",//color
-        0.02,//speed
+        0.03,//speed
         0.3//size
     );
 
@@ -63,13 +63,18 @@ function drawMenu() {
     drawMoneyButton();
     drawKabeButton();
     drawTowerButton();
-    drawSaveButton();
+    drawItemButton();
     drawResetButton();
+    switch (mode) {
+        case "kabe":
+            drawKabe0Button();
+            drawKabe2Button();
+            drawKabe3Button();
+            break;
+        case "tower":
+            drawTower4Button();
+            break;
 
-    if (mode === "kabe") {
-        drawKabe0Button();
-        drawKabe2Button();
-        drawKabe3Button();
     }
 }
 
