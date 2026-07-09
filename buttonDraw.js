@@ -20,6 +20,12 @@ function drawKabeButton() {
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壁", tileSize * 5, (tate + 3) * tileSize);
+
+    if (mode !== "kabe") return;
+
+    ctx.strokeStyle = "#ffffff";
+    ctx.strokeWidth = 0.05 * tileSize;
+    ctx.strokeRect(4 * tileSize, (tate + 2.5) * tileSize, 2 * tileSize, tileSize);
 }
 
 function drawTowerButton() {
