@@ -125,8 +125,13 @@ function bfs(startX, startY, goalX, goalY) {
 
             if (nx < 0 || nx >= yoko || ny < 0 || ny >= tate) continue;
             if (visited[ny][nx]) continue;//もう来たことがある
-            if (!(map[ny][nx] === 0) && !(map[ny][nx] === 2)) continue; // 壁は通れない
-
+            if(Math.random > 0.1) {
+                if(!(map[ny][nx] === 0)) continue;
+            }
+            else {
+                if (!(map[ny][nx] === 0) && !(map[ny][nx] === 2)) continue; //箱を壊してくる 
+            }
+            
             visited[ny][nx] = true;
             parent[ny][nx] = cur;
             queue.push({ x: nx, y: ny });
