@@ -5,9 +5,16 @@ function drawCircle(x, y, r, color) {
     ctx.fill();
 }
 
-function drawRect(x, y, w, h, color) {
+function drawShikakuRect(x, y, w, h, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x * tileSize, y * tileSize, w * tileSize, h * tileSize);
+}
+
+function drawSenRect(x0, y0, x1, y1) {
+    ctx.beginPath();
+    ctx.moveTo(x0 * tileSize, y0 * tileSize);
+    ctx.lineTo(x1 * tileSize, y1 * tileSize);
+    ctx.stroke();
 }
 
 function resize() {
@@ -47,6 +54,24 @@ function highlightCheck() {
 function placeKabeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
+
+    switch (map[highlightTile.y][highlightTile.x]) {
+        case 0:
+            if (oku === 0) return;
+            break;
+        case 1:
+            return;
+        case 2:
+            if (oku !== 0) return;
+            break;
+        case 3:
+            if (oku !== 0) return;
+            break;
+        case 4:
+            return;
+        case 5:
+            return;
+    }
     map[highlightTile.y][highlightTile.x] = oku;
 }
 
@@ -59,27 +84,17 @@ function placeTowerCheck() {
 
 function drawHighLight() {
     if (!highlightTile) return;
-    drawRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
+    drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
 }
 
 function drawGrid() {
     ctx.strokeStyle = "#404040";
     ctx.lineWidth = lineWidth;
-
-    //縦
     for (let x = 0; x <= yoko; x++) {
-        ctx.beginPath();
-        ctx.moveTo(x * tileSize, 0);
-        ctx.lineTo(x * tileSize, tate * tileSize);
-        ctx.stroke();
+        drawSenRect(x, 0, x, tate);
     }
-
-    //横
     for (let y = 0; y <= tate; y++) {
-        ctx.beginPath();
-        ctx.moveTo(0, y * tileSize);
-        ctx.lineTo(yoko * tileSize, y * tileSize);
-        ctx.stroke();
+        drawSenRect(0, y, yoko, y);
     }
 }
 

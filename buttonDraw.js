@@ -1,5 +1,5 @@
 function drawMoneyButton() {
-    drawRect(1, (tate + 2.5), 2, 1, "#dddd00");
+    drawShikakuRect(1, (tate + 2.5), 2, 1, "#dddd00");
 
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
@@ -62,7 +62,7 @@ function drawResetButton() {
 }
 
 function drawKabe0Button() {
-    drawRect(1, (tate + 0.5), 4, 1.5, "#ffffff");
+    drawShikakuRect(1, (tate + 0.5), 4, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壊す", 2 * tileSize, (tate + 1.25) * tileSize);
@@ -70,7 +70,7 @@ function drawKabe0Button() {
 }
 
 function drawKabe2Button() {
-    drawRect(6, (tate + 0.5), 4, 1.5, "#ffffff");
+    drawShikakuRect(6, (tate + 0.5), 4, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("箱", 7 * tileSize, (tate + 1.25) * tileSize);
@@ -78,7 +78,7 @@ function drawKabe2Button() {
 }
 
 function drawKabe3Button() {
-    drawRect(11, (tate + 0.5), 4, 1.5, "#ffffff");
+    drawShikakuRect(11, (tate + 0.5), 4, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("土台", 12 * tileSize, (tate + 1.25) * tileSize);
