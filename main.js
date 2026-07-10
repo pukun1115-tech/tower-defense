@@ -49,6 +49,12 @@ function updateEnemies() {
         e.draw();
     }
 }
+function updateTowers() {
+    for (const t of towers) {
+        t.update();
+        t.draw();
+    }
+}
 
 function drawMenu() {
     ctx.fillStyle = "#222";
@@ -100,6 +106,8 @@ function loop() {
     spawnEnemy();
     updateEnemies();
     updateMoney();
+
+    updateTowers();
 
     requestAnimationFrame(loop);
 }
