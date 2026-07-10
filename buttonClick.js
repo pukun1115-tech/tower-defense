@@ -112,6 +112,7 @@ function onMoneyLevelUpButtonClick() {
     ) {
         if(moneyLevel === 10) return;
         if (money < moneyLevelHyou[moneyLevel + 1]) return;
+        money -= moneyLevelHyou[moneyLevel + 1];
         moneyLevel++;
     }
 }
