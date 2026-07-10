@@ -43,10 +43,10 @@ function spawnEnemy() {
     enemies.push(e);
 }
 
-function updateEnemies(ctx) {
+function updateEnemies() {
     for (const e of enemies) {
         e.update();
-        e.draw(ctx);
+        e.draw();
     }
 }
 
@@ -98,7 +98,7 @@ function loop() {
     drawMenu();
 
     spawnEnemy();
-    updateEnemies(ctx);
+    updateEnemies();
     updateMoney(null);
 
     requestAnimationFrame(loop);
