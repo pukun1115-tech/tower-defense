@@ -43,6 +43,7 @@ canvas.addEventListener("pointerup", (e) => {
             placeCheck();
             break;
         case "money":
+            onMoneyLevelUpButtonClick();
             break;
     }
 
