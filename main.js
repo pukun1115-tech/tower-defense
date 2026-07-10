@@ -50,6 +50,13 @@ function updateTowers() {
         t.draw();
     }
 }
+function updateBullets() {
+    for (const b of bullets) {
+        b.update();
+        b.draw();
+    }
+    bullets = bullets.filter(b => b.alive);
+}
 
 function drawMenu() {
     ctx.fillStyle = "#222";
@@ -103,6 +110,8 @@ function loop() {
     updateMoney();
 
     updateTowers();
+
+    updateBullets();
 
     requestAnimationFrame(loop);
 }
