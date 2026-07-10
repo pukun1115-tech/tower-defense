@@ -70,6 +70,7 @@ function drawMenu() {
     ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
     drawMoney();
+    drawHp();
 
     drawMoneyButton();
     drawKabeButton();
@@ -99,6 +100,13 @@ function drawMoney() {
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
+}
+function drawHp() {
+    ctx.fillStyle = "#dd0";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "right";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillTrxt("Hp:"+hp, yoko * tileSize, (tate + 1.5) * tileSize);
 }
 
 function loop() {
