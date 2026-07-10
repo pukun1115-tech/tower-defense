@@ -111,8 +111,8 @@ function onMoneyLevelUpButtonClick() {
         pointerY < (tate + 2) * tileSize
     ) {
         if(moneyLevel === 10) return;
-        if (money < moneyLevelHyou[moneyLevel + 1]) return;
-        money -= moneyLevelHyou[moneyLevel + 1];
+        if (money < moneyLevelHyou[moneyLevel + 1].money) return;
+        money -= moneyLevelHyou[moneyLevel + 1].money;
         moneyLevel++;
     }
 }
