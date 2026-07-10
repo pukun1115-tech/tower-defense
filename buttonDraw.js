@@ -132,10 +132,15 @@ function drawTower5Button() {
 }
 
 function drawMoneyLevelUpButton() {
-    drawShikakuRect(1, tate + 0.5, 3, 1.5, "#ffffff");
+    drawShikakuRect(1, tate + 0.5, 5, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("Level" + (moneyLevel + 1) + "にする", 2.5 * tileSize, (tate + 1.25) * tileSize);
+    if (moneyLevel < 10) {
+        ctx.fillText("Level" + (moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+    else {
+        ctx.fillText("LevelMax!", 3.5 * tileSize, (tate + 1.25) * tileSize);
+    }
 }
