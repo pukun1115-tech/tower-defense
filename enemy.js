@@ -10,7 +10,7 @@ class enemy {
 
         this.isBreaking = false;
         this.breakTimer = 0;
-        this.breakTime = 120;
+        this.breakTime = 300;
 
         this.hp = hp;
         this.color = color;
