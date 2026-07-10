@@ -26,7 +26,7 @@ const moneyLevelHyou = {
     1: { speed: 60, money: 0 },
     2: { speed: 55, money: 100 },
     3: { speed: 50, money: 150 },
-    4: { soeed: 45, money: 200 },
+    4: { speed: 45, money: 200 },
     5: { speed: 40, money: 250 },
     6: { speed: 35, money: 300 },
     7: { speed: 30, money: 350 },
@@ -47,7 +47,14 @@ const spawnSchedule = [
     { time: 2220, type: 0 },
     { time: 2250, type: 1 },
     { time: 2360, type: 0 },
-    { time: 2360, type: 2 }
+    { time: 2360, type: 2 },
+    { time: 2390, type: 1 },
+    { time: 2420, type: 2 },
+    { time: 2450, type: 2 },
+    { time: 2480, type: 2 },
+    { time: 2510, type: 2 },
+    { time: 2510, type: 1 },
+    { time: 2570, type: 0 }
 ]
 //map
 let tileSize;
