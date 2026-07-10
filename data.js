@@ -14,7 +14,6 @@ let pointerY = null;
 let isPointerDown = false;
 //menu
 let mode = "menu";
-let kabeSyurui = 1;
 //置くブロック
 let oku = null;
 //時間
