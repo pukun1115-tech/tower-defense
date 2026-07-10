@@ -26,7 +26,13 @@ const moneyLevelHyou = {
     1: { speed: 60, money: 0 },
     2: { speed: 55, money: 100 },
     3: { speed: 50, money: 150 },
-    4: { soeed: 45, money: 200 }
+    4: { soeed: 45, money: 200 },
+    5: { speed: 40, money: 250 },
+    6: { speed: 35, money: 300 },
+    7: { speed: 30, money: 350 },
+    8: { speed: 25, money: 400 },
+    9: { speed: 20, money: 600 },
+    10: { speed: 10, money: 1000}
 }
     
 //spawn
