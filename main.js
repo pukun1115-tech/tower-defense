@@ -12,15 +12,9 @@ function drawMap() {
                     drawShikakuRect(x, y, 1, 1, "#aa4400");
                     break;
                 case 3:
-                    drawShikakuRect(x, y, 1, 1, "#000000");
-                    break;
                 case 4:
-                    drawShikakuRect(x, y, 1, 1, "#000000");
-                    drawCircle(x + 0.5, y + 0.5, 0.3, "#ffff00");
-                    break;
                 case 5:
                     drawShikakuRect(x, y, 1, 1, "#000000");
-                    drawCircle(x + 0.5, y + 0.5, 0.3, "#ff00ff");
                     break;
             }
 
