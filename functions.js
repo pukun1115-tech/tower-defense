@@ -84,18 +84,34 @@ function placeCheck() {
             if (money < 15) return;
             money -= 15;
             break;
-        case 4:
+        case 4:{
             if (money < 20) return;
             money -= 20;
-            const t = new tower(highlightTile.x, highlightTile.y, 1, "#ffff00", 0, 0.4);
+            const t = new tower(
+                highlightTile.x, 
+                highlightTile.y,
+                1,
+                "#ffff00",
+                0,
+                0.4
+            );
             towers.push(t);
             break;
-        case 5:
+        }
+        case 5:{
             if (money < 40) return;
             money -= 40;
-            const t = new tower(highlightTile.x, highlightTile.y, 3, "#ff00ff",1, 0.4);
+            const t = new tower(
+                highlightTile.x,
+                highlightTile.y,
+                3, 
+                "#ff00ff",
+                1,
+                0.4
+            );
             towers.push(t);
             break;
+        }
     }
     map[highlightTile.y][highlightTile.x] = oku;
 }
