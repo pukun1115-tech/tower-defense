@@ -10,11 +10,6 @@ class bullet{
     this.alive = true;
   }
   update() {
-    if(!this.target || !this.target.alive){
-      this.alive = false;
-      return;
-    }
-    
     const dx = this.target.x - this.x;
     const dy = this.target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
