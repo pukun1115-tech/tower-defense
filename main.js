@@ -29,7 +29,7 @@ function drawMap() {
 }
 
 function spawnEnemy() {
-    if (time % /*フレーム数*/40/*に一体*/ !== 0) return;
+    if (time % /*フレーム数*/120/*に一体*/ !== 0) return;
 
     const e = new enemy(
         0,//x
