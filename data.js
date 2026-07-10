@@ -21,7 +21,14 @@ let oku = null;
 let time = 0;
 //money
 let money = 300;
-let moneyLevel = 60;
+let moneyLevel = 1;
+const moneyLevelHyou = {
+    1: { speed: 60, money: 0 },
+    2: { speed: 55, money: 100 },
+    3: { speed: 50, money: 150 },
+    4: { soeed: 45, money: 200 }
+}
+    
 //spawn
 let spawnIndex = 0;
 
