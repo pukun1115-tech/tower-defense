@@ -44,7 +44,6 @@ class enemy {
                 if (next.y < tileY) this.dir = "up";
             }
         }
-        if (this.hp <= 0) money += 10;
         if (this.isBreaking) {
             this.breakTimer--;
 
@@ -98,6 +97,7 @@ class enemy {
         }
 
         if (this.hp <= 0) {
+            money += 10;
             this.alive = false;
             return;
         }
