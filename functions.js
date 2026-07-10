@@ -104,11 +104,7 @@ function drawGrid() {
     }
 }
 
-function updateMoney(m) {
-    if (m === null) {
+function updateMoney() {
         if (time % moneyLevel !== 0) return;
         money++;
-        return;
-    }
-    money += m;
 }
