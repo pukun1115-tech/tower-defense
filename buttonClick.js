@@ -82,7 +82,7 @@ function onKabe3ButtonClick() {
         oku = 3;
     }
 }
-function onTower4Click() {
+function onTower4ButtonClick() {
     if (
         pointerX > 5 * tileSize &&
         pointerX < 8 * tileSize &&
@@ -93,7 +93,7 @@ function onTower4Click() {
     }
 }
 
-function onTower5Click() {
+function onTower5ButtonClick() {
     if (
         pointerX > 9 * tileSize &&
         pointerX < 12 * tileSize &&
@@ -103,6 +103,13 @@ function onTower5Click() {
         oku = 5;
     }
 }
-function onMoneyLevelUpClick() {
-    //
+function onMoneyLevelUpButtonClick() {
+    if (
+        pointerX > tileSize &&
+        pointerX < 4 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        moneyLevel++;
+    }
 }
