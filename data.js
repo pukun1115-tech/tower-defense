@@ -20,16 +20,19 @@ let oku = null;
 //時間
 let time = 0;
 //money
-let money = 150;
+let money = 300;
 let moneyLevel = 60;
 //spawn
 let spawnIndex = 0;
 
 const spawnSchedule = [
-    { time: 600, type: 0 },
-    { time: 900, type: 0 },
     { time: 1200, type: 0 },
-    { time: 1500, type: 0 }
+    { time: 1500, type: 0 },
+    { time: 1800, type: 0 },
+    { time: 2100, type: 0 },
+    { time: 2160, type: 0 },
+    { time: 2220, type: 0 },
+    { time: 2250, type: 1 }
 ]
 //map
 let tileSize;
