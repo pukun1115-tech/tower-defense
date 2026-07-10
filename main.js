@@ -99,7 +99,7 @@ function loop() {
 
     spawnEnemy();
     updateEnemies();
-    updateMoney(null);
+    updateMoney();
 
     requestAnimationFrame(loop);
 }
