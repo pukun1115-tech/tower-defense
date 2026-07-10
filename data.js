@@ -26,7 +26,10 @@ let moneyLevel = 60;
 let spawnIndex = 0;
 
 const spawnSchedule = [
-    { time: 600, type: 0 }
+    { time: 600, type: 0 },
+    { time: 900, type: 0 },
+    { time: 1200, type: 0 },
+    { time: 1500, type: 0 }
 ]
 //map
 let tileSize;
