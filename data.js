@@ -20,7 +20,7 @@ let oku = null;
 //時間
 let time = 0;
 //money
-let money = 300;
+let money = 10000;
 let moneyLevel = 1;
 const moneyLevelHyou = {
     1: { speed: 60, money: 0 },
