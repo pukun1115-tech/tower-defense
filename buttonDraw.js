@@ -133,4 +133,9 @@ function drawTower5Button() {
 
 function drawMoneyLevelUpButton() {
     drawShikakuRect(1, tate + 0.5, 3, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("Level0", 2 * tileSize, (tate + 1.75) * tileSize);
 }
