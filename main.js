@@ -42,6 +42,7 @@ function updateEnemies() {
         e.update();
         e.draw();
     }
+    enemies = enemies.filter(e => e.alive);
 }
 function updateTowers() {
     for (const t of towers) {
