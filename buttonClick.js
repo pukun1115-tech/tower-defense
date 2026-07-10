@@ -103,3 +103,6 @@ function onTower5Click() {
         oku = 5;
     }
 }
+function onMoneyLevelUpClick() {
+    //
+}
