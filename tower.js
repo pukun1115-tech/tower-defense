@@ -12,11 +12,25 @@ class tower {
     }
     update() {
         this.timer++;
+        if(this.timer < this.cooldown) return;
         let target = null;
-        let minDist = null;
+        let minDist = Infinity;
 
         for(const e of enemies){
+            if(!e.alive) continue;
+            const dx = e.x - this.x;
+            const dy = e.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
 
+            if(dist < this.range && dist < mindist) {
+                mindist = dist;
+                target = e;
+            }
+        }
+
+        if(target) {
+            target.hp -= this.attack;
+            this.timer = 0;
         }
     }
     draw() {
