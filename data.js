@@ -32,7 +32,9 @@ const spawnSchedule = [
     { time: 2100, type: 0 },
     { time: 2160, type: 0 },
     { time: 2220, type: 0 },
-    { time: 2250, type: 1 }
+    { time: 2250, type: 1 },
+    { time: 2360, type: 0 },
+    { time: 2360, type: 2 }
 ]
 //map
 let tileSize;
@@ -65,8 +67,12 @@ let bullets = [];
 let enemies = [];
 
 const enemyTypes = {
-    0: { hp: 5, speed: 0.03, color: "#0000ff", size: 0.3 },
-    1: { hp: 10, speed: 0.02, color: "#00ff00", size: 0.3 }
+    //基本
+    0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3 },
+    //ちょっと強い
+    1: { hp: 10, speed: 0.015, color: "#00ff00", size: 0.3 },
+    //足が速い
+    2: { hp: 3, speed: 0.05, color: "#00ffff", size: 0.2 }
 }
 
 const dirs = [
