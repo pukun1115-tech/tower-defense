@@ -84,8 +84,8 @@ function onKabe3ButtonClick() {
 }
 function onTower4Click() {
     if (
-        pointerX > tileSize &&
-        pointerX < 4 * tileSize &&
+        pointerX > 5 * tileSize &&
+        pointerX < 8 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
@@ -95,8 +95,8 @@ function onTower4Click() {
 
 function onTower5Click() {
     if (
-        pointerX > 5 * tileSize &&
-        pointerX < 8 * tileSize &&
+        pointerX > 9 * tileSize &&
+        pointerX < 12 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
