@@ -35,6 +35,7 @@ class bullet {
 
             if (dist < this.size + e.size) {
                 e.hp -= this.damage;
+                if (e.hp <= 0) money += 10;
                 this.alive = false;
                 break;
             }
