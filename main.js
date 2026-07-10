@@ -23,10 +23,13 @@ function drawMap() {
 }
 
 function spawnEnemy() {
-    if (time % /*フレーム数*/120/*に一体*/ !== 0) return;
+    if (spawnIndex >= spawnSchedule.length) return;
 
-    const e = getEnemy(1);
-    enemies.push(e);
+    const s = spawnSchedule[spawnIndex];
+    if (time >= s.time) {
+        enemies.push(getEnemy(s.type));
+        spawnIndex++;
+    }
 }
 
 function getEnemy(type) {
