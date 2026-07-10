@@ -90,10 +90,12 @@ function placeCheck() {
             const t = new tower(
                 highlightTile.x, 
                 highlightTile.y,
-                1,
-                "#ffff00",
-                0,
-                0.4
+                1,//damage
+                "#ffff00",//color
+                4,//syurui
+                0.4,//size
+                5,//range
+                60//cooldown
             );
             towers.push(t);
             break;
@@ -106,8 +108,10 @@ function placeCheck() {
                 highlightTile.y,
                 3, 
                 "#ff00ff",
-                1,
-                0.4
+                5,
+                0.4,
+                10,
+                40
             );
             towers.push(t);
             break;
