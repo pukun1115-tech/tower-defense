@@ -137,5 +137,5 @@ function drawMoneyLevelUpButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("Level0", 2 * tileSize, (tate + 1.75) * tileSize);
+    ctx.fillText("Level0", 2.5 * tileSize, (tate + 1.25) * tileSize);
 }
