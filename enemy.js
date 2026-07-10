@@ -19,8 +19,6 @@ class enemy {
     }
 
     update() {
-        if (!this.alive) return;//死...
-
         if (this.x === this.nextTileX && this.y === this.nextTileY) {
             const tileX = Math.floor(this.x);
             const tileY = Math.floor(this.y);
@@ -42,11 +40,11 @@ class enemy {
                 if (next.y < tileY) this.dir = "up";
             }
         }
-        if(this.isBreaking){
+        if (this.isBreaking) {
             this.breakTimer--;
 
-            if(this.breakTimer <= 0 || map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 0){
-                if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+            if (this.breakTimer <= 0 || map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 0) {
+                if (map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
                     map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
                 }
                 this.isBreaking = false;
@@ -55,12 +53,12 @@ class enemy {
             return;
         }
 
-        if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+        if (map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
             this.isBreaking = true;
             this.breakTimer = this.breakTime;
             return;
         }
-        
+
         if (this.dir === "right") {
             if (this.nextTileX <= this.x + this.speed) {
                 this.x = this.nextTileX;
@@ -107,7 +105,7 @@ class enemy {
 
 function bfs(startX, startY, goalX, goalY) {
     const pathNoBreak = bfsCore(startX, startY, goalX, goalY, false);
-    if(pathNoBreak) return pathNoBreak;
+    if (pathNoBreak) return pathNoBreak;
 
     const pathBreak = bfsCore(startX, startY, goalX, goalY, true);
     return pathBreak;
@@ -143,13 +141,13 @@ function bfsCore(startX, startY, goalX, goalY, canBreak) {
 
             if (nx < 0 || nx >= yoko || ny < 0 || ny >= tate) continue;
             if (visited[ny][nx]) continue;//もう来たことがある
-            if(!canBreak) {
-                if(!(map[ny][nx] === 0)) continue;
+            if (!canBreak) {
+                if (!(map[ny][nx] === 0)) continue;
             }
             else {
                 if (map[ny][nx] !== 0 && map[ny][nx] !== 2) continue; //箱を壊してくる 
             }
-            
+
             visited[ny][nx] = true;
             parent[ny][nx] = cur;
             queue.push({ x: nx, y: ny });

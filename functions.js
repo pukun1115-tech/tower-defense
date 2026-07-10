@@ -77,18 +77,18 @@ function placeCheck() {
             money += 5;
             break;
         case 2:
-            if (money < 3) return;
-            money -= 3
+            if (money < 10) return;
+            money -= 10;
             break;
         case 3:
             if (money < 15) return;
             money -= 15;
             break;
-        case 4:{
+        case 4: {
             if (money < 20) return;
             money -= 20;
             const t = new tower(
-                highlightTile.x, 
+                highlightTile.x,
                 highlightTile.y,
                 1,//damage
                 "#ffff00",//color
@@ -100,18 +100,18 @@ function placeCheck() {
             towers.push(t);
             break;
         }
-        case 5:{
+        case 5: {
             if (money < 40) return;
             money -= 40;
             const t = new tower(
                 highlightTile.x,
                 highlightTile.y,
-                3, 
+                2,
                 "#ff00ff",
                 5,
                 0.4,
-                10,
-                40
+                5,
+                50
             );
             towers.push(t);
             break;
@@ -137,6 +137,6 @@ function drawGrid() {
 }
 
 function updateMoney() {
-        if (time % moneyLevel !== 0) return;
-        money++;
+    if (time % moneyLevel !== 0) return;
+    money++;
 }

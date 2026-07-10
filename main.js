@@ -25,16 +25,20 @@ function drawMap() {
 function spawnEnemy() {
     if (time % /*フレーム数*/120/*に一体*/ !== 0) return;
 
-    const e = new enemy(
-        0,//x
-        7,//y
-        20,//hp
-        "blue",//color
-        0.03,//speed
-        0.3//size
-    );
-
+    const e = getEnemy(1);
     enemies.push(e);
+}
+
+function getEnemy(type) {
+    const t = enemyTypes[type];
+    return new enemy(
+        0,
+        7,
+        t.hp,
+        t.color,
+        t.speed,
+        t.size
+    );
 }
 
 function updateEnemies() {

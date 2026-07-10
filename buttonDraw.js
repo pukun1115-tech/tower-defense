@@ -95,7 +95,7 @@ function drawKabe2Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("箱", 7 * tileSize, (tate + 3.25) * tileSize);
-    ctx.fillText("3$", 9 * tileSize, (tate + 3.25) * tileSize);
+    ctx.fillText("10$", 9 * tileSize, (tate + 3.25) * tileSize);
 }
 
 function drawKabe3Button() {
@@ -122,13 +122,13 @@ function drawTower4Button() {
 
 function drawTower5Button() {
     drawShikakuRect(5, tate + 0.5, 3, 1, "#ffffff");
-    drawCircle(5.5, tate + 1, 0.3, "#ffff00");
+    drawCircle(5.5, tate + 1, 0.3, "#ff00ff");
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("20$", 7 * tileSize, (tate + 1) * tileSize);
+    ctx.fillText("40$", 7 * tileSize, (tate + 1) * tileSize);
 }
 
 function drawMoneyLevelUpButton() {

@@ -20,10 +20,14 @@ let oku = null;
 //時間
 let time = 0;
 //money
-let money = 10000;
+let money = 150;
 let moneyLevel = 60;
-//wave
-let wave = 0;
+//spawn
+let spawnIndex = 0;
+
+const spawnSchedule = [
+    { time: 600, type: 0 }
+]
 //map
 let tileSize;
 
@@ -53,6 +57,11 @@ let towers = [];
 let bullets = [];
 //enemy
 let enemies = [];
+
+const enemyTypes = {
+    0: { hp: 5, speed: 0.03, color: "#0000ff", size: 0.3 },
+    1: { hp: 10, speed: 0.02, color: "#00ff00", size: 0.3 }
+}
 
 const dirs = [
     { x: 1, y: 0 },//right
