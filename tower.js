@@ -1,8 +1,8 @@
 class tower {
-    constructor(tileX, tileY, attack, color, syurui, size, range, cooldown) {
+    constructor(tileX, tileY, damage, color, syurui, size, range, cooldown) {
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
-        this.attack = attack;
+        this.damage = damage;
         this.color = color;
         this.syurui = syurui;
         this.size = size;
@@ -36,7 +36,7 @@ class tower {
                 0.1,
                 0.15,
                 "red",
-                this.attack
+                this.damage
             );
             bullets.push(b);
             
