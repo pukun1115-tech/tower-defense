@@ -87,7 +87,7 @@ function placeCheck() {
         case 4:
             if (money < 20) return;
             money -= 20;
-            const t = new tower();
+            const t = new tower(highlightTile.x, highlightTile.y, 100, "blue", 0, 0.4);
             towers.push(t);
             break;
         case 5:
