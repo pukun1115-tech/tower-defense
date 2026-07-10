@@ -22,8 +22,8 @@ class tower {
             const dy = e.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if(dist < this.range && dist < mindist) {
-                mindist = dist;
+            if(dist < this.range && dist < minDist) {
+                minDist = dist;
                 target = e;
             }
         }
