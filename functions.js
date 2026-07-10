@@ -137,6 +137,6 @@ function drawGrid() {
 }
 
 function updateMoney() {
-    if (time % moneyLevel !== 0) return;
+    if (time % moneyLevelHyou[moneyLevel].speed !== 0) return;
     money++;
 }
