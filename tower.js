@@ -1,13 +1,13 @@
 class tower {
-    constructor(tileX, tileY, attack, color, syurui, size) {
+    constructor(tileX, tileY, attack, color, syurui, size, range, cooldown) {
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
         this.attack = attack;
         this.color = color;
         this.syurui = syurui;
         this.size = size;
-        this.range = 3;
-        this.cooldown = 10;
+        this.range = range;
+        this.cooldown = cooldown;
         this.timer = 0;
     }
     update() {
