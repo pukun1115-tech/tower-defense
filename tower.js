@@ -12,23 +12,23 @@ class tower {
     }
     update() {
         this.timer++;
-        if(this.timer < this.cooldown) return;
+        if (this.timer < this.cooldown) return;
         let target = null;
         let minDist = Infinity;
 
-        for(const e of enemies){
-            if(!e.alive) continue;
+        for (const e of enemies) {
+            if (!e.alive) continue;
             const dx = e.x - this.x;
             const dy = e.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if(dist < this.range && dist < minDist) {
+            if (dist < this.range && dist < minDist) {
                 minDist = dist;
                 target = e;
             }
         }
 
-        if(target) {
+        if (target) {
             const b = new bullet(
                 this.x,
                 this.y,
@@ -39,7 +39,7 @@ class tower {
                 this.damage
             );
             bullets.push(b);
-            
+
             this.timer = 0;
         }
     }
