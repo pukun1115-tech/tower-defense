@@ -8,6 +8,10 @@ class enemy {
         this.nextTileX = this.x;
         this.nextTileY = this.y;
 
+        this.isBreaking = false;
+        this.breakTimer = 0;
+        this.breakTime = 120;
+
         this.hp = hp;
         this.color = color;
         this.speed = speed;
@@ -38,13 +42,28 @@ class enemy {
                 if (next.y < tileY) this.dir = "up";
             }
         }
+        if(this.isBreaking){
+            this.breakTimer--;
 
+            if(this.breakTimer <= 0){
+                if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+                    map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
+                }
+                this.isBreaking = false;
+            }
+
+            return;
+        }
+
+        if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+            this.isBreaking = true;
+            this.breakTimer = this.breakTime;
+            return;
+        }
+        
         if (this.dir === "right") {
             if (this.nextTileX <= this.x + this.speed) {
                 this.x = this.nextTileX;
-            }
-            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
-                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
             }
             else {
                 this.x += this.speed;
@@ -54,9 +73,6 @@ class enemy {
             if (this.nextTileX >= this.x - this.speed) {
                 this.x = this.nextTileX;
             }
-            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
-                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
-            }
             else {
                 this.x -= this.speed;
             }
@@ -65,9 +81,6 @@ class enemy {
             if (this.nextTileY <= this.y + this.speed) {
                 this.y = this.nextTileY;
             }
-            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
-                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
-            }
             else {
                 this.y += this.speed;
             }
@@ -75,9 +88,6 @@ class enemy {
         if (this.dir === "up") {
             if (this.nextTileY >= this.y - this.speed) {
                 this.y = this.nextTileY;
-            }
-            else if(map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
-                map[this.nextTileY - 0.5][this.nextTileX - 0.5] = 0;
             }
             else {
                 this.y -= this.speed;
