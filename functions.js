@@ -84,6 +84,16 @@ function placeCheck() {
             if (money < 15) return;
             money -= 15;
             break;
+        case 4:
+            if (money < 20) return;
+            money -= 20;
+            const t = new tower();
+            towers.push(t);
+            break;
+        case 5:
+            if (money < 40) return;
+            money -= 40;
+            break;
     }
     map[highlightTile.y][highlightTile.x] = oku;
 }
