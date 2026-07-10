@@ -20,6 +20,10 @@ class enemy {
 
     update() {
         if (this.x === this.nextTileX && this.y === this.nextTileY) {
+            if (this.x === 19 && this.y === 7) {
+                hp--;
+                this.alive = false;
+            }
             const tileX = Math.floor(this.x);
             const tileY = Math.floor(this.y);
 
