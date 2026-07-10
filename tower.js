@@ -29,7 +29,17 @@ class tower {
         }
 
         if(target) {
-            target.hp -= this.attack;
+            const b = new bullet(
+                this.x,
+                this.y,
+                target,
+                0.1,
+                0.15,
+                "red",
+                this.attack
+            );
+            bullets.push(b);
+            
             this.timer = 0;
         }
     }
