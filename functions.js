@@ -55,69 +55,59 @@ function placeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
 
-    switch (map[highlightTile.y][highlightTile.x]) {
-        case 0:
-            if (oku === 0 || oku >= 4) return;//草にはタワー付きの土台と草は置けない
-            break;
-        case 1:
-            return;//変更できない
-        case 2:
-            if (oku !== 0) return;//草にするだけ
-            break;
-        case 3:
-            if (oku === 0 || oku >= 4) break;//土台は草にするかタワーを置くか
-            return;
-        case 4:
-        case 5:
-            if (oku === 3) break;//タワーなしの土台にしかできない
-            return;
-    }
-    switch (oku) {
-        case 0:
-            money += 5;
-            break;
-        case 2:
-            if (money < 10) return;
-            money -= 10;
-            break;
-        case 3:
-            if (money < 15) return;
-            money -= 15;
-            break;
-        case 4: {
-            if (money < 20) return;
-            money -= 20;
-            const t = new tower(
-                highlightTile.x,
-                highlightTile.y,
-                1,//damage
-                "#ffff00",//color
-                4,//syurui
-                0.4,//size
-                5,//range
-                60//cooldown
-            );
-            towers.push(t);
-            break;
-        }
-        case 5: {
-            if (money < 40) return;
-            money -= 40;
-            const t = new tower(
-                highlightTile.x,
-                highlightTile.y,
-                2,
-                "#ff00ff",
-                5,
-                0.4,
-                5,
-                50
-            );
-            towers.push(t);
-            break;
+    const tile = map[highlightTile.y][highlightTile.x];
+    if (mode === "kabe") {
+        switch (oku) {
+            case 0:
+                if (tile === 2 || tile === 3) {
+                    money += 5;
+                    map[highlightTile.y][highlightTile.x] = 0;
+                }
+                break;
+            case 2:
+                if (tile === 0) {
+                    if (money < 10) return;
+                    money -= 10;
+                    map[highlightTile.y][highlightTile.x] = 2;
+                }
+                break;
+            case 3:
+                if (tile === 0) {
+                    if (money < 15) return;
+                    money -= 15;
+                    map[highlightTile.y][highlightTile.x] = 3;
+                }
+                break;
         }
     }
-    map[highlightTile.y][highlightTile.x] = oku;
+    else if (mode === "tower") {
+        if (oku === 3) {
+            if (tile > 3) {
+                money += 10;
+                map[highlightTile.y][highlightTile.x] = 3;
+            }
+        }
+        else {
+            if (tile === 3) {
+                const o = towerTypes[oku];
+                if (money < o.cost) return;
+                money -= o.cost;
+                map[highlightTile.y][highlightTile.x] = oku;
+                towers.push(
+                    new tower(
+                        highlightTile.x,
+                        highlightTile.y,
+                        o.damage,
+                        o.color,
+                        oku,//syurui
+                        o.size,
+                        o.range,
+                        o.cooldown
+                    )
+                );
+            }
+        }
+    }
 }
 
 function drawHighLight() {

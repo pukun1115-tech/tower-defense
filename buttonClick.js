@@ -1,6 +1,6 @@
 function onMoneyButtonClick() {
     if (
-        pointerX > tileSize &&
+        pointerX > 1 * tileSize &&
         pointerX < 3 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
@@ -54,7 +54,7 @@ function onResetButtonClick() {
 }
 function onKabe0ButtonClick() {
     if (
-        pointerX > tileSize &&
+        pointerX > 1 * tileSize &&
         pointerX < 5 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
@@ -82,6 +82,16 @@ function onKabe3ButtonClick() {
         oku = 3;
     }
 }
+function onTower3ButtonClick() {
+    if (
+        pointerX > 1 * tileSize &&
+        pointerX < 4 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 1.5) * tileSize
+    ) {
+        oku = 3;
+    }
+}
 function onTower4ButtonClick() {
     if (
         pointerX > 5 * tileSize &&
@@ -105,12 +115,12 @@ function onTower5ButtonClick() {
 }
 function onMoneyLevelUpButtonClick() {
     if (
-        pointerX > tileSize &&
+        pointerX > 1 * tileSize &&
         pointerX < 6 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2) * tileSize
     ) {
-        if(moneyLevel === 10) return;
+        if (moneyLevel === 10) return;
         if (money < moneyLevelHyou[moneyLevel + 1].money) return;
         money -= moneyLevelHyou[moneyLevel + 1].money;
         moneyLevel++;

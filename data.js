@@ -35,7 +35,6 @@ const moneyLevelHyou = {
 }
 
 //spawn
-let spawnIndex = 0;
 
 const spawnRules = [
     { start: 600, interval: 240, count: 2, type: 0 },
@@ -67,6 +66,10 @@ const yoko = map[0].length;//20
 const tate = map.length;//15
 //tower
 let towers = [];
+const towerTypes = {
+    4: { damage: 1, color: "#ffff00", size: 0.4, range: 5, cooldown: 60, cost: 20 },
+    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 5, cooldown: 50, cost: 40 }
+};
 //bullets
 let bullets = [];
 //enemy

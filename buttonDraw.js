@@ -28,7 +28,7 @@ function drawKabeButton() {
     if (mode !== "kabe") return;
 
     ctx.strokeStyle = "#ffffff";
-    ctx.strokeWidth = 0.05 * tileSize;
+    ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(4 * tileSize, (tate + 4.5) * tileSize, 2 * tileSize, tileSize);
 }
 
@@ -45,7 +45,7 @@ function drawTowerButton() {
     if (mode !== "tower") return;
 
     ctx.strokeStyle = "#ffffff";
-    ctx.strokeWidth = 0.05 * tileSize;
+    ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 }
 
@@ -62,7 +62,7 @@ function drawItemButton() {
     if (mode !== "item") return;
 
     ctx.strokeStyle = "#ffffff";
-    ctx.strokeWidth = 0.05 * tileSize;
+    ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(11 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 }
 
@@ -85,6 +85,12 @@ function drawKabe0Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壊す", 2 * tileSize, (tate + 3.25) * tileSize);
+
+    if (oku !== 0) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(1 * tileSize, (tate + 2.5) * tileSize, 4 * tileSize, 1.5 * tileSize);
 }
 
 function drawKabe2Button() {
@@ -98,6 +104,12 @@ function drawKabe2Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("箱", 7 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("10$", 9 * tileSize, (tate + 3.25) * tileSize);
+
+    if (oku !== 2 || money < 10) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(6 * tileSize, (tate + 2.5) * tileSize, 4 * tileSize, 1.5 * tileSize);
 }
 
 function drawKabe3Button() {
@@ -111,6 +123,12 @@ function drawKabe3Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("土台", 12 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("15$", 14 * tileSize, (tate + 3.25) * tileSize);
+
+    if (oku !== 3 || money < 15) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(11 * tileSize, (tate + 2.5) * tileSize, 4 * tileSize, 1.5 * tileSize);
 }
 
 function drawTower3Button() {
@@ -120,6 +138,12 @@ function drawTower3Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壊す", 2 * tileSize, (tate + 1) * tileSize);
+
+    if (oku !== 3) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(1 * tileSize, (tate + 0.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
 
 function drawTower4Button() {
@@ -134,6 +158,12 @@ function drawTower4Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("20$", 7 * tileSize, (tate + 1) * tileSize);
+
+    if (oku !== 4 || money < 20) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(5 * tileSize, (tate + 0.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
 
 function drawTower5Button() {
@@ -148,6 +178,12 @@ function drawTower5Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("40$", 11 * tileSize, (tate + 1) * tileSize);
+
+    if (oku !== 5 || money < 40) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(9 * tileSize, (tate + 0.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
 
 function drawMoneyLevelUpButton() {
@@ -158,6 +194,9 @@ function drawMoneyLevelUpButton() {
     ctx.font = `${fontSize}px sans-serif`;
     if (moneyLevel < 10) {
         ctx.fillText("Level" + (moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
+        if (money < moneyLevelHyou[moneyLevel + 1].money) {
+            drawShikakuRect(1, tate + 0.5, 5, 1.5, "#00000080");
+        }
     }
     else {
         ctx.fillText("LevelMax!", 3.5 * tileSize, (tate + 1.25) * tileSize);

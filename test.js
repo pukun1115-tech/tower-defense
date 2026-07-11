@@ -1,4 +1,5 @@
 //console.log(Math.random());
+console.log(null !== 2);
 console.log(!!true);
 console.log(!!false);
 console.log(!!-1);

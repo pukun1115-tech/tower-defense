@@ -12,7 +12,6 @@ canvas.addEventListener("pointerdown", (e) => {
 canvas.addEventListener("pointermove", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
-    isPointerDown = true;
 
     pointerX = e.clientX - rect.left;
     pointerY = e.clientY - rect.top;
@@ -38,6 +37,7 @@ canvas.addEventListener("pointerup", (e) => {
             placeCheck();
             break;
         case "tower":
+            onTower3ButtonClick();
             onTower4ButtonClick();
             onTower5ButtonClick();
             placeCheck();

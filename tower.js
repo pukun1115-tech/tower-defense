@@ -1,5 +1,6 @@
 class tower {
     constructor(tileX, tileY, damage, color, syurui, size, range, cooldown) {
+        this.alive = true;//生きてる!!!
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
         this.damage = damage;
@@ -12,6 +13,11 @@ class tower {
     }
     update() {
         this.timer++;
+        //死んじゃった?
+        if (map[Math.floor(this.y)][Math.floor(this.x)] !== this.syurui) {
+            this.alive = false;
+            return;
+        }
         if (this.timer < this.cooldown) return;
         let target = null;
         let minDist = Infinity;

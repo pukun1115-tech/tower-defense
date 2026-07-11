@@ -60,6 +60,7 @@ function updateTowers() {
         t.update();
         t.draw();
     }
+    towers = towers.filter(t => t.alive);
 }
 function updateBullets() {
     for (const b of bullets) {
