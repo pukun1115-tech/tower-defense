@@ -89,7 +89,9 @@ function drawKabe0Button() {
 
 function drawKabe2Button() {
     drawShikakuRect(6, (tate + 2.5), 4, 1.5, "#ffffff");
-
+    if (money < 10) {
+        drawShikakuRect(6, (tate + 2.5), 4, 1.5, "#00000080");
+    }
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
@@ -100,7 +102,9 @@ function drawKabe2Button() {
 
 function drawKabe3Button() {
     drawShikakuRect(11, (tate + 2.5), 4, 1.5, "#ffffff");
-
+    if (money < 15) {
+        drawShikakuRect(11, (tate + 2.5), 4, 1.5, "#00000080");
+    }
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
@@ -109,9 +113,21 @@ function drawKabe3Button() {
     ctx.fillText("15$", 14 * tileSize, (tate + 3.25) * tileSize);
 }
 
+function drawTower3Button() {
+    drawShikakuRect(1, tate + 0.5, 3, 1, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("壊す", 2 * tileSize, (tate + 1) * tileSize);
+}
+
 function drawTower4Button() {
     drawShikakuRect(5, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(5.5, tate + 1, 0.3, "#ffff00");
+    if (money < 20) {
+        drawShikakuRect(5, tate + 0.5, 3, 1, "#00000080");
+    }
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
@@ -123,6 +139,9 @@ function drawTower4Button() {
 function drawTower5Button() {
     drawShikakuRect(9, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(9.5, tate + 1, 0.3, "#ff00ff");
+    if (money < 40) {
+        drawShikakuRect(9, tate + 0.5, 3, 1, "#00000080");
+    }
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";

@@ -19,7 +19,7 @@ let oku = null;
 //時間
 let time = 0;
 //money
-let money = 100;
+let money = 200;
 let moneyLevel = 1;
 const moneyLevelHyou = {
     1: { speed: 60, money: 0 },
@@ -31,29 +31,16 @@ const moneyLevelHyou = {
     7: { speed: 30, money: 350 },
     8: { speed: 25, money: 400 },
     9: { speed: 20, money: 600 },
-    10: { speed: 10, money: 1000}
+    10: { speed: 10, money: 1000 }
 }
-    
+
 //spawn
 let spawnIndex = 0;
 
-const spawnSchedule = [
-    { time: 1200, type: 0 },
-    { time: 1500, type: 0 },
-    { time: 1800, type: 0 },
-    { time: 2100, type: 0 },
-    { time: 2160, type: 0 },
-    { time: 2220, type: 0 },
-    { time: 2250, type: 1 },
-    { time: 2360, type: 0 },
-    { time: 2360, type: 2 },
-    { time: 2390, type: 1 },
-    { time: 2420, type: 2 },
-    { time: 2450, type: 2 },
-    { time: 2480, type: 2 },
-    { time: 2510, type: 2 },
-    { time: 2510, type: 1 },
-    { time: 2570, type: 0 }
+const spawnRules = [
+    { start: 600, interval: 240, count: 2, type: 0 },
+    { start: 1200, interval: 60, count: 5, type: 0 },
+    { start: 2100, interval: 10, count: 3, type: 2 }
 ]
 //map
 let tileSize;

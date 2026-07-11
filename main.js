@@ -23,12 +23,16 @@ function drawMap() {
 }
 
 function spawnEnemy() {
-    if (spawnIndex >= spawnSchedule.length) return;
+    for (const rule of spawnRules) {
+        if (time < rule.start) continue;
 
-    const s = spawnSchedule[spawnIndex];
-    if (time >= s.time) {
-        enemies.push(getEnemy(s.type));
-        spawnIndex++;
+        const spawned = Math.floor((time - rule.start) / rule.interval);
+
+        if (spawned >= rule.count) continue;
+
+        if ((time - rule.start) % rule.interval === 0) {
+            enemies.push(getEnemy(rule.type));
+        }
     }
 }
 
@@ -87,6 +91,7 @@ function drawMenu() {
             drawKabe3Button();
             break;
         case "tower":
+            drawTower3Button();
             drawTower4Button();
             drawTower5Button();
             break;
@@ -110,7 +115,6 @@ function drawHp() {
 }
 
 function loop() {
-    time++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawMap();
@@ -128,6 +132,7 @@ function loop() {
 
     updateBullets();
 
+    time++;
     requestAnimationFrame(loop);
 }
 
