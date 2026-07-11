@@ -102,7 +102,8 @@ function placeCheck() {
                         oku,//syurui
                         o.size,
                         o.range,
-                        o.cooldown
+                        o.cooldown,
+                        o.bulletSpeed
                     )
                 );
             }
