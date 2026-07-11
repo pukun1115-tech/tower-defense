@@ -114,26 +114,45 @@ function drawHp() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("Hp:" + hp, yoko * tileSize, (tate + 1.5) * tileSize);
 }
+function drawGameOver() {
+    ctx.fillStyle = "#00000080";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#ff3333";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = "48px sans-serif";
+    ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2);
+}
+
 
 function loop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (gameOver) {
+        drawGameOver();
+    }
+    else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawMap();
-    drawGrid();
-    highlightCheck();
-    drawHighLight();
+        drawMap();
+        drawGrid();
+        highlightCheck();
+        drawHighLight();
 
-    drawMenu();
+        drawMenu();
 
-    spawnEnemy();
-    updateEnemies();
-    updateMoney();
+        spawnEnemy();
+        updateEnemies();
+        updateMoney();
 
-    updateTowers();
+        updateTowers();
 
-    updateBullets();
+        updateBullets();
+        if (hp <= 0) {
+            //gameOver = true;
+        }
 
-    time++;
+        time++;
+    }
     requestAnimationFrame(loop);
 }
 

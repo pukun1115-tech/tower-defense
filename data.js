@@ -2,6 +2,7 @@
 //初期設定
 //
 let hp = 50;
+let gameOver = false;
 //canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -39,10 +40,10 @@ const moneyLevelHyou = {
 
 //spawn
 const spawnRules = [
-    { start: 60, interval: 3, count: Infinity, type: 1 },
     { start: 600, interval: 240, count: 2, type: 0 },
-    { start: 1200, interval: 60, count: 5, type: 0 },
-    { start: 2100, interval: 10, count: 3, type: 2 }
+    { start: 1200, interval: 60, count: 20, type: 0 },
+    { start: 2100, interval: 10, count: 3, type: 2 },
+    { start: 2160, interval: 30, count: 40, type: 1 }
 ]
 //map
 let tileSize;
@@ -71,7 +72,7 @@ const tate = map.length;//15
 let towers = [];
 const towerTypes = {
     4: { damage: 1, color: "#ffff00", size: 0.4, range: 5, cooldown: 60, cost: 20, bulletSpeed: 0.1 },
-    5: { damage: 2, color: "#ff00ff", size: 0.4, range: Infinity, cooldown: 1, cost: 40, bulletSpeed: 1 }
+    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 5, cooldown: 60, cost: 40, bulletSpeed: 0.3 }
 };
 //bullets
 let bullets = [];
@@ -82,7 +83,7 @@ const enemyTypes = {
     //基本
     0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3 },
     //ちょっと強い
-    1: { hp: 10, speed: 0.15, color: "#00ff00", size: 0.3 },
+    1: { hp: 10, speed: 0.015, color: "#00ff00", size: 0.3 },
     //足が速い
     2: { hp: 3, speed: 0.05, color: "#00ffff", size: 0.2 }
 }

@@ -42,7 +42,7 @@ class tower {
                 target,
                 this.bulletSpeed,
                 0.15,//size
-                "red",
+                this.color,
                 this.damage,
             );
             bullets.push(b);
