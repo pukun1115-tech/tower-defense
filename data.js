@@ -1,8 +1,11 @@
 //グローバル変数
+//初期設定
+//
 let hp = 50;
 //canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 //見た目
 let menuTate;
 let lineWidth;
@@ -35,7 +38,6 @@ const moneyLevelHyou = {
 }
 
 //spawn
-
 const spawnRules = [
     { start: 600, interval: 240, count: 2, type: 0 },
     { start: 1200, interval: 60, count: 5, type: 0 },

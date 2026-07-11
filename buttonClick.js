@@ -50,6 +50,10 @@ function onResetButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         resize();
+        time = 0;
+        money = 200;
+        moneyLevel = 1;
+        mode = "menu";
     }
 }
 function onKabe0ButtonClick() {
