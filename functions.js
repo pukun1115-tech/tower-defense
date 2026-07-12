@@ -51,7 +51,7 @@ function highlightCheck() {
             return;
         }
         if (oku === 0) {
-            if (map[tileY][tileX] === 0 || map[tileY][tileX] === 1) {
+            if (map[tileY][tileX] === 0 || map[tileY][tileX] === 1 || map[tileY][tileX] > 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
             }
@@ -104,59 +104,54 @@ function placeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
 
-    const tile = map[highlightTile.y][highlightTile.x];
     if (mode === "kabe") {
         switch (oku) {
             case 0:
-                if (tile === 2 || tile === 3) {
-                    money += 5;
-                    map[highlightTile.y][highlightTile.x] = 0;
-                }
+                if (highlightTile.type !== "y") return;
+                map[highlightTile.y][highlightTile.x] = 0;
                 break;
             case 2:
-                if (tile === 0) {
-                    if (money < 10) return;
-                    money -= 10;
-                    map[highlightTile.y][highlightTile.x] = 2;
-                }
+                if (highlightTile.type !== "y") return;
+                if (money < 10) return;
+                money -= 10;
+                map[highlightTile.y][highlightTile.x] = 2;
                 break;
             case 3:
-                if (tile === 0) {
-                    if (money < 15) return;
-                    money -= 15;
-                    map[highlightTile.y][highlightTile.x] = 3;
-                }
+                if (highlightTile.type !== "y") return;
+                if (money < 15) return;
+                money -= 15;
+                map[highlightTile.y][highlightTile.x] = 3;
                 break;
         }
+        return;
     }
-    else if (mode === "tower") {
+    if (mode === "tower") {
         if (oku === 3) {
-            if (tile > 3) {
-                money += 10;
-                map[highlightTile.y][highlightTile.x] = 3;
-            }
+            if (highlightTile.type !== "y") return;
+            money += 10;
+            map[highlightTile.y][highlightTile.x] = 3;
         }
         else {
-            if (tile === 3) {
-                const o = towerTypes[oku];
-                if (money < o.cost) return;
-                money -= o.cost;
-                map[highlightTile.y][highlightTile.x] = oku;
-                towers.push(
-                    new tower(
-                        highlightTile.x,
-                        highlightTile.y,
-                        o.damage,
-                        o.color,
-                        oku,//syurui
-                        o.size,
-                        o.range,
-                        o.cooldown,
-                        o.bulletSpeed
-                    )
-                );
-            }
+            if (highlightTile.type !== "y") return;
+            const o = towerTypes[oku];
+            if (money < o.cost) return;
+            money -= o.cost;
+            map[highlightTile.y][highlightTile.x] = oku;
+            towers.push(
+                new tower(
+                    highlightTile.x,
+                    highlightTile.y,
+                    o.damage,
+                    o.color,
+                    oku,//syurui
+                    o.size,
+                    o.range,
+                    o.cooldown,
+                    o.bulletSpeed
+                )
+            );
         }
+
     }
 }
 
