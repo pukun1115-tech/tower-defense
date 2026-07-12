@@ -43,9 +43,10 @@ const spawnRules = [
     { start: 600, interval: 240, count: 2, type: 0 },
     { start: 1200, interval: 120, count: 5, type: 0 },
     { start: 1500, interval: 60, count: 20, type: 0 },
-    { start: 2400, interval: 90, count: 10, type: 2 },
-    { start: 2460, interval: 90, count: 40, type: 1 },
-    { start: 2700, interval: 30, count: 6, type: 0 }
+    { start: 2400, interval: 90, count: 5, type: 2 },
+    { start: 2460, interval: 90, count: 20, type: 1 },
+    { start: 2700, interval: 30, count: 6, type: 0 },
+    { start: 3000, interval: 30, count: 3, type: 2 }
 ]
 //map
 let tileSize;
