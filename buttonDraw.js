@@ -149,7 +149,7 @@ function drawTower3Button() {
 function drawTower4Button() {
     drawShikakuRect(5, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(5.5, tate + 1, 0.3, "#ffff00");
-    if (money < 20) {
+    if (money < towerTypes[4].cost) {
         drawShikakuRect(5, tate + 0.5, 3, 1, "#00000080");
     }
 
@@ -157,9 +157,9 @@ function drawTower4Button() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("20$", 7 * tileSize, (tate + 1) * tileSize);
+    ctx.fillText(`${towerTypes[4].cost}$`, 7 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 4 || money < 20) return;
+    if (oku !== 4 || money < towerTypes[4].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -169,7 +169,7 @@ function drawTower4Button() {
 function drawTower5Button() {
     drawShikakuRect(9, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(9.5, tate + 1, 0.3, "#ff00ff");
-    if (money < 40) {
+    if (money < towerTypes[5].cost) {
         drawShikakuRect(9, tate + 0.5, 3, 1, "#00000080");
     }
 
@@ -177,9 +177,9 @@ function drawTower5Button() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("40$", 11 * tileSize, (tate + 1) * tileSize);
+    ctx.fillText(`${towerTypes[5].cost}$`, 11 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 5 || money < 40) return;
+    if (oku !== 5 || money < towerTypes[5].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;

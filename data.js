@@ -26,24 +26,26 @@ let time = 0;
 let money = 200;
 let moneyLevel = 1;
 const moneyLevelHyou = {
-    1: { speed: 60, money: 0 },
-    2: { speed: 55, money: 100 },
-    3: { speed: 50, money: 150 },
-    4: { speed: 45, money: 200 },
-    5: { speed: 40, money: 250 },
-    6: { speed: 35, money: 300 },
-    7: { speed: 30, money: 350 },
-    8: { speed: 25, money: 400 },
-    9: { speed: 20, money: 600 },
-    10: { speed: 10, money: 1000 }
+    1: { speed: 40, money: 0 },
+    2: { speed: 35, money: 50 },
+    3: { speed: 30, money: 100 },
+    4: { speed: 27, money: 150 },
+    5: { speed: 24, money: 200 },
+    6: { speed: 21, money: 250 },
+    7: { speed: 18, money: 300 },
+    8: { speed: 15, money: 350 },
+    9: { speed: 12, money: 400 },
+    10: { speed: 10, money: 450 }
 }
 
 //spawn
 const spawnRules = [
     { start: 600, interval: 240, count: 2, type: 0 },
-    { start: 1200, interval: 60, count: 20, type: 0 },
-    { start: 2100, interval: 10, count: 3, type: 2 },
-    { start: 2160, interval: 30, count: 40, type: 1 }
+    { start: 1200, interval: 120, count: 5, type: 0 },
+    { start: 1500, interval: 60, count: 20, type: 0 },
+    { start: 2400, interval: 90, count: 10, type: 2 },
+    { start: 2460, interval: 90, count: 40, type: 1 },
+    { start: 2700, interval: 30, count: 6, type: 0 }
 ]
 //map
 let tileSize;
@@ -71,8 +73,9 @@ const tate = map.length;//15
 //tower
 let towers = [];
 const towerTypes = {
-    4: { damage: 1, color: "#ffff00", size: 0.4, range: 5, cooldown: 60, cost: 20, bulletSpeed: 0.1 },
-    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 5, cooldown: 60, cost: 40, bulletSpeed: 0.3 }
+    4: { damage: 1, color: "#ffff00", size: 0.4, range: 4, cooldown: 60, cost: 20, bulletSpeed: 0.1 },
+    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 6, cooldown: 60, cost: 60, bulletSpeed: 0.2 },
+    6: { damage: 4, color: "#ffffff", size: 0.35, range: 2, cooldown: 90, cost: 80, bulletSpeed: 0.4 }
 };
 //bullets
 let bullets = [];
