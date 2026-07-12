@@ -1,10 +1,13 @@
-//console.log(Math.random());
-console.log(null !== 2);
-console.log(!!true);
-console.log(!!false);
-console.log(!!-1);
-console.log(!!0);
-console.log(!!1);
-console.log(!!2);
-console.log(!!null);
-console.log(!!undefined);
+javascript: (
+    function () {
+        if (document.body.contentEditable === 'true') {
+            document.body.contentEditable = 'false';
+            document.designMode = 'off';
+            alert('編集モードを解除しました。');
+        } else {
+            document.body.contentEditable = 'true';
+            document.designMode = 'on';
+            alert('編集モードを開始しました！ページ内の文字を書き換えられます。');
+        }
+    }
+)();
