@@ -14,11 +14,6 @@ class tower {
     }
     update() {
         this.timer++;
-        //死んじゃった?
-        if (map[Math.floor(this.y)][Math.floor(this.x)] !== this.syurui) {
-            this.alive = false;
-            return;
-        }
         if (this.timer < this.cooldown) return;
         let target = null;
         let minDist = Infinity;
@@ -52,5 +47,10 @@ class tower {
     }
     draw() {
         drawCircle(this.x, this.y, this.size, this.color);
+        //死んじゃった?
+        if (map[Math.floor(this.y)][Math.floor(this.x)] !== this.syurui) {
+            this.alive = false;
+            return;
+        }
     }
 }

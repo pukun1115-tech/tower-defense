@@ -22,6 +22,7 @@ function resize() {
     menuTate = 120;
     lineWidth = 1;
     fontSize = 15;
+
     const scale = Math.min(
         window.innerWidth / (yoko * tileSize),
         window.innerHeight / (tate * tileSize + menuTate)
@@ -51,18 +52,29 @@ function highlightCheck() {
             return;
         }
         if (oku === 0) {
-            if (map[tileY][tileX] === 0 || map[tileY][tileX] === 1 || map[tileY][tileX] > 3) {
+            //nの場合
+            if (map[tileY][tileX] === -1 || map[tileY][tileX] === 0 || map[tileY][tileX] === 1 || map[tileY][tileX] > 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
             }
+            //y
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
         if (oku === 1 || oku === 2 || oku === 3) {
+            //ゲームの設定として
             if (map[tileY][tileX] !== 0) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
             }
+            //敵の道をふさがない
+            if (oku === 3) {
+                if (!canPlaceWallForEnemy(tileX, tileY)) {
+                    highlightTile = { x: tileX, y: tileY, type: "n" };
+                    return;
+                }
+            }
+            //敵にかぶらない
             for (const e of enemies) {
                 if (!e.alive) continue;
                 if ((Math.floor(e.x) === tileX && Math.floor(e.y) === tileY) || (Math.floor(e.nextTileX) === tileX && Math.floor(e.nextTileY) === tileY)) {
@@ -96,6 +108,8 @@ function highlightCheck() {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
+        highlightTile = { x: tileX, y: tileY, type: "n" };
+        return;
     }
     highlightTile = { x: tileX, y: tileY, type: "y" };
 }
@@ -155,13 +169,41 @@ function placeCheck() {
     }
 }
 
+function canPlaceWallForEnemy(x, y) {
+
+    const old = map[y][x];
+    map[y][x] = oku;
+
+    for (const e of enemies) {
+        if (!e.alive) continue;
+
+        const path = bfs(Math.floor(e.x), Math.floor(e.y), 19, 7);
+
+        if (!path) {
+            map[y][x] = old;
+            return false;
+        }
+    }
+
+    const spawnPath = bfs(0, 7, 19, 7);
+
+    if (!spawnPath) {
+        map[y][x] = old;
+        return false;
+    }
+
+    map[y][x] = old;
+    return true;
+}
+
 function drawHighLight() {
     if (!highlightTile) return;
+
     if (highlightTile.type === "y") {
-        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
+        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff60");
     }
     else {
-        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#ff000080");
+        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#ff000060");
     }
 }
 

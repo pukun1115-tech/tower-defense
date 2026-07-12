@@ -2,6 +2,10 @@ function drawMap() {
     for (let y = 0; y < tate; y++) {
         for (let x = 0; x < yoko; x++) {
             switch (map[y][x]) {
+                case -1:
+                    const hue = (time * 2) % 360;
+                    drawShikakuRect(x, y, 1, 1, `hsl(${hue}, 100%, 50%)`);
+                    break;
                 case 0:
                     drawShikakuRect(x, y, 1, 1, "#008800");
                     break;
