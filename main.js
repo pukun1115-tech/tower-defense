@@ -23,6 +23,7 @@ function drawMap() {
 }
 
 function spawnEnemy() {
+    if (!start) return;
     for (const rule of spawnRules) {
         if (time < rule.start) continue;
 
@@ -50,21 +51,27 @@ function getEnemy(type) {
 
 function updateEnemies() {
     for (const e of enemies) {
-        e.update();
+        if (start) {
+            e.update();
+        }
         e.draw();
     }
     enemies = enemies.filter(e => e.alive);
 }
 function updateTowers() {
     for (const t of towers) {
-        t.update();
+        if (start) {
+            t.update();
+        }
         t.draw();
     }
     towers = towers.filter(t => t.alive);
 }
 function updateBullets() {
     for (const b of bullets) {
-        b.update();
+        if (start) {
+            b.update();
+        }
         b.draw();
     }
     bullets = bullets.filter(b => b.alive);
@@ -81,7 +88,7 @@ function drawMenu() {
     drawKabeButton();
     drawTowerButton();
     drawItemButton();
-    drawResetButton();
+    drawStartButton();
     switch (mode) {
         case "money":
             drawMoneyLevelUpButton();
@@ -143,15 +150,17 @@ function loop() {
         spawnEnemy();
         updateEnemies();
         updateMoney();
-
         updateTowers();
 
         updateBullets();
+
         if (hp <= 0) {
             //gameOver = true;
         }
 
-        time++;
+        if (start) {
+            time++;
+        }
     }
     requestAnimationFrame(loop);
 }

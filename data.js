@@ -3,6 +3,7 @@
 //
 let hp = 50;
 let gameOver = false;
+let start = false;
 //canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");

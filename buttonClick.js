@@ -42,18 +42,14 @@ function onItemButtonClick() {
         mode = "item";
     }
 }
-function onResetButtonClick() {
+function onStartButtonClick() {
     if (
         pointerX > 15 * tileSize &&
         pointerX < 18 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        resize();
-        time = 0;
-        money = 200;
-        moneyLevel = 1;
-        mode = "menu";
+        start = !start;
     }
 }
 function onKabe0ButtonClick() {

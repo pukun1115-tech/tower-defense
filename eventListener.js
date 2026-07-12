@@ -23,7 +23,7 @@ canvas.addEventListener("pointerup", (e) => {
     onMoneyButtonClick();
     onKabeButtonClick();
     onTowerButtonClick();
-    onResetButtonClick();
+    onStartButtonClick();
     onItemButtonClick();
 
     switch (mode) {

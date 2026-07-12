@@ -66,7 +66,7 @@ function drawItemButton() {
     ctx.strokeRect(11 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 }
 
-function drawResetButton() {
+function drawStartButton() {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(15 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 
@@ -74,7 +74,12 @@ function drawResetButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px Impact`;
-    ctx.fillText("Reset", 16.5 * tileSize, (tate + 5) * tileSize);
+    if (start) {
+        ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
+    }
+    else {
+        ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
+    }
 }
 
 function drawKabe0Button() {
