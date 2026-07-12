@@ -116,7 +116,7 @@ function onTower5ButtonClick() {
 function onMoneyLevelUpButtonClick() {
     if (
         pointerX > 1 * tileSize &&
-        pointerX < 6 * tileSize &&
+        pointerX < 8 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2) * tileSize
     ) {

@@ -9,7 +9,7 @@ function drawMap() {
                     drawShikakuRect(x, y, 1, 1, "#ffffff");
                     break;
                 case 2:
-                    drawShikakuRect(x, y, 1, 1, "#aa4400");
+                    drawShikakuRect(x, y, 1, 1, "#993300");
                     break;
                 case 3:
                 case 4:
@@ -21,7 +21,6 @@ function drawMap() {
         }
     }
 }
-
 function spawnEnemy() {
     if (!start) return;
     for (const rule of spawnRules) {

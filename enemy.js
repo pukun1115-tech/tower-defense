@@ -58,7 +58,7 @@ class enemy {
             return;
         }
 
-        if (map[this.nextTileY - 0.5][this.nextTileX - 0.5] === 2) {
+        if (map[Math.floor(this.nextTileY)][Math.floor(this.nextTileX)] === 2) {
             this.isBreaking = true;
             this.breakTimer = this.breakTime;
             return;

@@ -36,19 +36,68 @@ function resize() {
     canvas.height = window.innerHeight;
 }
 
-function getTileFromXY(x, y) {
-    const tileX = Math.floor(x / tileSize);
-    const tileY = Math.floor(y / tileSize);
-
-    if (tileX < 0 || tileX >= yoko || tileY < 0 || tileY >= tate) {
-        return null;
-    }
-
-    return { x: tileX, y: tileY };
-}
 
 function highlightCheck() {
-    highlightTile = getTileFromXY(pointerX, pointerY);
+    const tileX = Math.floor(pointerX / tileSize);
+    const tileY = Math.floor(pointerY / tileSize);
+
+    if (tileX < 0 || tileX >= yoko || tileY < 0 || tileY >= tate) {
+        highlightTile = null;
+        return;
+    }
+    if (mode === "kabe") {
+        if (oku === null) {
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+        if (oku === 0) {
+            if (map[tileY][tileX] === 0 || map[tileY][tileX] === 1) {
+                highlightTile = { x: tileX, y: tileY, type: "n" };
+                return;
+            }
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+        if (oku === 1 || oku === 2 || oku === 3) {
+            if (map[tileY][tileX] !== 0) {
+                highlightTile = { x: tileX, y: tileY, type: "n" };
+                return;
+            }
+            for (const e of enemies) {
+                if (!e.alive) continue;
+                if ((Math.floor(e.x) === tileX && Math.floor(e.y) === tileY) || (Math.floor(e.nextTileX) === tileX && Math.floor(e.nextTileY) === tileY)) {
+                    highlightTile = { x: tileX, y: tileY, type: "n" };
+                    return;
+                }
+            }
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+        return;
+    }
+    if (mode === "tower") {
+        if (oku === null) {
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+        if (oku === 3) {
+            if (map[tileY][tileX] <= 3) {
+                highlightTile = { x: tileX, y: tileY, type: "n" };
+                return;
+            }
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+        if (oku === 4 || oku === 5 || oku === 6 || oku === 7) {
+            if (map[tileY][tileX] !== 3) {
+                highlightTile = { x: tileX, y: tileY, type: "n" };
+                return;
+            }
+            highlightTile = { x: tileX, y: tileY, type: "y" };
+            return;
+        }
+    }
+    highlightTile = { x: tileX, y: tileY, type: "y" };
 }
 
 function placeCheck() {
@@ -113,7 +162,12 @@ function placeCheck() {
 
 function drawHighLight() {
     if (!highlightTile) return;
-    drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
+    if (highlightTile.type === "y") {
+        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#0000ff80");
+    }
+    else {
+        drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#ff000080");
+    }
 }
 
 function drawGrid() {

@@ -192,18 +192,19 @@ function drawTower5Button() {
 }
 
 function drawMoneyLevelUpButton() {
-    drawShikakuRect(1, tate + 0.5, 5, 1.5, "#ffffff");
+    drawShikakuRect(1, tate + 0.5, 7, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     if (moneyLevel < 10) {
         ctx.fillText("Level" + (moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[moneyLevel + 1].money + "$", 7 * tileSize, (tate + 1.25) * tileSize);
         if (money < moneyLevelHyou[moneyLevel + 1].money) {
-            drawShikakuRect(1, tate + 0.5, 5, 1.5, "#00000080");
+            drawShikakuRect(1, tate + 0.5, 7, 1.5, "#00000080");
         }
     }
     else {
-        ctx.fillText("LevelMax!", 3.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText("LevelMax!", 4.5 * tileSize, (tate + 1.25) * tileSize);
     }
 }
