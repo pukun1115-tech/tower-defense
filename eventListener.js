@@ -24,7 +24,7 @@ canvas.addEventListener("pointerup", (e) => {
     onKabeButtonClick();
     onTowerButtonClick();
     onStartButtonClick();
-    onItemButtonClick();
+    onHelpButtonClick();
 
     switch (mode) {
         case "menu":

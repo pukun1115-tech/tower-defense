@@ -49,7 +49,7 @@ function drawTowerButton() {
     ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 }
 
-function drawItemButton() {
+function drawHelpButton() {
     ctx.fillStyle = "#ff0000";
     ctx.fillRect(tileSize * 11, (tate + 4.5) * tileSize, tileSize * 3, tileSize);
 
@@ -57,13 +57,7 @@ function drawItemButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("アイテム", tileSize * 12.5, (tate + 5) * tileSize);
-
-    if (mode !== "item") return;
-
-    ctx.strokeStyle = "#ffffff";
-    ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(11 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+    ctx.fillText("ヘルプ", tileSize * 12.5, (tate + 5) * tileSize);
 }
 
 function drawStartButton() {

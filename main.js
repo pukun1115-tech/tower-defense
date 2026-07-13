@@ -90,7 +90,7 @@ function drawMenu() {
     drawMoneyButton();
     drawKabeButton();
     drawTowerButton();
-    drawItemButton();
+    drawHelpButton();
     drawStartButton();
     switch (mode) {
         case "money":

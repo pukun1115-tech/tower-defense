@@ -32,14 +32,14 @@ function onTowerButtonClick() {
         mode = "tower";
     }
 }
-function onItemButtonClick() {
+function onHelpButtonClick() {
     if (
         pointerX > 11 * tileSize &&
         pointerX < 14 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        mode = "item";
+        window.open("https://github.com/pukun1115-tech/tower-defense.git", "_blank");
     }
 }
 function onStartButtonClick() {
