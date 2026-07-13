@@ -45,11 +45,11 @@ const spawnRules = [
     { start: 900, inetrval: 120, count: 10, type: 1 },
     { start: 2100, interval: 30, count: 5, type: 0 },
     { start: 2400, interval: 60, count: 10, type: 2 },
-    { start: 2400, interval:Infinity, count: 1, type: 3 },
+    { start: 2400, interval: Infinity, count: 1, type: 3 },
     { start: 3600, interval: 90, count: 10, type: 1 },
     { start: 3600, interval: 60, count: 15, type: 2 },
     { start: 4200, interval: 10, count: 30, type: 0 },
-    { start: 4800, interval: 120, count: 20, type: 1},
+    { start: 4800, interval: 120, count: 20, type: 1 },
     { start: 7500, interval: 75, count: 30, type: 0 },
     { start: 7500, interval: 45, count: 60, type: 2 },
     { start: 7500, interval: 30, count: 90, type: 1 },
@@ -94,7 +94,7 @@ const enemyTypes = {
     //基本
     0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3 },
     //ちょっと強い
-    1: { hp: 10, speed: 0.015, color: "#00ff00", size: 0.3 },
+    1: { hp: 10, speed: 0.015, color: "#ffcc00", size: 0.3 },
     //足が速い
     2: { hp: 3, speed: 0.05, color: "#00ffff", size: 0.2 },
     //足が遅くて体力だけ多い
