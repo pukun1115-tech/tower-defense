@@ -45,8 +45,9 @@ const spawnRules = [
     { start: 900, inetrval: 120, count: 10, type: 1 },
     { start: 2100, interval: 30, count: 5, type: 0 },
     { start: 2400, interval: 60, count: 10, type: 2 },
-    { start: 2400, interval: 120, count: 20, type: 3 },
-    { start: 3600, interval: 30, count: 10, type: 1 }
+    { start: 2400, interval:Infinity, count: 1, type: 3 },
+    { start: 3600, interval: 90, count: 10, type: 1 },
+    { start: 3600, interval: 60, count: 15, type: 2} 
 ]
 //map
 let tileSize;
@@ -91,6 +92,7 @@ const enemyTypes = {
     //足が速い
     2: { hp: 3, speed: 0.05, color: "#00ffff", size: 0.2 },
     //足が遅くて体力だけ多い
+    //ボス
     3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4 }
 }
 
