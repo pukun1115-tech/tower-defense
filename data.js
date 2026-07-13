@@ -94,9 +94,9 @@ const enemyTypes = {
     //基本
     0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3 },
     //ちょっと強い
-    1: { hp: 10, speed: 0.015, color: "#ffcc00", size: 0.3 },
+    1: { hp: 15, speed: 0.015, color: "#ffcc00", size: 0.3 },
     //足が速い
-    2: { hp: 3, speed: 0.05, color: "#00ffff", size: 0.2 },
+    2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2 },
     //足が遅くて体力だけ多い
     //ボス
     3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4 }
