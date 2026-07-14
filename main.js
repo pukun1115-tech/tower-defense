@@ -28,21 +28,30 @@ function drawMap() {
 function updateWave() {
     if (!inWave) return;
     if (!waves[currentWave]) return;
-    if (waveTimer >= waves[currentWave].duration) {
-        inWave = false;
-        currentWave++;
-        return;
-    }
+
+    let allSpawned = true;
+
+
     for (const rule of waves[currentWave].rules) {
-        if (waveTimer < rule.start) continue;
+        if (waveTimer < rule.start) {
+            allSpawned = false;
+            continue;
+        }
 
         const spawned = Math.floor((waveTimer - rule.start) / rule.interval);
 
-        if (spawned >= rule.count) continue;
+        if (spawned < rule.count) {
+            allSpawned = false;
 
-        if ((waveTimer - rule.start) % rule.interval === 0) {
-            enemies.push(getEnemy(rule.type));
+            if ((waveTimer - rule.start) % rule.interval === 0) {
+                enemies.push(getEnemy(rule.type));
+            }
         }
+    }
+
+    if (allSpawned && enemies.length === 0) {
+        inWave = false;
+        currentWave++;
     }
 }
 
@@ -165,12 +174,10 @@ function loop() {
         drawHighLight();
 
         drawMenu();
-
-        updateWave();
-        updateEnemies();
         updateMoney();
-        updateTowers();
 
+        updateEnemies();
+        updateTowers();
         updateBullets();
 
         if (hp <= 0) {
@@ -179,6 +186,7 @@ function loop() {
 
         if (start) {
             if (inWave) {
+                updateWave();
                 waveTimer++;
             }
 
