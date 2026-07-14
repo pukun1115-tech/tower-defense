@@ -5,7 +5,12 @@ function onMoneyButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        mode = "money";
+        if (mode === "money") {
+            mode = "menu";
+        }
+        else {
+            mode = "money";
+        }
     }
 }
 
@@ -17,7 +22,12 @@ function onKabeButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         oku = null;
-        mode = "kabe";
+        if (mode === "kabe") {
+            mode = "menu";
+        }
+        else {
+            mode = "kabe";
+        }
     }
 }
 
@@ -39,7 +49,7 @@ function onHelpButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        window.open("https://github.com/pukun1115-tech/tower-defense.git", "_blank");
+        window.open("https://github.com/pukun1115-tech/tower-defense/blob/main/%E3%83%98%E3%83%AB%E3%83%97.txt", "_blank");
     }
 }
 function onStartButtonClick() {
@@ -66,7 +76,12 @@ function onKabe0ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        oku = 0;
+        if (oku === 0) {
+            oku = null;
+        }
+        else {
+            oku = 0;
+        }
     }
 }
 function onKabe2ButtonClick() {
@@ -76,7 +91,12 @@ function onKabe2ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        oku = 2;
+        if (oku === 2) {
+            oku = null;
+        }
+        else {
+            oku = 2;
+        }
     }
 }
 function onKabe3ButtonClick() {
