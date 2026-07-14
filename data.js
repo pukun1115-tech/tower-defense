@@ -46,15 +46,18 @@ let inWave = false;
 
 const waves = [
     {
-        duration: 1800,
         rules: [
             { start: 120, interval: 240, count: 5, type: 0 }
         ]
     },
     {
-        duration: 1200,
         rules: [
             { start: 120, interval: 60, count: 10, type: 0 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 60, count: 10, type: 2 }
         ]
     }
 ];
