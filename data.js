@@ -1,6 +1,3 @@
-//グローバル変数
-//初期設定
-//
 let hp = 50;
 let gameOver = false;
 let start = true;
@@ -17,13 +14,13 @@ let fontSize;
 let pointerX = null;
 let pointerY = null;
 let isPointerDown = false;
-//menu
+
 let mode = "menu";
-//置くブロック
+
 let oku = null;
-//時間
+
 let time = 0;
-//money
+
 let money = 200;
 let moneyLevel = 1;
 const moneyLevelHyou = {
@@ -39,7 +36,6 @@ const moneyLevelHyou = {
     10: { speed: 10, money: 450 }
 }
 
-//spawn
 let currentWave = 0;
 let waveTimer = 0;
 let inWave = false;
@@ -58,6 +54,25 @@ const waves = [
     {
         rules: [
             { start: 0, interval: 60, count: 10, type: 2 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 120, count: 5, type: 1 },
+            { start: 150, interval: 90, count: 15, type: 0 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: Infinity, count: 1, type: 3 }
+        ]
+    },
+    {
+        rules: [
+            { start: 240, interval: 20, count: 3, type: 2 },
+            { start: 480, interval: 20, count: 3, type: 2 },
+            { start: 720, interval: 20, count: 3, type: 2 },
+            { start: 0, interval: 90, count: 15, type: 1 }
         ]
     }
 ];
@@ -107,7 +122,7 @@ const enemyTypes = {
     //小ボス
     3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4 },
     //中ボス
-    4: { hp: 300, speed: 0.01, color: "#404040", size: 0.5 }
+    4: { hp: 300, speed: 0.01, color: "#000000", size: 0.5 }
 }
 
 const dirs = [
