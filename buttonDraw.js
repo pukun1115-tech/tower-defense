@@ -68,11 +68,16 @@ function drawStartButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px Impact`;
-    if (start) {
-        ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
+    if (!inWave) {
+        ctx.fillText("Wave" + (currentWave + 1), 16.5 * tileSize, (tate + 5) * tileSize);
     }
     else {
-        ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
+        if (start) {
+            ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
+        }
+        else {
+            ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
+        }
     }
 }
 

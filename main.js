@@ -25,16 +25,22 @@ function drawMap() {
         }
     }
 }
-function spawnEnemy() {
-    if (!start) return;
-    for (const rule of spawnRules) {
-        if (time < rule.start) continue;
+function updateWave() {
+    if (!inWave) return;
+    if (!waves[currentWave]) return;
+    if (waveTimer >= waves[currentWave].duration) {
+        inWave = false;
+        currentWave++;
+        return;
+    }
+    for (const rule of waves[currentWave].rules) {
+        if (waveTimer < rule.start) continue;
 
-        const spawned = Math.floor((time - rule.start) / rule.interval);
+        const spawned = Math.floor((waveTimer - rule.start) / rule.interval);
 
         if (spawned >= rule.count) continue;
 
-        if ((time - rule.start) % rule.interval === 0) {
+        if ((waveTimer - rule.start) % rule.interval === 0) {
             enemies.push(getEnemy(rule.type));
         }
     }
@@ -86,6 +92,9 @@ function drawMenu() {
 
     drawMoney();
     drawHp();
+    if (inWave) {
+        drawWave();
+    }
 
     drawMoneyButton();
     drawKabeButton();
@@ -124,6 +133,13 @@ function drawHp() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("Hp:" + hp, yoko * tileSize, (tate + 1.5) * tileSize);
 }
+function drawWave() {
+    ctx.fillStyle = "#dd0";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "right";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("Wave" + (currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
+}
 function drawGameOver() {
     ctx.fillStyle = "#00000080";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -150,7 +166,7 @@ function loop() {
 
         drawMenu();
 
-        spawnEnemy();
+        updateWave();
         updateEnemies();
         updateMoney();
         updateTowers();
@@ -162,6 +178,10 @@ function loop() {
         }
 
         if (start) {
+            if (inWave) {
+                waveTimer++;
+            }
+
             time++;
         }
     }

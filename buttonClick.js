@@ -49,7 +49,14 @@ function onStartButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        start = !start;
+        if (!inWave) {
+            waveTimer = 0;
+            inWave = true;
+            start = true;
+        }
+        else {
+            start = !start;
+        }
     }
 }
 function onKabe0ButtonClick() {

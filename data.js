@@ -3,7 +3,7 @@
 //
 let hp = 50;
 let gameOver = false;
-let start = false;
+let start = true;
 //canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -40,22 +40,23 @@ const moneyLevelHyou = {
 }
 
 //spawn
-const spawnRules = [
-    { start: 600, interval: 240, count: 5, type: 0 },
-    { start: 900, inetrval: 120, count: 10, type: 1 },
-    { start: 2100, interval: 30, count: 5, type: 0 },
-    { start: 2400, interval: 60, count: 10, type: 2 },
-    { start: 2400, interval: Infinity, count: 1, type: 3 },
-    { start: 3600, interval: 90, count: 10, type: 1 },
-    { start: 3600, interval: 60, count: 15, type: 2 },
-    { start: 4200, interval: 10, count: 30, type: 0 },
-    { start: 4800, interval: 120, count: 20, type: 1 },
-    { start: 7500, interval: 75, count: 90, type: 0 },
-    { start: 7500, interval: 60, count: 90, type: 2 },
-    { start: 7500, interval: 30, count: 180, type: 1 },
-    { start: 7500, interval: 900, count: 5, type: 4 },
-    { start: 12000, interval: 300, count: 30, type: 3 },
-    { start: 12000, interval: 20, count: 100, type: 2 },
+let currentWave = 0;
+let waveTimer = 0;
+let inWave = false;
+
+const waves = [
+    {
+        duration: 1800,
+        rules: [
+            { start: 120, interval: 240, count: 5, type: 0 }
+        ]
+    },
+    {
+        duration: 1200,
+        rules: [
+            { start: 120, interval: 60, count: 10, type: 0 }
+        ]
+    }
 ];
 //map
 let tileSize;
