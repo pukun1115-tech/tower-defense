@@ -50,9 +50,9 @@ const spawnRules = [
     { start: 3600, interval: 60, count: 15, type: 2 },
     { start: 4200, interval: 10, count: 30, type: 0 },
     { start: 4800, interval: 120, count: 20, type: 1 },
-    { start: 7500, interval: 75, count: 30, type: 0 },
-    { start: 7500, interval: 45, count: 60, type: 2 },
-    { start: 7500, interval: 30, count: 90, type: 1 },
+    { start: 7500, interval: 75, count: 90, type: 0 },
+    { start: 7500, interval: 45, count: 180, type: 2 },
+    { start: 7500, interval: 30, count: 180, type: 1 },
     { start: 7500, interval: 300, count: 5, type: 4 }
 ];
 //map
@@ -101,7 +101,7 @@ const enemyTypes = {
     //小ボス
     3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4 },
     //中ボス
-    4: { hp: 300, speed: 0.005, color: "#404040", size: 0.5 }
+    4: { hp: 300, speed: 0.01, color: "#404040", size: 0.5 }
 }
 
 const dirs = [
