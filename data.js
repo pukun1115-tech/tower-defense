@@ -41,7 +41,6 @@ const moneyLevelHyou = {
 
 //spawn
 const spawnRules = [
-    { start: 0, interval: 1, count: Infinity, type: 4},
     { start: 600, interval: 240, count: 5, type: 0 },
     { start: 900, inetrval: 120, count: 10, type: 1 },
     { start: 2100, interval: 30, count: 5, type: 0 },
@@ -56,7 +55,7 @@ const spawnRules = [
     { start: 7500, interval: 30, count: 180, type: 1 },
     { start: 7500, interval: 900, count: 5, type: 4 },
     { start: 12000, interval: 300, count: 30, type: 3 },
-    { start: 12000, interval: 20, count: 100, type: 2 }
+    { start: 12000, interval: 20, count: 100, type: 2 },
 ];
 //map
 let tileSize;
