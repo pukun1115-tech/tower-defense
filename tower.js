@@ -31,10 +31,14 @@ class tower {
         }
 
         if (target) {
+            const dx = target.x - this.x;
+            const dy = target.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
             const b = new bullet(
                 this.x,
                 this.y,
-                target,
+                dx / dist,
+                dy / dist,
                 this.bulletSpeed,
                 0.15,//size
                 this.color,
