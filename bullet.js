@@ -3,8 +3,6 @@ class bullet {
         this.x = x;
         this.y = y;
 
-        this.target = target;
-
         this.dx = dx;
         this.dy = dy;
 
