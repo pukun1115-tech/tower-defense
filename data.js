@@ -100,6 +100,19 @@ const waves = [
             { start: 0, interval: 300, count: 30, type: 3 },
             { start: 900, interval: 1, count: 1, type: 4 }
         ]
+    },
+    {
+        rules: [
+            { start: 600, interval: 1, count: 60, type: 2 },
+            { start: 1800, interval: 1, count: 120, type: 2 }
+        ]
+    },
+    {
+        rules: [
+            { start: 360, interval: 30, count: 100, type: 1 },
+            { start: 0, interval: 120, count: 25, type: 3 },
+            { start: 720, interval: 1, count: 3000, type: 2 }
+        ]
     }
 ];
 //map
