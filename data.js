@@ -97,7 +97,7 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 300, count: 30, type: 3 },
+            { start: 0, interval: 300, count: 10, type: 3 },
             { start: 900, interval: 1, count: 1, type: 4 }
         ]
     },
@@ -112,6 +112,11 @@ const waves = [
             { start: 360, interval: 30, count: 100, type: 1 },
             { start: 0, interval: 120, count: 25, type: 3 },
             { start: 720, interval: 1, count: 3000, type: 2 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 120, count: 10, type: 5 }
         ]
     }
 ];
@@ -161,7 +166,8 @@ const enemyTypes = {
     //小ボス
     3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4 },
     //中ボス
-    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 }
+    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 },
+    5: { hp: 30, speed: 0.02, color: "#8000ff", size: 0.3 }
 }
 
 const dirs = [
