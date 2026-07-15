@@ -116,7 +116,12 @@ function onTower3ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        oku = 3;
+        if (oku === 3) {
+            oku = null;
+        }
+        else {
+            oku = 3;
+        }
     }
 }
 function onTower4ButtonClick() {
@@ -126,7 +131,12 @@ function onTower4ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        oku = 4;
+        if (oku === 4) {
+            oku = null;
+        }
+        else {
+            oku = 4;
+        }
     }
 }
 
@@ -137,7 +147,27 @@ function onTower5ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        oku = 5;
+        if (oku === 5) {
+            oku = null;
+        }
+        else {
+            oku = 5;
+        }
+    }
+}
+function onTower6ButtonClick() {
+    if (
+        pointerX > 13 * tileSize &&
+        pointerX < 16 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 1.5) * tileSize
+    ) {
+        if (oku === 6) {
+            oku = null;
+        }
+        else {
+            oku = 6;
+        }
     }
 }
 function onMoneyLevelUpButtonClick() {
