@@ -34,7 +34,7 @@ const moneyLevelHyou = {
     8: { speed: 15, money: 350 },
     9: { speed: 12, money: 400 },
     10: { speed: 10, money: 450 }
-}
+};
 
 let currentWave = 0;
 let waveTimer = 0;
@@ -183,7 +183,7 @@ const enemyTypes = {
     4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 },
     //強い
     5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3 }
-}
+};
 
 const dirs = [
     { x: 1, y: 0 },//right
