@@ -66,9 +66,9 @@ class tower {
                             this.damage
                         );
                         bullets.push(b);
-                        this.timer = 0;
-                        break;
                     }
+                    this.timer = 0;
+                    break;
                 }
             }
         }
