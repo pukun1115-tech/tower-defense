@@ -171,18 +171,18 @@ let enemies = [];
 
 const enemyTypes = {
     //基本
-    0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3 },
+    0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3, money: 5 },
     //ちょっと強い
-    1: { hp: 15, speed: 0.015, color: "#ffcc00", size: 0.3 },
+    1: { hp: 15, speed: 0.015, color: "#ffcc00", size: 0.3, money: 10 },
     //足が速い
-    2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2 },
+    2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2, money: 1 },
     //足が遅くて体力だけ多い
     //小ボス
-    3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4 },
+    3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4, money: 50 },
     //中ボス
-    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 },
+    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5, money: 200 },
     //強い
-    5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3 }
+    5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 }
 };
 
 const dirs = [
