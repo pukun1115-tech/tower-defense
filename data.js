@@ -64,7 +64,7 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 100, count: 1, type: 3 }
+            { start: 0, interval: 1, count: 1, type: 3 }
         ]
     },
     {
@@ -90,9 +90,15 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 60, count: 10, type: 1 },
+            { start: 0, interval: 60, count: 100, type: 1 },
             { start: 360, interval: 5, count: 12, type: 2 },
-            { start: 720, interval: 5, count: 12, type: 3 }
+            { start: 720, interval: 5, count: 12, type: 2 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 300, count: 30, type: 3 },
+            { start: 900, interval: 1, count: 1, type: 4 }
         ]
     }
 ];
