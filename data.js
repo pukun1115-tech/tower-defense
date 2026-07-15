@@ -97,7 +97,7 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 150, count: 10, type: 3 },
+            { start: 0, interval: 150, count: 5, type: 3 },
             { start: 900, interval: 1, count: 1, type: 4 }
         ]
     },
@@ -111,7 +111,7 @@ const waves = [
     {
         rules: [
             { start: 360, interval: 30, count: 40, type: 1 },
-            { start: 0, interval: 240, count: 10, type: 3 },
+            { start: 0, interval: 240, count: 3, type: 3 },
             { start: 720, interval: 1, count: 120, type: 2 },
             { start: 1800, interval: 1, count: 48, type: 2 }
         ]
@@ -130,7 +130,13 @@ const waves = [
     },
     {
         rules: [
-            { start: 360, interval: 900, count: 3, type: 4 }
+            { start: 180, interval: 300, count: 3, type: 4 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 120, count: 10, type: 0 },
+            { start: 1500, interval: 6, count: 100, type: 6 }
         ]
     }
 ];
@@ -161,8 +167,9 @@ const tate = map.length;//15
 let towers = [];
 const towerTypes = {
     4: { damage: 1, color: "#ffff00", size: 0.4, range: 4, cooldown: 60, cost: 20, bulletSpeed: 0.1 },
-    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 6, cooldown: 60, cost: 60, bulletSpeed: 0.2 },
-    6: { damage: 4, color: "#ffffff", size: 0.35, range: 2, cooldown: 90, cost: 80, bulletSpeed: 0.4 }
+    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 6, cooldown: 40, cost: 60, bulletSpeed: 0.2 },
+    //上下左右
+    6: { damage: 4, color: "#5522ff", size: 0.35, range: 2, cooldown: 90, cost: 100, bulletSpeed: 0.4 }
 };
 //bullets
 let bullets = [];
@@ -182,7 +189,9 @@ const enemyTypes = {
     //中ボス
     4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5, money: 200 },
     //強い
-    5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 }
+    5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 },
+    //
+    6: { hp: 10, speed: 0.05, color: "#00ffff", size: 0.1, money: 30 }
 };
 
 const dirs = [
