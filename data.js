@@ -90,7 +90,7 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 60, count: 100, type: 1 },
+            { start: 0, interval: 60, count: 10, type: 1 },
             { start: 360, interval: 5, count: 12, type: 2 },
             { start: 720, interval: 5, count: 12, type: 2 }
         ]
@@ -146,9 +146,9 @@ const enemyTypes = {
     2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2 },
     //足が遅くて体力だけ多い
     //小ボス
-    3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4 },
+    3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4 },
     //中ボス
-    4: { hp: 300, speed: 0.01, color: "#000000", size: 0.5 }
+    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 }
 }
 
 const dirs = [
