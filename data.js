@@ -97,22 +97,23 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 300, count: 10, type: 3 },
+            { start: 0, interval: 150, count: 10, type: 3 },
             { start: 900, interval: 1, count: 1, type: 4 }
         ]
     },
     {
         rules: [
             { start: 600, interval: 1, count: 60, type: 2 },
-            { start: 1800, interval: 1, count: 120, type: 2 }
+            { start: 1800, interval: 1, count: 120, type: 2 },
+            { start: 3600, interval: 1, count; 180, type: 2 }
         ]
     },
     {
         rules: [
-            { start: 360, interval: 30, count: 100, type: 1 },
-            { start: 0, interval: 240, count: 25, type: 3 },
-            { start: 720, interval: 1, count: 300, type: 2 },
-            { start: 1800, interval: 1, count: 120, type: 2 }
+            { start: 360, interval: 30, count: 40, type: 1 },
+            { start: 0, interval: 240, count: 10, type: 3 },
+            { start: 720, interval: 1, count: 120, type: 2 },
+            { start: 1800, interval: 1, count: 48, type: 2 }
         ]
     },
     {
@@ -125,6 +126,11 @@ const waves = [
             { start: 0, interval: 30, count: 20, type: 5 },
             { start: 5, interval: 30, count: 20, type: 1 },
             { start: 10, interval: 30, count: 20, type: 0 }
+        ]
+    },
+    {
+        rules: [
+            { start: 360, interval: 900, count: 3, type: 4 }
         ]
     }
 ];
@@ -175,6 +181,7 @@ const enemyTypes = {
     3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4 },
     //中ボス
     4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5 },
+    //強い
     5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3 }
 }
 
