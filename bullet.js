@@ -5,10 +5,6 @@ class bullet {
 
         this.target = target;
 
-        const dx = this.target.x - this.x;
-        const dy = this.target.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
         this.dx = dx;
         this.dy = dy;
 
