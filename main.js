@@ -63,7 +63,8 @@ function getEnemy(type) {
         t.hp,
         t.color,
         t.speed,
-        t.size
+        t.size,
+        t.money
     );
 }
 
