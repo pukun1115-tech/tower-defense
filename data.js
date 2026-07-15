@@ -81,6 +81,19 @@ const waves = [
             { start: 240, interval: 30, count: 20, type: 2 },
             { start: 180, interval: 20, count: 30, type: 0 }
         ]
+    },
+    {
+        rules: [
+            { start: 120, interval: 360, count: 5, type: 3 },
+            { start: 60, interval: 20, count: 100, type: 1 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 60, count: 10, type: 1 },
+            { start: 360, interval: 5, count: 12, type: 2 },
+            { start: 720, interval: 5, count: 12, type: 3 }
+        ]
     }
 ];
 //map
