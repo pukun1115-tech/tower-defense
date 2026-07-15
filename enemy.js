@@ -1,5 +1,5 @@
 class enemy {
-    constructor(tileX, tileY, hp, color, speed, size) {
+    constructor(tileX, tileY, hp, color, speed, size, money) {
         this.alive = true;//生きてる!
 
         this.x = tileX + 0.5;
@@ -11,6 +11,8 @@ class enemy {
         this.isBreaking = false;
         this.breakTimer = 0;
         this.breakTime = 300;
+
+        this.money = money;
 
         this.hp = hp;
         this.color = color;
@@ -98,7 +100,7 @@ class enemy {
         }
 
         if (this.hp <= 0) {
-            money += 10;
+            money += this.money;
             this.alive = false;
             return;
         }
