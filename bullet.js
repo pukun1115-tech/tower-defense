@@ -1,5 +1,5 @@
 class bullet {
-    constructor(x, y, target, speed, size, color, damage) {
+    constructor(x, y, dx, dy, target, speed, size, color, damage) {
         this.x = x;
         this.y = y;
 
@@ -9,8 +9,8 @@ class bullet {
         const dy = this.target.y - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        this.dx = dx / dist;
-        this.dy = dy / dist;
+        this.dx = dx;
+        this.dy = dy;
 
         this.speed = speed;
         this.size = size;
