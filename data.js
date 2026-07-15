@@ -119,6 +119,13 @@ const waves = [
         rules: [
             { start: 0, interval: 120, count: 10, type: 5 }
         ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 30, count: 20, type: 5 },
+            { start: 5, interval: 30, count: 20, type: 1 },
+            { start: 10, interval: 30, count: 20, type: 0 }
+        ]
     }
 ];
 //map
