@@ -1,5 +1,5 @@
 class bullet {
-    constructor(x, y, dx, dy, target, speed, size, color, damage) {
+    constructor(x, y, dx, dy, speed, size, color, damage) {
         this.x = x;
         this.y = y;
 
