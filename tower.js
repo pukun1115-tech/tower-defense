@@ -58,8 +58,8 @@ class tower {
                         const b = new bullet(
                             this.x,
                             this.y,
-                            d.x * this.bulletSpeed,
-                            d.y * this.bulletSpeed,
+                            d.x,
+                            d.y,
                             this.bulletSpeed,
                             0.1,
                             this.color,
