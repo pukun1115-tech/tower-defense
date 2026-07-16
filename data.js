@@ -185,9 +185,9 @@ const enemyTypes = {
     2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2, money: 1 },
     //足が遅くて体力だけ多い
     //小ボス
-    3: { hp: 300, speed: 0.005, color: "#404040", size: 0.4, money: 50 },
+    3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4, money: 50 },
     //中ボス
-    4: { hp: 1200, speed: 0.01, color: "#000000", size: 0.5, money: 200 },
+    4: { hp: 600, speed: 0.01, color: "#000000", size: 0.5, money: 200 },
     //強い
     5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 },
     //
