@@ -195,7 +195,7 @@ const enemyTypes = {
     //強い
     5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 },
     //
-    6: { hp: 10, speed: 0.05, color: "#00ffff", size: 0.1, money: 30 }
+    6: { hp: 10, speed: 0.15, color: "#00ffff", size: 0.1, money: 30 }
 };
 
 const dirs = [
