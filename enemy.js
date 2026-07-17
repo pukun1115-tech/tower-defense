@@ -103,7 +103,7 @@ class enemy {
         if (this.hp <= 0) {
             money += this.money;
             if (this.syurui === 7) {
-                enemies.push(getType(0, this.x, this.y));
+                enemies.push(getEnemy(0, this.x, this.y));
             }
             this.alive = false;
             return;
