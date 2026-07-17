@@ -64,7 +64,8 @@ function getEnemy(type) {
         t.color,
         t.speed,
         t.size,
-        t.money
+        t.money,
+        type
     );
 }
 
