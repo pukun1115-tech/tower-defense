@@ -2,8 +2,8 @@ class enemy {
     constructor(x, y, hp, color, speed, size, money, syurui) {
         this.alive = true;//生きてる!
 
-        this.x = x;
-        this.y = y;
+        this.x = x + 0.5;
+        this.y = y + 0.5;
         this.dir = null;
         this.nextTileX = x;
         this.nextTileY = y;
@@ -103,9 +103,11 @@ class enemy {
 
         if (this.hp <= 0) {
             money += this.money;
+            /*
             if (this.syurui === 7) {
                 enemies.push(getEnemy(0, this.x, this.y));
             }
+            */
             this.alive = false;
             return;
         }
