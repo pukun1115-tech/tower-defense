@@ -1,5 +1,5 @@
 class enemy {
-    constructor(x, tileY, hp, color, speed, size, money, syurui) {
+    constructor(x, y, hp, color, speed, size, money, syurui) {
         this.alive = true;//生きてる!
 
         this.x = x;
