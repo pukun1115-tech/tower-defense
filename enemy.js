@@ -5,6 +5,8 @@ class enemy {
         this.x = x;
         this.y = y;
         this.dir = null;
+        this.nextTileX = x;
+        this.nextTileY = y;
 
         this.isBreaking = false;
         this.breakTimer = 0;
@@ -17,9 +19,6 @@ class enemy {
         this.speed = speed;
         this.size = size;//tileSizeの何倍の半径?
         this.syurui = syurui;
-
-        this.nextTileX = null;
-        this.nextTileY = null;
     }
 
     update() {
@@ -29,25 +28,26 @@ class enemy {
                 this.alive = false;
                 return;
             }
-        }
-        const tileX = Math.floor(this.x);
-        const tileY = Math.floor(this.y);
+            
+            const tileX = Math.floor(this.x);
+            const tileY = Math.floor(this.y);
 
-        const goalX = 19;
-        const goalY = 7;
+            const goalX = 19;
+            const goalY = 7;
 
-        this.path = bfs(tileX, tileY, goalX, goalY);
+            const path = bfs(tileX, tileY, goalX, goalY);
 
-        if (this.path && this.path.length > 1) {
-            const next = this.path[1];//次,0は今の場所
+            if (path && path.length > 1) {
+                const next = path[1];//次,0は今の場所
 
-            this.nextTileX = next.x + 0.5;
-            this.nextTileY = next.y + 0.5;
+                this.nextTileX = next.x + 0.5;
+                this.nextTileY = next.y + 0.5;
 
-            if (next.x > tileX) this.dir = "right";
-            if (next.x < tileX) this.dir = "left";
-            if (next.y > tileY) this.dir = "down";
-            if (next.y < tileY) this.dir = "up";
+                if (next.x > tileX) this.dir = "right";
+                if (next.x < tileX) this.dir = "left";
+                if (next.y > tileY) this.dir = "down";
+                if (next.y < tileY) this.dir = "up";
+            }
         }
         if (this.isBreaking) {
             this.breakTimer--;
