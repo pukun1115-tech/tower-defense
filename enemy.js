@@ -5,8 +5,8 @@ class enemy {
         this.x = x + 0.5;
         this.y = y + 0.5;
         this.dir = null;
-        this.nextTileX = x;
-        this.nextTileY = y;
+        this.nextTileX = this.x;
+        this.nextTileY = this.y;
 
         this.isBreaking = false;
         this.breakTimer = 0;
