@@ -104,8 +104,8 @@ const waves = [
     {
         rules: [
             { start: 600, interval: 1, count: 60, type: 2 },
-            { start: 1800, interval: 1, count: 120, type: 2 },
-            { start: 2400, interval: 1, count: 180, type: 2 },
+            { start: 1800, interval: 1, count: 30, type: 2 },
+            { start: 2400, interval: 1, count: 60, type: 2 },
             { start: 2700, interval: 1, count: 30, type: 6 }
         ]
     },
@@ -113,7 +113,7 @@ const waves = [
         rules: [
             { start: 360, interval: 30, count: 40, type: 1 },
             { start: 0, interval: 240, count: 3, type: 3 },
-            { start: 720, interval: 1, count: 120, type: 2 },
+            { start: 720, interval: 1, count: 60, type: 2 },
             { start: 1800, interval: 1, count: 48, type: 2 }
         ]
     },
@@ -140,7 +140,19 @@ const waves = [
     {
         rules: [
             { start: 0, interval: 120, count: 10, type: 0 },
-            { start: 1500, interval: 6, count: 100, type: 6 }
+            { start: 1500, interval: 10, count: 100, type: 6 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 120, count: 10, type: 0 },
+            { start: 360, interval: 1, count: 1, type: 7 }
+        ]
+    },
+    {
+        rules: [
+            { start: 0, interval: 30, count: 50, type: 0 },
+            { start: 1, interval: 30, count: 50, type: 1 }
         ]
     }
 ];
@@ -193,9 +205,11 @@ const enemyTypes = {
     //中ボス
     4: { hp: 600, speed: 0.01, color: "#000000", size: 0.5, money: 200 },
     //強い
-    5: { hp: 50, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 },
+    5: { hp: 100, speed: 0.02, color: "#8000ff", size: 0.3, money: 5 },
     //
-    6: { hp: 10, speed: 0.15, color: "#00ffff", size: 0.1, money: 30 }
+    6: { hp: 10, speed: 0.1, color: "#00ffff", size: 0.1, money: 3 },
+    //死んだら大量の敵を出す
+    7: { hp: 100, speed: 0.01, color: "#000000", size: 0.1, money: 30 }
 };
 
 const dirs = [
