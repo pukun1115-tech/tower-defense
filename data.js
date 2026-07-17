@@ -106,7 +106,7 @@ const waves = [
             { start: 600, interval: 1, count: 60, type: 2 },
             { start: 1800, interval: 1, count: 30, type: 2 },
             { start: 2400, interval: 1, count: 60, type: 2 },
-            { start: 2700, interval: 1, count: 30, type: 6 }
+            { start: 2700, interval: 5, count: 10, type: 6 }
         ]
     },
     {
