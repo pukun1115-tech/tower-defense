@@ -1,5 +1,5 @@
 class enemy {
-    constructor(tileX, tileY, hp, color, speed, size, money) {
+    constructor(tileX, tileY, hp, color, speed, size, money, syurui) {
         this.alive = true;//生きてる!
 
         this.x = tileX + 0.5;
@@ -18,6 +18,7 @@ class enemy {
         this.color = color;
         this.speed = speed;
         this.size = size;//tileSizeの何倍の半径?
+        this.syurui = syurui;
     }
 
     update() {
