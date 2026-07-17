@@ -102,6 +102,9 @@ class enemy {
 
         if (this.hp <= 0) {
             money += this.money;
+            if (this.syurui === 7) {
+                enemies.push();
+            }
             this.alive = false;
             return;
         }
