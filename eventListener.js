@@ -22,9 +22,12 @@ canvas.addEventListener("pointerup", (e) => {
 
     onMoneyButtonClick();
     onKabeButtonClick();
-    onTowerButtonClick();
     onStartButtonClick();
     onHelpButtonClick();
+
+    for (const b of buttons) {
+        b.click(pointerX, pointerY);
+    }
 
     switch (mode) {
         case "menu":

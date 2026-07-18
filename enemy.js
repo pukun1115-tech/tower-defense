@@ -17,7 +17,7 @@ class enemy {
         this.hp = hp;
         this.color = color;
         this.speed = speed;
-        this.size = size;//tileSizeの何倍の半径?
+        this.size = size;
         this.syurui = syurui;
     }
 
@@ -28,7 +28,7 @@ class enemy {
                 this.alive = false;
                 return;
             }
-            
+
             const tileX = Math.floor(this.x);
             const tileY = Math.floor(this.y);
 
@@ -107,6 +107,8 @@ class enemy {
                 enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5));
                 enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5));
                 enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5));
+                enemies.push(getEnemy(3, this.x - 0.5, this.y - 0.5));
+                enemies.push(getEnemy(4, this.x - 0.5, this.y - 0.5));
                 enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5));
                 enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5));
             }

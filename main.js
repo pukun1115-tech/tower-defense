@@ -107,9 +107,11 @@ function drawMenu() {
         drawWave();
     }
 
+    for (const b of buttons) {
+        b.draw();
+    }
     drawMoneyButton();
     drawKabeButton();
-    drawTowerButton();
     drawHelpButton();
     drawStartButton();
     switch (mode) {
