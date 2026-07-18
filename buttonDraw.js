@@ -33,7 +33,6 @@ function drawKabeButton() {
 }
 
 function drawTowerButton() {
-    /*
     ctx.fillStyle = "#0000ff";
     ctx.fillRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 
@@ -48,7 +47,6 @@ function drawTowerButton() {
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
-    */
 }
 
 function drawHelpButton() {

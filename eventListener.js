@@ -20,14 +20,13 @@ canvas.addEventListener("pointermove", (e) => {
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
 
+    onStartButtonClick();
+
     onMoneyButtonClick();
     onKabeButtonClick();
-    onStartButtonClick();
+    onTowerButtonClick();
     onHelpButtonClick();
-
-    for (const b of buttons) {
-        b.click(pointerX, pointerY);
-    }
+    onStartButtonClick();
 
     switch (mode) {
         case "menu":

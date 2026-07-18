@@ -32,7 +32,6 @@ function onKabeButtonClick() {
 }
 
 function onTowerButtonClick() {
-    /*
     if (
         pointerX > 7 * tileSize &&
         pointerX < 10 * tileSize &&
@@ -42,7 +41,6 @@ function onTowerButtonClick() {
         oku = null;
         mode = "tower";
     }
-    */
 }
 function onHelpButtonClick() {
     if (

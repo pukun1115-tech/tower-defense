@@ -1,5 +1,5 @@
 class Button {
-    constructor(x, y, w, h, texts, tower, color, canClick, onClick, wakuColor, wakuHantei, kuroHantei) {
+    constructor(x, y, w, h, texts, tower, color, canClickandDraw, onClick, wakuColor, wakuHantei, kuroHantei) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -7,7 +7,7 @@ class Button {
         this.texts = texts;
         this.tower = tower;
         this.color = color;
-        this.canClick = canClick;
+        this.canClickandDraw = canClickandDraw;
         this.onClick = onClick;//処理
         this.wakuColor = wakuColor;
         this.wakuHantei = wakuHantei;
@@ -15,11 +15,11 @@ class Button {
     }
 
     draw() {
+        if (!this.canClickandDraw()) return;
         drawShikakuRect(this.x, this.y, this.w, this.h, this.color);
         if (this.kuroHantei()) {
             drawShikakuRect(this.x, this.y, this.w, this.h, "#00000080");
         }
-        drawShikakuRect
         if (this.wakuHantei()) {
             ctx.strokeStyle = this.wakuColor;
             ctx.lineWidth = 0.05 * tileSize;
@@ -48,42 +48,72 @@ class Button {
     }
 
     click(px, py) {
-        if (!this.canClick()) return;
+        if (!this.canClickandDraw()) return;
         if (this.contains(px, py)) {
             this.onClick();
         }
     }
 }
 
-let buttons = [];
+const buttons = [];
 
-let towerButton = new Button(
-    7,
-    tate + 4.5,
-    3,
-    1,
-    [
-        {
-            text: "タワー",
-            x: 8.5,
-            y: tate + 5
-        }
-    ],
+const moneyButton = new Button(
+    1, tate + 4.5, 2, 1,
+    [{ text: "お金", x: 2, y: tate + 5 }],
+    null,
+    "#ffff00",
+    () => true,
+    () => mode = (mode === "money" ? "menu" : "money"),
+    "#ffffff",
+    () => mode === "money",
+    () => false
+);
+const kabeButton = new Button(
+    4, tate + 4.5, 2, 1,
+    [{ text: "かべ", x: 5, y: tate + 5 }],
+    null,
+    "#00dd00",
+    () => true,
+    () => mode = (mode === "kabe" ? "menu" : "kabe"),
+    "#ffffff",
+    () => mode === "kabe",
+    () => false
+)
+const towerButton = new Button(
+    7, tate + 4.5, 3, 1,
+    [{ text: "タワー", x: 8.5, y: tate + 5 }],
     null,
     "#0000ff",
-    () => {
-        return true;
-    },
-    () => {
-        mode = "tower";
-    },
+    () => true,
+    () => mode = (mode === "tower" ? "menu" : "tower"),
     "#ffffff",
-    () => {
-        return (mode === "tower");
-    },
-    () => {
-        return false;
-    }
+    () => mode === "tower",
+    () => false
 );
-
+const helpButton = new Button(
+    11, tate + 4.5, 3, 1,
+    [{ text: "ヘルプ", x: 12.5, y: tate + 5 }],
+    null,
+    "#ff0000",
+    () => true,
+    () => window.open("https://github.com/pukun1115-tech/tower-defense/blob/main/%E3%83%98%E3%83%AB%E3%83%97.txt", "_blank"),
+    null,
+    () => false,
+    () => false
+);
+const startButton = new Button(
+    15, tate + 4.5, 3, 1,
+    [{ fillStyle: "#7d2b2b", font: `${fontSize}px Impact`, text: "start", x: 16.5, y: tate + 5 }],
+    null,
+    "#ffffff",
+    () => true,
+    () => null,
+    null,
+    () => false,
+    () => false
+);
+buttons.push(moneyButton);
+buttons.push(kabeButton);
 buttons.push(towerButton);
+buttons.push(helpButton);
+buttons.push(startButton);
