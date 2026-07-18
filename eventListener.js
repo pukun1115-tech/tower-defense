@@ -20,8 +20,6 @@ canvas.addEventListener("pointermove", (e) => {
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
 
-    onStartButtonClick();
-
     onMoneyButtonClick();
     onKabeButtonClick();
     onTowerButtonClick();
@@ -32,7 +30,6 @@ canvas.addEventListener("pointerup", (e) => {
         case "menu":
             break;
         case "kabe":
-            //ここまでok
             onKabe0ButtonClick();
             onKabe2ButtonClick();
             onKabe3ButtonClick();
