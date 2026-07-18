@@ -198,6 +198,10 @@ function loop() {
     }
     requestAnimationFrame(loop);
 }
+function gameOverLoop() {
+    //
+    requestAnimationFrame(gameOverLoop);
+}
 
 resize();
 loop();

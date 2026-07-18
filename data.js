@@ -12,6 +12,19 @@ let pointerX = null;
 let pointerY = null;
 let isPointerDown = false;
 //
+const Game = {
+    hp: 50,
+    money: 200,
+    moneyLevel: 1,
+    gameOver: false,
+    start: true,
+    mode: "menu",
+    time: 0,
+    currentWave: 0,
+    waveTimer: 0,
+    inWave: false,
+    oku: null
+};
 let hp = 50;
 let gameOver = false;
 let start = true;
