@@ -44,7 +44,7 @@ function updateWave() {
             allSpawned = false;
 
             if ((waveTimer - rule.start) % rule.interval === 0) {
-                enemies.push(getEnemy(rule.type, 0, 7));
+                enemies.push(getEnemy(rule.type, 0, 7, 0, 7));
             }
         }
     }
