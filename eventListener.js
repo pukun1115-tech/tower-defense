@@ -40,6 +40,7 @@ canvas.addEventListener("pointerup", (e) => {
             onTower4ButtonClick();
             onTower5ButtonClick();
             onTower6ButtonClick();
+            onTower7ButtonClick();
             placeCheck();
             break;
         case "money":

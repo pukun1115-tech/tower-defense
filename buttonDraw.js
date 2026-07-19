@@ -15,6 +15,24 @@ function drawMoneyButton() {
 
 }
 
+function drawMoneyLevelUpButton() {
+    drawShikakuRect(1, tate + 0.5, 7, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    if (moneyLevel < 10) {
+        ctx.fillText("Level" + (moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[moneyLevel + 1].money + "$", 7 * tileSize, (tate + 1.25) * tileSize);
+        if (money < moneyLevelHyou[moneyLevel + 1].money) {
+            drawShikakuRect(1, tate + 0.5, 7, 1.5, "#00000080");
+        }
+    }
+    else {
+        ctx.fillText("LevelMax!", 4.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+}
+
 function drawKabeButton() {
     ctx.fillStyle = "#00dd00";
     ctx.fillRect(tileSize * 4, (tate + 4.5) * tileSize, tileSize * 2, tileSize);
@@ -30,55 +48,6 @@ function drawKabeButton() {
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(4 * tileSize, (tate + 4.5) * tileSize, 2 * tileSize, tileSize);
-}
-
-function drawTowerButton() {
-    ctx.fillStyle = "#0000ff";
-    ctx.fillRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
-
-    ctx.fillStyle = "#000000";
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("タワー", 8.5 * tileSize, (tate + 5) * tileSize);
-
-    if (mode !== "tower") return;
-
-    ctx.strokeStyle = "#ffffff";
-    ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
-}
-
-function drawHelpButton() {
-    ctx.fillStyle = "#ff0000";
-    ctx.fillRect(tileSize * 11, (tate + 4.5) * tileSize, tileSize * 3, tileSize);
-
-    ctx.fillStyle = "#000000";
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("ヘルプ", tileSize * 12.5, (tate + 5) * tileSize);
-}
-
-function drawStartButton() {
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(15 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
-
-    ctx.fillStyle = "#ff0000";
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    ctx.font = `${fontSize}px Impact`;
-    if (!inWave) {
-        ctx.fillText("Wave" + (currentWave + 1), 16.5 * tileSize, (tate + 5) * tileSize);
-    }
-    else {
-        if (start) {
-            ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
-        }
-        else {
-            ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
-        }
-    }
 }
 
 function drawKabe0Button() {
@@ -135,6 +104,55 @@ function drawKabe3Button() {
     ctx.strokeRect(11 * tileSize, (tate + 2.5) * tileSize, 4 * tileSize, 1.5 * tileSize);
 }
 
+function drawTowerButton() {
+    ctx.fillStyle = "#0000ff";
+    ctx.fillRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("タワー", 8.5 * tileSize, (tate + 5) * tileSize);
+
+    if (mode !== "tower") return;
+
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+}
+
+function drawHelpButton() {
+    ctx.fillStyle = "#ff0000";
+    ctx.fillRect(tileSize * 11, (tate + 4.5) * tileSize, tileSize * 3, tileSize);
+
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("ヘルプ", tileSize * 12.5, (tate + 5) * tileSize);
+}
+
+function drawStartButton() {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(15 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+
+    ctx.fillStyle = "#ff0000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px Impact`;
+    if (!inWave) {
+        ctx.fillText("Wave" + (currentWave + 1), 16.5 * tileSize, (tate + 5) * tileSize);
+    }
+    else {
+        if (start) {
+            ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
+        }
+        else {
+            ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
+        }
+    }
+}
+
 function drawTower3Button() {
     drawShikakuRect(1, tate + 0.5, 3, 1, "#ffffff");
     ctx.fillStyle = "#000000";
@@ -152,7 +170,7 @@ function drawTower3Button() {
 
 function drawTower4Button() {
     drawShikakuRect(5, tate + 0.5, 3, 1, "#ffffff");
-    drawCircle(5.5, tate + 1, 0.3, towerTypes[4].color);
+    drawCircle(5.5, tate + 1, towerTypes[4].size, towerTypes[4].color);
     if (money < towerTypes[4].cost) {
         drawShikakuRect(5, tate + 0.5, 3, 1, "#00000080");
     }
@@ -172,7 +190,7 @@ function drawTower4Button() {
 
 function drawTower5Button() {
     drawShikakuRect(9, tate + 0.5, 3, 1, "#ffffff");
-    drawCircle(9.5, tate + 1, 0.3, towerTypes[5].color);
+    drawCircle(9.5, tate + 1, towerTypes[5].size, towerTypes[5].color);
     if (money < towerTypes[5].cost) {
         drawShikakuRect(9, tate + 0.5, 3, 1, "#00000080");
     }
@@ -192,7 +210,7 @@ function drawTower5Button() {
 
 function drawTower6Button() {
     drawShikakuRect(13, tate + 0.5, 3, 1, "#ffffff");
-    drawCircle(13.5, tate + 1, 0.3, towerTypes[6].color);
+    drawCircle(13.5, tate + 1, towerTypes[6].size, towerTypes[6].color);
     if (money < towerTypes[6].cost) {
         drawShikakuRect(13, tate + 0.5, 3, 1, "#00000080");
     }
@@ -210,20 +228,23 @@ function drawTower6Button() {
     ctx.strokeRect(13 * tileSize, (tate + 0.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
 
-function drawMoneyLevelUpButton() {
-    drawShikakuRect(1, tate + 0.5, 7, 1.5, "#ffffff");
+
+function drawTower7Button() {
+    drawShikakuRect(1, tate + 2.5, 3, 1, "#ffffff");
+    drawCircle(1.5, tate + 3, towerTypes[7].size, towerTypes[7].color);
+    if (money < towerTypes[7].cost) {
+        drawShikakuRect(1, tate + 2.5, 3, 1, "#00000080");
+    }
+
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    if (moneyLevel < 10) {
-        ctx.fillText("Level" + (moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(moneyLevelHyou[moneyLevel + 1].money + "$", 7 * tileSize, (tate + 1.25) * tileSize);
-        if (money < moneyLevelHyou[moneyLevel + 1].money) {
-            drawShikakuRect(1, tate + 0.5, 7, 1.5, "#00000080");
-        }
-    }
-    else {
-        ctx.fillText("LevelMax!", 4.5 * tileSize, (tate + 1.25) * tileSize);
-    }
+    ctx.fillText(`${towerTypes[7].cost}$`, 3 * tileSize, (tate + 3) * tileSize);
+
+    if (oku !== 7 || money < towerTypes[7].cost) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(1 * tileSize, (tate + 2.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }

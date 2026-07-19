@@ -15,9 +15,7 @@ function drawMap() {
                 case 2:
                     drawShikakuRect(x, y, 1, 1, "#993300");
                     break;
-                case 3:
-                case 4:
-                case 5:
+                default:
                     drawShikakuRect(x, y, 1, 1, "#000000");
                     break;
             }
@@ -129,6 +127,7 @@ function drawMenu() {
             drawTower4Button();
             drawTower5Button();
             drawTower6Button();
+            drawTower7Button();
             break;
 
     }

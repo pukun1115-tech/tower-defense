@@ -13,6 +13,9 @@ class tower {
         this.timer = 0;
     }
     update() {
+        if (this.syurui === 7) {
+            money++;
+        }
         this.timer++;
         if (this.timer < this.cooldown) return;
         let target = null;
@@ -32,28 +35,7 @@ class tower {
 
         if (target) {
             switch (this.syurui) {
-                case 4:
-                case 5:{
-                    const dx = target.x - this.x;
-                    const dy = target.y - this.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    
-                    const b = new bullet(
-                        this.x,
-                        this.y,
-                        dx / dist,
-                        dy / dist,
-                        this.bulletSpeed,
-                        0.15,//size
-                        this.color,
-                        this.damage,
-                    );
-                    bullets.push(b);
-
-                    this.timer = 0;
-                    break;
-                }
-                case 6:{
+                case 6: {
                     for (const d of dirs) {
                         const b = new bullet(
                             this.x,
@@ -67,6 +49,26 @@ class tower {
                         );
                         bullets.push(b);
                     }
+                    this.timer = 0;
+                    break;
+                }
+                default: {
+                    const dx = target.x - this.x;
+                    const dy = target.y - this.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    const b = new bullet(
+                        this.x,
+                        this.y,
+                        dx / dist,
+                        dy / dist,
+                        this.bulletSpeed,
+                        0.15,//size
+                        this.color,
+                        this.damage,
+                    );
+                    bullets.push(b);
+
                     this.timer = 0;
                     break;
                 }
