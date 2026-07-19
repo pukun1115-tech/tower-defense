@@ -104,13 +104,13 @@ class enemy {
         if (this.hp <= 0) {
             money += this.money;
             if (this.syurui === 7) {
-                enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(3, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(4, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5));
-                enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5));
+                enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5));
+                enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5));
+                enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5));
+                enemies.push(getEnemy(3, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5))
+                enemies.push(getEnemy(4, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5));
+                enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5
+                enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5));
             }
             this.alive = false;
             return;
