@@ -60,6 +60,8 @@ function getEnemy(type, x, y) {
     return new enemy(
         x,
         y,
+        x,
+        y,
         t.hp,
         t.color,
         t.speed,
