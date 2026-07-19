@@ -13,9 +13,6 @@ class tower {
         this.timer = 0;
     }
     update() {
-        if (this.syurui === 7) {
-            money++;
-        }
         this.timer++;
         if (this.timer < this.cooldown) return;
         let target = null;
