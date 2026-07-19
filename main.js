@@ -55,13 +55,13 @@ function updateWave() {
     }
 }
 
-function getEnemy(type, x, y) {
+function getEnemy(type, x, y, nx, ny) {
     const t = enemyTypes[type];
     return new enemy(
         x,
         y,
-        x,
-        y,
+        nx,
+        ny,
         t.hp,
         t.color,
         t.speed,
