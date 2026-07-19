@@ -1,12 +1,12 @@
 class enemy {
-    constructor(x, y, hp, color, speed, size, money, syurui) {
+    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui) {
         this.alive = true;//生きてる!
 
         this.x = x + 0.5;
         this.y = y + 0.5;
         this.dir = null;
-        this.nextTileX = this.x;
-        this.nextTileY = this.y;
+        this.nextTileX = nextX + 0.5;
+        this.nextTileY = nextY + 0.5;
 
         this.isBreaking = false;
         this.breakTimer = 0;
