@@ -142,7 +142,7 @@ const waves = [
     },
     {
         //20
-        rule: [
+        rules: [
             { start: 0, interval: 360, count: 10, type: 4 },
             { start: 180, interval: 360, count: 10, type: 7 }
         ]
