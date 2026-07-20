@@ -93,9 +93,9 @@ const waves = [
         //13
         rules: [
             { start: 0, interval: 120, count: 10, type: 5 },
-            { start: 0, interval: 1, count: 5, type: 6 },
-            { start: 60, interval: 1, count: 5, type: 6 },
-            { start: 120, interval: 1, count: 5, type: 6 }
+            { start: 0, interval: 6, count: 5, type: 6 },
+            { start: 60, interval: 6, count: 5, type: 6 },
+            { start: 120, interval: 6, count: 5, type: 6 }
         ]
     },
     {
@@ -132,6 +132,19 @@ const waves = [
             { start: 0, interval: 30, count: 50, type: 0 },
             { start: 0, interval: 30, count: 50, type: 1 },
             { start: 0, interval: 120, count: 6, type: 4 }
+        ]
+    },
+    {
+        //19
+        rules: [
+            { start: 0, interval: 6, count: 100, type: 5 }
+        ]
+    },
+    {
+        //20
+        rule: [
+            { start: 0, interval: 360, count: 10, type: 4 },
+            { start: 180, interval: 360, count: 10, type: 7 }
         ]
     }
 ];

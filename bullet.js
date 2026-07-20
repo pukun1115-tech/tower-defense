@@ -1,5 +1,5 @@
 class bullet {
-    constructor(x, y, dx, dy, speed, size, color, damage) {
+    constructor(x, y, dx, dy, speed, size, color, damage, kanntuu) {
         this.x = x;
         this.y = y;
 
@@ -10,6 +10,7 @@ class bullet {
         this.size = size;
         this.color = color;
         this.damage = damage;
+        this.kanntuu = kanntuu;
         this.alive = true;
     }
     update() {
@@ -29,8 +30,10 @@ class bullet {
 
             if (dist < this.size + e.size) {
                 e.hp -= this.damage;
-                this.alive = false;
-                break;
+                if (!this.kanntuu) {
+                    this.alive = false;
+                    break;
+                }
             }
         }
     }

@@ -42,7 +42,8 @@ class tower {
                             this.bulletSpeed,
                             0.1,
                             this.color,
-                            this.damage
+                            this.damage,
+                            true
                         );
                         bullets.push(b);
                     }
@@ -63,6 +64,7 @@ class tower {
                         0.15,//size
                         this.color,
                         this.damage,
+                        false
                     );
                     bullets.push(b);
 
