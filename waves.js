@@ -149,9 +149,10 @@ const waves = [
     },
     {
         rules: [
-            { start: 0, interval: 1, count: 30, type: 7 },
-            { start: 60, interval: 1, count: 60, type: 7 },
-            { start: 180, interval: 1, count: 120, type: 7 }
+            { start: 0, interval: 3, count: 10, type: 7 },
+            { start: 60, interval: 3, count: 20, type: 7 },
+            { start: 180, interval: 3, count: 40, type: 7 },
+            { start: 360, interval: 3, count: 80, type: 7 }
         ]
     }
 ];
