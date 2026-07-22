@@ -49,7 +49,7 @@ function onHelpButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        window.open("https://github.com/pukun1115-tech/tower-defense/blob/main/%E3%83%98%E3%83%AB%E3%83%97.txt", "_blank");
+        window.open("https://github.com/pukun1115-tech/tower-defense/blob/main/help.txt", "_blank");
     }
 }
 function onStartButtonClick() {
