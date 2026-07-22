@@ -129,7 +129,7 @@ function drawHelpButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("ヘルプ", tileSize * 12.5, (tate + 5) * tileSize);
+    ctx.fillText("情報", tileSize * 12.5, (tate + 5) * tileSize);
 }
 
 function drawStartButton() {
