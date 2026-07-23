@@ -38,7 +38,7 @@ class enemy {
 
         if (this.x === this.nextTileX && this.y === this.nextTileY) {
             if (this.x === 19.5 && this.y === 7.5) {
-                hp--;
+                Game.hp--;
                 this.alive = false;
                 return;
             }
