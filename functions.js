@@ -222,6 +222,6 @@ function drawGrid() {
 
 function updateMoney() {
     if (!start) return;
-    if (time % moneyLevelHyou[moneyLevel].speed !== 0) return;
+    if (time % moneyLevelHyou[Game.moneyLevel].speed !== 0) return;
     money++;
 }
