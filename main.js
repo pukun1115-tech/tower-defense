@@ -155,20 +155,19 @@ function drawWave() {
     ctx.fillText("Wave" + (currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
 }
 function drawGameOver() {
-    ctx.fillStyle = "#00000080";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#000000";
 
     ctx.fillStyle = "#ff3333";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "48px sans-serif";
+    ctx.font = "{fontSize * 8}px sans-serif";
     ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2);
 }
 
 
 function loop() {
     if (gameOver) {
-        drawGameOver();
+        gameOverLoop();
     }
     else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -186,8 +185,8 @@ function loop() {
         updateTowers();
         updateBullets();
 
-        if (hp <= 0) {
-            //gameOver = true;
+        if (Game.hp <= 0) {
+            gameOver = true;
         }
 
         if (start) {
@@ -202,7 +201,8 @@ function loop() {
     requestAnimationFrame(loop);
 }
 function gameOverLoop() {
-    //
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawGameOver();
     requestAnimationFrame(gameOverLoop);
 }
 
