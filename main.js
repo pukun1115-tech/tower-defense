@@ -3,7 +3,7 @@ function drawMap() {
         for (let x = 0; x < yoko; x++) {
             switch (map[y][x]) {
                 case -1:
-                    const hue = (time * 2) % 360;
+                    const hue = (Game.time * 2) % 360;
                     drawShikakuRect(x, y, 1, 1, `hsl(${hue}, 100%, 50%)`);
                     break;
                 case 0:
@@ -24,7 +24,7 @@ function drawMap() {
     }
 }
 function updateWave() {
-    if (!inWave) return;
+    if (!Game.inWave) return;
     if (!waves[currentWave]) return;
 
     let allSpawned = true;
@@ -48,7 +48,7 @@ function updateWave() {
     }
 
     if (allSpawned && enemies.length === 0) {
-        inWave = false;
+        Game.inWave = false;
         currentWave++;
     }
 }
@@ -72,7 +72,7 @@ function getEnemy(type, x, y, nx, ny, dir) {
 
 function updateEnemies() {
     for (const e of enemies) {
-        if (start) {
+        if (Game.start) {
             e.update();
         }
         e.draw();
@@ -81,7 +81,7 @@ function updateEnemies() {
 }
 function updateTowers() {
     for (const t of towers) {
-        if (start) {
+        if (Game.start) {
             t.update();
         }
         t.draw();
@@ -90,7 +90,7 @@ function updateTowers() {
 }
 function updateBullets() {
     for (const b of bullets) {
-        if (start) {
+        if (Game.start) {
             b.update();
         }
         b.draw();
@@ -104,7 +104,7 @@ function drawMenu() {
 
     drawMoney();
     drawHp();
-    if (inWave) {
+    if (Game.inWave) {
         drawWave();
     }
 
@@ -138,7 +138,7 @@ function drawMoney() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("$" + money, yoko * tileSize, (tate + 0.5) * tileSize);
+    ctx.fillText("$" + Game.money, yoko * tileSize, (tate + 0.5) * tileSize);
 }
 function drawHp() {
     ctx.fillStyle = "#dd0";
@@ -167,7 +167,7 @@ function drawGameOver() {
 
 
 function loop() {
-    if (gameOver) {
+    if (Game.gameOver) {
         gameOverLoop();
     }
     else {
@@ -187,16 +187,16 @@ function loop() {
         updateBullets();
 
         if (Game.hp <= 0) {
-            gameOver = true;
+            Game.gameOver = true;
         }
 
-        if (start) {
-            if (inWave) {
+        if (Game.start) {
+            if (Game.inWave) {
                 updateWave();
                 waveTimer++;
             }
 
-            time++;
+            Game.time++;
         }
     }
     requestAnimationFrame(loop);
@@ -204,7 +204,7 @@ function loop() {
 function gameOverLoop() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     resize();
-    
+
     drawGameOver();
     requestAnimationFrame(gameOverLoop);
 }

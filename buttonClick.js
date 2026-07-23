@@ -64,13 +64,13 @@ function onStartButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        if (!inWave) {
+        if (!Game.inWave) {
             waveTimer = 0;
-            inWave = true;
-            start = true;
+            Game.inWave = true;
+            Game.start = true;
         }
         else {
-            start = !start;
+            Game.start = !Game.start;
         }
     }
 }
@@ -203,8 +203,8 @@ function onMoneyLevelUpButtonClick() {
         pointerY < (tate + 2) * tileSize
     ) {
         if (Game.moneyLevel === 10) return;
-        if (money < moneyLevelHyou[Game.moneyLevel + 1].money) return;
-        money -= moneyLevelHyou[Game.moneyLevel + 1].money;
+        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].money) return;
+        Game.money -= moneyLevelHyou[Game.moneyLevel + 1].money;
         Game.moneyLevel++;
     }
 }

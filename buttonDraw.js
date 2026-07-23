@@ -24,7 +24,7 @@ function drawMoneyLevelUpButton() {
     if (Game.moneyLevel < 10) {
         ctx.fillText("Level" + (Game.moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
         ctx.fillText(moneyLevelHyou[Game.moneyLevel + 1].money + "$", 7 * tileSize, (tate + 1.25) * tileSize);
-        if (money < moneyLevelHyou[Game.moneyLevel + 1].money) {
+        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].money) {
             drawShikakuRect(1, tate + 0.5, 7, 1.5, "#00000080");
         }
     }
@@ -68,7 +68,7 @@ function drawKabe0Button() {
 
 function drawKabe2Button() {
     drawShikakuRect(6, (tate + 2.5), 4, 1.5, "#ffffff");
-    if (money < 10) {
+    if (Game.money < 10) {
         drawShikakuRect(6, (tate + 2.5), 4, 1.5, "#00000080");
     }
     ctx.fillStyle = "#000000";
@@ -78,7 +78,7 @@ function drawKabe2Button() {
     ctx.fillText("箱", 7 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("10$", 9 * tileSize, (tate + 3.25) * tileSize);
 
-    if (oku !== 2 || money < 10) return;
+    if (oku !== 2 || Game.money < 10) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -87,7 +87,7 @@ function drawKabe2Button() {
 
 function drawKabe3Button() {
     drawShikakuRect(11, (tate + 2.5), 4, 1.5, "#ffffff");
-    if (money < 15) {
+    if (Game.money < 15) {
         drawShikakuRect(11, (tate + 2.5), 4, 1.5, "#00000080");
     }
     ctx.fillStyle = "#000000";
@@ -97,7 +97,7 @@ function drawKabe3Button() {
     ctx.fillText("土台", 12 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("15$", 14 * tileSize, (tate + 3.25) * tileSize);
 
-    if (oku !== 3 || money < 15) return;
+    if (oku !== 3 || Game.money < 15) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -140,11 +140,11 @@ function drawStartButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px Impact`;
-    if (!inWave) {
+    if (!Game.inWave) {
         ctx.fillText("Wave" + (currentWave + 1), 16.5 * tileSize, (tate + 5) * tileSize);
     }
     else {
-        if (start) {
+        if (Game.start) {
             ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
         }
         else {
@@ -171,7 +171,7 @@ function drawTower3Button() {
 function drawTower4Button() {
     drawShikakuRect(5, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(5.5, tate + 1, towerTypes[4].size, towerTypes[4].color);
-    if (money < towerTypes[4].cost) {
+    if (Game.money < towerTypes[4].cost) {
         drawShikakuRect(5, tate + 0.5, 3, 1, "#00000080");
     }
 
@@ -181,7 +181,7 @@ function drawTower4Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[4].cost}$`, 7 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 4 || money < towerTypes[4].cost) return;
+    if (oku !== 4 || Game.money < towerTypes[4].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -191,7 +191,7 @@ function drawTower4Button() {
 function drawTower5Button() {
     drawShikakuRect(9, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(9.5, tate + 1, towerTypes[5].size, towerTypes[5].color);
-    if (money < towerTypes[5].cost) {
+    if (Game.money < towerTypes[5].cost) {
         drawShikakuRect(9, tate + 0.5, 3, 1, "#00000080");
     }
 
@@ -201,7 +201,7 @@ function drawTower5Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[5].cost}$`, 11 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 5 || money < towerTypes[5].cost) return;
+    if (oku !== 5 || Game.money < towerTypes[5].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -211,7 +211,7 @@ function drawTower5Button() {
 function drawTower6Button() {
     drawShikakuRect(13, tate + 0.5, 3, 1, "#ffffff");
     drawCircle(13.5, tate + 1, towerTypes[6].size, towerTypes[6].color);
-    if (money < towerTypes[6].cost) {
+    if (Game.money < towerTypes[6].cost) {
         drawShikakuRect(13, tate + 0.5, 3, 1, "#00000080");
     }
 
@@ -221,7 +221,7 @@ function drawTower6Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[6].cost}$`, 15 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 6 || money < towerTypes[6].cost) return;
+    if (oku !== 6 || Game.money < towerTypes[6].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -232,7 +232,7 @@ function drawTower6Button() {
 function drawTower7Button() {
     drawShikakuRect(1, tate + 2.5, 3, 1, "#ffffff");
     drawCircle(1.5, tate + 3, towerTypes[7].size, towerTypes[7].color);
-    if (money < towerTypes[7].cost) {
+    if (Game.money < towerTypes[7].cost) {
         drawShikakuRect(1, tate + 2.5, 3, 1, "#00000080");
     }
 
@@ -242,7 +242,7 @@ function drawTower7Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[7].cost}$`, 3 * tileSize, (tate + 3) * tileSize);
 
-    if (oku !== 7 || money < towerTypes[7].cost) return;
+    if (oku !== 7 || Game.money < towerTypes[7].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;

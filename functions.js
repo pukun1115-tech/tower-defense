@@ -126,14 +126,14 @@ function placeCheck() {
                 break;
             case 2:
                 if (highlightTile.type !== "y") return;
-                if (money < 10) return;
-                money -= 10;
+                if (Game.money < 10) return;
+                Game.money -= 10;
                 map[highlightTile.y][highlightTile.x] = 2;
                 break;
             case 3:
                 if (highlightTile.type !== "y") return;
-                if (money < 15) return;
-                money -= 15;
+                if (Game.money < 15) return;
+                Game.money -= 15;
                 map[highlightTile.y][highlightTile.x] = 3;
                 break;
         }
@@ -142,14 +142,14 @@ function placeCheck() {
     if (mode === "tower") {
         if (oku === 3) {
             if (highlightTile.type !== "y") return;
-            money += 10;
+            Game.money += 10;
             map[highlightTile.y][highlightTile.x] = 3;
         }
         else {
             if (highlightTile.type !== "y") return;
             const o = towerTypes[oku];
-            if (money < o.cost) return;
-            money -= o.cost;
+            if (Game.money < o.cost) return;
+            Game.money -= o.cost;
             map[highlightTile.y][highlightTile.x] = oku;
             towers.push(
                 new tower(
@@ -221,7 +221,7 @@ function drawGrid() {
 }
 
 function updateMoney() {
-    if (!start) return;
-    if (time % moneyLevelHyou[Game.moneyLevel].speed !== 0) return;
-    money++;
+    if (!Game.start) return;
+    if (Game.time % moneyLevelHyou[Game.moneyLevel].speed !== 0) return;
+    Game.money++;
 }

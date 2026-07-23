@@ -23,7 +23,7 @@ class enemy {
 
     update() {
         if (this.hp <= 0) {
-            money += this.money;
+            Game.money += this.money;
             if (this.syurui === 7) {
                 enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
                 enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
