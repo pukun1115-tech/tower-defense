@@ -161,7 +161,9 @@ function placeCheck() {
                     o.size,
                     o.range,
                     o.cooldown,
-                    o.bulletSpeed
+                    o.bulletSpeed,
+                    o.bulletSize,
+                    o.kan
                 )
             );
         }
