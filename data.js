@@ -73,10 +73,10 @@ let towers = [];
 let bullets = [];
 let enemies = [];
 const towerTypes = {
-    4: { damage: 1, color: "#ffff00", size: 0.3, range: 4, cooldown: 90, cost: 20, bulletSpeed: 0.1 },
-    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 6, cooldown: 60, cost: 60, bulletSpeed: 0.2 },
-    6: { damage: 5, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3 },
-    7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 150, bulletSpeed: 0.2 }
+    4: { damage: 1, color: "#ffff00", size: 0.3, range: 4, cooldown: 90, cost: 20, bulletSpeed: 0.1 , bulletSize: 0.2, kan: false},
+    5: { damage: 2, color: "#ff00ff", size: 0.4, range: 6, cooldown: 60, cost: 60, bulletSpeed: 0.2 , bulletSize: 0.1, kan: false},
+    6: { damage: 5, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3 , bulletSize: 0.1, kan: true},
+    7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 150, bulletSpeed: 0.2 , bulletSize: 0.1 ,kan: false}
 };
 const enemyTypes = {
     //基本
