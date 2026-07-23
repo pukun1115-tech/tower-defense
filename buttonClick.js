@@ -39,7 +39,12 @@ function onTowerButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         oku = null;
-        mode = "tower";
+        if (mode === "tower") {
+            mode = "menu";
+        }
+        else {
+            mode = "tower";
+        }
     }
 }
 function onHelpButtonClick() {
@@ -106,7 +111,12 @@ function onKabe3ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        oku = 3;
+        if (oku === 3) {
+            oku = null;
+        }
+        else {
+            oku = 3;
+        }
     }
 }
 function onTower3ButtonClick() {
