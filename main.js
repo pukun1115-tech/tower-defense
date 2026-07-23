@@ -145,7 +145,7 @@ function drawHp() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("Hp:" + hp, yoko * tileSize, (tate + 1.5) * tileSize);
+    ctx.fillText("Hp:" + Game.hp, yoko * tileSize, (tate + 1.5) * tileSize);
 }
 function drawWave() {
     ctx.fillStyle = "#dd0";
