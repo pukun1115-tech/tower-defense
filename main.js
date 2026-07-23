@@ -31,17 +31,17 @@ function updateWave() {
 
 
     for (const rule of waves[currentWave].rules) {
-        if (waveTimer < rule.start) {
+        if (Game.waveTimer < rule.start) {
             allSpawned = false;
             continue;
         }
 
-        const spawned = Math.floor((waveTimer - rule.start) / rule.interval);
+        const spawned = Math.floor((Game.waveTimer - rule.start) / rule.interval);
 
         if (spawned < rule.count) {
             allSpawned = false;
 
-            if ((waveTimer - rule.start) % rule.interval === 0) {
+            if ((Game.waveTimer - rule.start) % rule.interval === 0) {
                 enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null));
             }
         }
@@ -113,7 +113,7 @@ function drawMenu() {
     drawTowerButton();
     drawHelpButton();
     drawStartButton();
-    switch (mode) {
+    switch (Game.mode) {
         case "money":
             drawMoneyLevelUpButton();
             break;
@@ -193,7 +193,7 @@ function loop() {
         if (Game.start) {
             if (Game.inWave) {
                 updateWave();
-                waveTimer++;
+                Game.waveTimer++;
             }
 
             Game.time++;

@@ -5,11 +5,11 @@ function onMoneyButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        if (mode === "money") {
-            mode = "menu";
+        if (Game.mode === "money") {
+            Game.mode = "menu";
         }
         else {
-            mode = "money";
+            Game.mode = "money";
         }
     }
 }
@@ -22,11 +22,11 @@ function onKabeButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         oku = null;
-        if (mode === "kabe") {
-            mode = "menu";
+        if (Game.mode === "kabe") {
+            Game.mode = "menu";
         }
         else {
-            mode = "kabe";
+            Game.mode = "kabe";
         }
     }
 }
@@ -39,11 +39,11 @@ function onTowerButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         oku = null;
-        if (mode === "tower") {
-            mode = "menu";
+        if (Game.mode === "tower") {
+            Game.mode = "menu";
         }
         else {
-            mode = "tower";
+            Game.mode = "tower";
         }
     }
 }
@@ -65,7 +65,7 @@ function onStartButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         if (!Game.inWave) {
-            waveTimer = 0;
+            Game.waveTimer = 0;
             Game.inWave = true;
             Game.start = true;
         }

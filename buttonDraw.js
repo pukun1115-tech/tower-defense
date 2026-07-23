@@ -7,7 +7,7 @@ function drawMoneyButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("お金", tileSize * 2, (tate + 5) * tileSize);
 
-    if (mode !== "money") return;
+    if (Game.mode !== "money") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -43,7 +43,7 @@ function drawKabeButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壁", tileSize * 5, (tate + 5) * tileSize);
 
-    if (mode !== "kabe") return;
+    if (Game.mode !== "kabe") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -114,7 +114,7 @@ function drawTowerButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("タワー", 8.5 * tileSize, (tate + 5) * tileSize);
 
-    if (mode !== "tower") return;
+    if (Game.mode !== "tower") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;

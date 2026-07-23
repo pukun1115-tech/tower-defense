@@ -26,7 +26,7 @@ canvas.addEventListener("pointerup", (e) => {
     onHelpButtonClick();
     onStartButtonClick();
 
-    switch (mode) {
+    switch (Game.mode) {
         case "menu":
             break;
         case "kabe":

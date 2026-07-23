@@ -5,13 +5,13 @@ const ctx = canvas.getContext("2d");
 let tileSize;
 let menuTate;
 let lineWidth;
-let highlightTile = null;
 let fontSize;
 //タップ
 let pointerX = null;
 let pointerY = null;
 let isPointerDown = false;
 //
+let highlightTile = null;
 const Game = {
     hp: 10,
     money: 200,
@@ -20,15 +20,13 @@ const Game = {
     start: true,
     mode: "menu",
     time: 0,
-    currentWave: 0,
+    currentWave: 0,//表示は(currentWave + 1)
     waveTimer: 0,
     inWave: false,
     oku: null
 };
-let mode = "menu";//
-let oku = null;//
-let currentWave = 0;//表示は(currentWave + 1)
-let waveTimer = 0;//
+let oku = null;
+let currentWave = 0;
 
 const moneyLevelHyou = {
     1: { speed: 40, money: 0 },

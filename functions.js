@@ -46,7 +46,7 @@ function highlightCheck() {
         highlightTile = null;
         return;
     }
-    if (mode === "kabe") {
+    if (Game.mode === "kabe") {
         if (oku === null) {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
@@ -87,7 +87,7 @@ function highlightCheck() {
         }
         return;
     }
-    if (mode === "tower") {
+    if (Game.mode === "tower") {
         if (oku === null) {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
@@ -118,7 +118,7 @@ function placeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
 
-    if (mode === "kabe") {
+    if (Game.mode === "kabe") {
         switch (oku) {
             case 0:
                 if (highlightTile.type !== "y") return;
@@ -139,7 +139,7 @@ function placeCheck() {
         }
         return;
     }
-    if (mode === "tower") {
+    if (Game.mode === "tower") {
         if (oku === 3) {
             if (highlightTile.type !== "y") return;
             Game.money += 10;
