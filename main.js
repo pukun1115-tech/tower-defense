@@ -162,7 +162,7 @@ function drawGameOver() {
     ctx.textBaseline = "middle";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("game over", canvas.width / 2, canvas.height / 2);
-    ctx.fillText(`wave${currentWave + 1}まで`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
+    ctx.fillText(`wave${currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
 }
 
 
