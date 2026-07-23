@@ -160,8 +160,9 @@ function drawGameOver() {
     ctx.fillStyle = "#ff3333";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = `${fontSize * 8}px sans-serif`;
-    ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2);
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("game over", canvas.width / 2, canvas.height / 2);
+    ctx.fillText(`wave${currentWave + 1}まで`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
 }
 
 
