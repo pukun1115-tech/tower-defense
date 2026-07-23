@@ -13,7 +13,7 @@ let pointerY = null;
 let isPointerDown = false;
 //
 const Game = {
-    hp: 50,
+    hp: 10,
     money: 200,
     moneyLevel: 1,
     gameOver: false,
@@ -25,7 +25,6 @@ const Game = {
     inWave: false,
     oku: null
 };
-let hp = 50;//
 let gameOver = false;//
 let start = true;//
 let mode = "menu";//
