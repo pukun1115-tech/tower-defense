@@ -49,7 +49,6 @@ function updateWave() {
 
     if (allSpawned && enemies.length === 0) {
         Game.inWave = false;
-        currentWave++;
     }
 }
 
