@@ -159,7 +159,7 @@ const waves = [
     {
         //22
         rules: [
-            { start: 0, interval: 12, count: 100, type: 6 }
+            { start: 0, interval: 12, count: 100, type: 5 }
         ]
     }
 ];
