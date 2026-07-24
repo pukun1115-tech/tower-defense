@@ -107,7 +107,7 @@ function onKabe2ButtonClick() {
 function onKabe3ButtonClick() {
     if (
         pointerX > 11 * tileSize &&
-        pointerX < 16 * tileSize &&
+        pointerX < 15 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
