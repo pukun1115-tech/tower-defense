@@ -42,7 +42,7 @@ function updateWave() {
             allSpawned = false;
 
             if ((Game.waveTimer - rule.start) % rule.interval === 0) {
-                enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null, true));
+                enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null));
             }
         }
     }
@@ -53,7 +53,7 @@ function updateWave() {
     }
 }
 
-function getEnemy(type, x, y, nx, ny, dir, kane) {
+function getEnemy(type, x, y, nx, ny, dir) {
     const t = enemyTypes[type];
     return new enemy(
         x,
@@ -66,8 +66,7 @@ function getEnemy(type, x, y, nx, ny, dir, kane) {
         t.size,
         t.money,
         type,
-        dir,
-        kane
+        dir
     );
 }
 
@@ -173,13 +172,8 @@ function loop() {
     }
     else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if (time % 30 === 0) {
-            resize();
-        }
-        
-        if (Game.hp <= 0) {
-            Game.gameOver = true;
-        }
+        resize();
+
         drawMap();
         drawGrid();
         highlightCheck();
@@ -191,6 +185,10 @@ function loop() {
         updateEnemies();
         updateTowers();
         updateBullets();
+
+        if (Game.hp <= 0) {
+            Game.gameOver = true;
+        }
 
         if (Game.start) {
             if (Game.inWave) {
