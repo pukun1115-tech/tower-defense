@@ -176,30 +176,31 @@ function loop() {
         if (time % 30 === 0) {
             resize();
         }
-
-        drawMap();
-        drawGrid();
-        highlightCheck();
-        drawHighLight();
-
-        drawMenu();
-        updateMoney();
-
-        updateEnemies();
-        updateTowers();
-        updateBullets();
-
+        
         if (Game.hp <= 0) {
             Game.gameOver = true;
         }
+        else {
+            drawMap();
+            drawGrid();
+            highlightCheck();
+            drawHighLight();
 
-        if (Game.start) {
-            if (Game.inWave) {
-                updateWave();
-                Game.waveTimer++;
+            drawMenu();
+            updateMoney();
+
+            updateEnemies();
+            updateTowers();
+            updateBullets();
+
+            if (Game.start) {
+                if (Game.inWave) {
+                    updateWave();
+                    Game.waveTimer++;
+                }
+
+                Game.time++;
             }
-
-            Game.time++;
         }
     }
     requestAnimationFrame(loop);
