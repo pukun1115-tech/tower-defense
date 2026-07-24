@@ -53,7 +53,7 @@ function updateWave() {
     }
 }
 
-function getEnemy(type, x, y, nx, ny, dir) {
+function getEnemy(type, x, y, nx, ny, dir, kane) {
     const t = enemyTypes[type];
     return new enemy(
         x,
@@ -66,7 +66,8 @@ function getEnemy(type, x, y, nx, ny, dir) {
         t.size,
         t.money,
         type,
-        dir
+        dir,
+        kane
     );
 }
 
