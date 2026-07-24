@@ -173,7 +173,9 @@ function loop() {
     }
     else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        resize();
+        if (time % 30 === 0) {
+            resize();
+        }
 
         drawMap();
         drawGrid();
