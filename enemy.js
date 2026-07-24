@@ -1,5 +1,5 @@
 class enemy {
-    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir) {
+    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane) {
         this.alive = true;//生きてる!
 
         this.x = x + 0.5;
@@ -19,18 +19,21 @@ class enemy {
         this.speed = speed;
         this.size = size;
         this.syurui = syurui;
+        this.kane = kane;
     }
 
     update() {
         if (this.hp <= 0) {
-            Game.money += this.money;
+            if (this.kane) {
+                Game.money += this.money;
+            }
             if (this.syurui === 7) {
-                enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
-                enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
-                enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
-                enemies.push(getEnemy(3, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
-                enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
-                enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir));
+                enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
+                enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
+                enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
+                enemies.push(getEnemy(3, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
+                enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
+                enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false));
             }
             this.alive = false;
             return;
