@@ -43,7 +43,6 @@ function updateWave() {
 
             if ((Game.waveTimer - rule.start) % rule.interval === 0) {
                 enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null, Game.enemyId));
-                Game.enemyId++;
             }
         }
     }
@@ -69,6 +68,7 @@ function getEnemy(type, x, y, nx, ny, dir, id) {
         dir,
         id
     );
+    Game.enemyId++;
 }
 
 function updateEnemies() {
