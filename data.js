@@ -23,7 +23,8 @@ const Game = {
     currentWave: -1,//表示は(currentWave + 1)
     waveTimer: 0,
     inWave: false,
-    oku: null
+    oku: null,
+    enemyId: 0
 };
 let oku = null;
 let currentWave = -1;
