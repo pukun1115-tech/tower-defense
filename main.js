@@ -174,6 +174,10 @@ function loop() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         resize();
 
+        if (Game.hp <= 0) {
+            Game.gameOver = true;
+        }
+        
         drawMap();
         drawGrid();
         highlightCheck();
@@ -185,10 +189,6 @@ function loop() {
         updateEnemies();
         updateTowers();
         updateBullets();
-
-        if (Game.hp <= 0) {
-            Game.gameOver = true;
-        }
 
         if (Game.start) {
             if (Game.inWave) {
