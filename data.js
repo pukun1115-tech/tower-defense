@@ -20,13 +20,13 @@ const Game = {
     start: true,
     mode: "menu",
     time: 0,
-    currentWave: 0,//表示は(currentWave + 1)
+    currentWave: -1,//表示は(currentWave + 1)
     waveTimer: 0,
     inWave: false,
     oku: null
 };
 let oku = null;
-let currentWave = 0;
+let currentWave = -1;
 
 const moneyLevelHyou = {
     1: { speed: 40, money: 0 },
