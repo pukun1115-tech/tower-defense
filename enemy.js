@@ -1,5 +1,5 @@
 class enemy {
-    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane) {
+    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane, id) {
         this.alive = true;//生きてる!
 
         this.x = x + 0.5;
@@ -20,6 +20,7 @@ class enemy {
         this.size = size;
         this.syurui = syurui;
         this.kane = kane;
+        this.id = id;
     }
 
     update() {
