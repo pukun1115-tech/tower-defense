@@ -180,27 +180,25 @@ function loop() {
         if (Game.hp <= 0) {
             Game.gameOver = true;
         }
-        else {
-            drawMap();
-            drawGrid();
-            highlightCheck();
-            drawHighLight();
+        drawMap();
+        drawGrid();
+        highlightCheck();
+        drawHighLight();
 
-            drawMenu();
-            updateMoney();
+        drawMenu();
+        updateMoney();
 
-            updateEnemies();
-            updateTowers();
-            updateBullets();
+        updateEnemies();
+        updateTowers();
+        updateBullets();
 
-            if (Game.start) {
-                if (Game.inWave) {
-                    updateWave();
-                    Game.waveTimer++;
-                }
-
-                Game.time++;
+        if (Game.start) {
+            if (Game.inWave) {
+                updateWave();
+                Game.waveTimer++;
             }
+
+            Game.time++;
         }
     }
     requestAnimationFrame(loop);
