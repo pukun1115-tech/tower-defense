@@ -42,7 +42,7 @@ function updateWave() {
             allSpawned = false;
 
             if ((Game.waveTimer - rule.start) % rule.interval === 0) {
-                enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null, Game.enemyId));
+                enemies.push(getEnemy(rule.type, 0, 7, 0, 7, null, true, Game.enemyId));
             }
         }
     }
@@ -52,7 +52,7 @@ function updateWave() {
     }
 }
 
-function getEnemy(type, x, y, nx, ny, dir, id) {
+function getEnemy(type, x, y, nx, ny, dir, k, id) {
     const t = enemyTypes[type];
     Game.enemyId++;
     return new enemy(
@@ -67,6 +67,7 @@ function getEnemy(type, x, y, nx, ny, dir, id) {
         t.money,
         type,
         dir,
+        k,
         id
     );
 }
