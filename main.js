@@ -54,6 +54,7 @@ function updateWave() {
 
 function getEnemy(type, x, y, nx, ny, dir, id) {
     const t = enemyTypes[type];
+    Game.enemyId++;
     return new enemy(
         x,
         y,
@@ -68,7 +69,6 @@ function getEnemy(type, x, y, nx, ny, dir, id) {
         dir,
         id
     );
-    Game.enemyId++;
 }
 
 function updateEnemies() {
