@@ -141,7 +141,7 @@ function drawStartButton() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px Impact`;
     if (!Game.inWave) {
-        ctx.fillText("Wave" + (currentWave + 1), 16.5 * tileSize, (tate + 5) * tileSize);
+        ctx.fillText("Wave" + (currentWave + 2), 16.5 * tileSize, (tate + 5) * tileSize);
     }
     else {
         if (Game.start) {
