@@ -148,11 +148,18 @@ const waves = [
         ]
     },
     {
+        //21
         rules: [
-            { start: 0, interval: 6, count: 10, type: 7 },
-            { start: 240, interval: 6, count: 20, type: 7 },
-            { start: 720, interval: 6, count: 40, type: 7 },
-            { start: 1680, interval: 6, count: 80, type: 7 }
+            { start: 0, interval: 12, count: 5, type: 7 },
+            { start: 240, interval: 12, count: 10, type: 7 },
+            { start: 720, interval: 12, count: 20, type: 7 },
+            { start: 1680, interval: 12, count: 40, type: 7 }
+        ]
+    },
+    {
+        //22
+        rules: [
+            { start: 0, interval: 12, count: 100, type: 6 }
         ]
     }
 ];
