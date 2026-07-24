@@ -12,6 +12,10 @@ class bullet {
         this.damage = damage;
         this.kanntuu = kanntuu;
         this.alive = true;
+
+        if (this.kanntuu) {
+            this.hairetu = [];
+        }
     }
     update() {
         this.x += this.dx * this.speed;
@@ -29,8 +33,14 @@ class bullet {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < this.size + e.size) {
-                e.hp -= this.damage;
-                if (!this.kanntuu) {
+                if (this.kanntuu) {
+                    if (!this.hairetu.includes(e.id)) {
+                        e.hp -= this.damage;
+                        this.hairetu.push(e.id);
+                    }
+                }
+                else {
+                    e.hp -= this.damage;
                     this.alive = false;
                     break;
                 }
