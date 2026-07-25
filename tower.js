@@ -1,5 +1,5 @@
 class tower {
-    constructor(tileX, tileY, damage, color, syurui, size, range, cooldown, bulletSpeed, bulletSize, kanntsuu) {
+    constructor(tileX, tileY, damage, color, syurui, size, range, cooldown, bulletSpeed, bulletSize, bulletHp) {
         this.alive = true;//生きてる!!!
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
@@ -11,7 +11,7 @@ class tower {
         this.cooldown = cooldown;
         this.bulletSpeed = bulletSpeed;
         this.bulletSize = bulletSize;
-        this.kanntsuu = kanntsuu;
+        this.bulletHp = bulletHp;
         this.timer = 0;
     }
     update() {
@@ -66,7 +66,7 @@ class tower {
                         this.bulletSize,//size
                         this.color,
                         this.damage,
-                        this.kanntsuu
+                        this.bulletHp
                     );
                     bullets.push(b);
 

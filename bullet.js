@@ -1,5 +1,5 @@
 class bullet {
-    constructor(x, y, dx, dy, speed, size, color, damage, kanntuu) {
+    constructor(x, y, dx, dy, speed, size, color, damage, hp) {
         this.x = x;
         this.y = y;
 
@@ -10,12 +10,10 @@ class bullet {
         this.size = size;
         this.color = color;
         this.damage = damage;
-        this.kanntuu = kanntuu;
+        this.hp = hp;
         this.alive = true;
 
-        if (this.kanntuu) {
-            this.hairetu = [];
-        }
+        this.hairetu = [];
     }
     update() {
         this.x += this.dx * this.speed;
@@ -26,24 +24,19 @@ class bullet {
             return;
         }
         for (const e of enemies) {
-            if (!e.alive) continue;
-
+            if (this.hp <= 0) {
+                this.alive = false;
+                return;
+            }
             const dx = e.x - this.x;
             const dy = e.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < this.size + e.size) {
-                if (this.kanntuu) {
-                    if (!this.hairetu.includes(e.id)) {
-                        e.hp -= this.damage;
-                        this.hairetu.push(e.id);
-                    }
-                }
-                else {
-                    e.hp -= this.damage;
-                    this.alive = false;
-                    break;
-                }
+            if (dist < this.size + e.size && !this.hairetu.includes(e.id)) {
+                this.hp--;
+                e.hp -= this.damage;
+                this.hairetu.push(e.id);
+                break;
             }
         }
     }

@@ -163,7 +163,7 @@ function placeCheck() {
                     o.cooldown,
                     o.bulletSpeed,
                     o.bulletSize,
-                    o.kan
+                    o.bulletHp
                 )
             );
         }
