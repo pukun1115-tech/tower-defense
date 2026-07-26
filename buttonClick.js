@@ -68,7 +68,7 @@ function onStartButtonClick() {
             Game.waveTimer = 0;
             Game.inWave = true;
             Game.start = true;
-            currentWave++;
+            Game.currentWave++;
         }
         else {
             Game.start = !Game.start;

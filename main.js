@@ -25,12 +25,12 @@ function drawMap() {
 }
 function updateWave() {
     if (!Game.inWave) return;
-    if (!waves[currentWave]) return;
+    if (!waves[Game.currentWave]) return;
 
     let allSpawned = true;
 
 
-    for (const rule of waves[currentWave].rules) {
+    for (const rule of waves[Game.currentWave].rules) {
         if (Game.waveTimer < rule.start) {
             allSpawned = false;
             continue;
@@ -154,7 +154,7 @@ function drawWave() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("Wave" + (currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
+    ctx.fillText("Wave" + (Game.currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
 }
 function drawGameOver() {
     ctx.fillStyle = "#000000";
@@ -164,7 +164,7 @@ function drawGameOver() {
     ctx.textBaseline = "middle";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("game over", canvas.width / 2, canvas.height / 2);
-    ctx.fillText(`wave${currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
+    ctx.fillText(`wave${Game.currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
 }
 
 
@@ -174,12 +174,11 @@ function loop() {
     }
     else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        resize();
 
         if (Game.hp <= 0) {
             Game.gameOver = true;
         }
-        
+
         drawMap();
         drawGrid();
         highlightCheck();
@@ -205,7 +204,6 @@ function loop() {
 }
 function gameOverLoop() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    resize();
 
     drawGameOver();
     requestAnimationFrame(gameOverLoop);

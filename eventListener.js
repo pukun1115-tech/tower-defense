@@ -19,6 +19,7 @@ canvas.addEventListener("pointermove", (e) => {
 
 canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
+    resize();
 
     onMoneyButtonClick();
     onKabeButtonClick();

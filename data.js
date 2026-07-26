@@ -27,7 +27,6 @@ const Game = {
     enemyId: 0
 };
 let oku = null;
-let currentWave = -1;
 
 const moneyLevelHyou = {
     1: { speed: 40, money: 0 },
