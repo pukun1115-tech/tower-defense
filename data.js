@@ -69,7 +69,7 @@ const towerTypes = {
     5: { damage: 2, color: "#ff00ff", size: 0.3, range: 3, cooldown: 30, cost: 60, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 1 },
     6: { damage: 5, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3, bulletSize: 0.2, bulletHp: 100 },
     7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 300, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 5 },
-    8: { damage: 20, color: "#ff0000", size: 0.4, range: Infinity, cooldown: 1800, cost: 500, bulletSpeed: 0.4, bulletSize: 0.3, bulletHp: 1 }
+    8: { damage: 20, color: "#ff0000", size: 0.4, range: Infinity, cooldown: 1800, cost: 500, bulletSpeed: 0.4, bulletSize: 0.3, bulletHp: 10 }
 };
 const enemyTypes = {
     //基本
