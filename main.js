@@ -184,12 +184,12 @@ function loop() {
         highlightCheck();
         drawHighLight();
 
-        drawMenu();
-        updateMoney();
-
         updateEnemies();
         updateTowers();
         updateBullets();
+
+        drawMenu();
+        updateMoney();
 
         if (Game.start) {
             if (Game.inWave) {
