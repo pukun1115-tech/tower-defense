@@ -100,7 +100,7 @@ function highlightCheck() {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
-        if (oku === 4 || oku === 5 || oku === 6 || oku === 7) {
+        if (oku === 4 || oku === 5 || oku === 6 || oku === 7 || oku === 8 || oku === 9 || oku === 10) {
             if (map[tileY][tileX] !== 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
