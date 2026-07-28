@@ -265,5 +265,5 @@ function drawTower8Button() {
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(5 * tileSize, (tate + 2.5) * tileSize, 8 * tileSize, 1 * tileSize);
+    ctx.strokeRect(5 * tileSize, (tate + 2.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
