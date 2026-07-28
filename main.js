@@ -130,6 +130,7 @@ function drawMenu() {
             drawTower5Button();
             drawTower6Button();
             drawTower7Button();
+            drawTower8Button();
             break;
 
     }
