@@ -248,3 +248,22 @@ function drawTower7Button() {
     ctx.lineWidth = 0.05 * tileSize;
     ctx.strokeRect(1 * tileSize, (tate + 2.5) * tileSize, 3 * tileSize, 1 * tileSize);
 }
+function drawTower8Button() {
+    drawShikakuRect(5, tate + 2.5, 7, 1, "#ffffff");
+    drawCircle(5.5, tate + 3, towerTypes[8].size, towerTypes[8].color);
+    if (Game.money < towerTypes[8].cost) {
+        drawShikakuRect(5, tate + 2.5, 7, 1, "#00000080");
+    }
+
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText(`${towerTypes[8].cost}$`, 3 * tileSize, (tate + 3) * tileSize);
+
+    if (oku !== 8 || Game.money < towerTypes[8].cost) return;
+
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 0.05 * tileSize;
+    ctx.strokeRect(5 * tileSize, (tate + 2.5) * tileSize, 7 * tileSize, 1 * tileSize);
+}
