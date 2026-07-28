@@ -200,7 +200,7 @@ function onTower7ButtonClick() {
 function onTower8ButtonClick() {
     if (
         pointerX > 5 * tileSize &&
-        pointerX < 7 * tileSize &&
+        pointerX < 8 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
