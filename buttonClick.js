@@ -184,7 +184,7 @@ function onTower6ButtonClick() {
 function onTower7ButtonClick() {
     if (
         pointerX > 1 * tileSize &&
-        pointerX < 4.5 * tileSize &&
+        pointerX < 4 * tileSize &&
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
@@ -193,6 +193,22 @@ function onTower7ButtonClick() {
         }
         else {
             oku = 7;
+        }
+    }
+}
+
+function onTower8ButtonClick() {
+    if (
+        pointerX > 5 * tileSize &&
+        pointerX < 7 * tileSize &&
+        pointerY > (tate + 2.5) * tileSize &&
+        pointerY < (tate + 3.5) * tileSize
+    ) {
+        if (oku === 8) {
+            oku = null;
+        }
+        else {
+            oku = 8;
         }
     }
 }
