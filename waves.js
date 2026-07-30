@@ -137,7 +137,7 @@ const waves = [
     {
         //19
         rules: [
-            { start: 0, interval: 6, count: 100, type: 5 }
+            { start: 0, interval: 15, count: 40, type: 5 }
         ]
     },
     {
@@ -150,16 +150,21 @@ const waves = [
     {
         //21
         rules: [
-            { start: 0, interval: 12, count: 5, type: 7 },
-            { start: 240, interval: 12, count: 10, type: 7 },
-            { start: 720, interval: 12, count: 20, type: 7 },
-            { start: 1680, interval: 12, count: 40, type: 7 }
+            { start: 60, interval: 20, count: 3, type: 7 },
+            { start: 240, interval: 20, count: 6, type: 7 },
+            { start: 600, interval: 20, count: 12, type: 7 },
+            { start: 1320, interval: 20, count: 24, type: 7 }
         ]
     },
     {
         //22
         rules: [
-            { start: 0, interval: 12, count: 100, type: 5 }
+            { start: 0, interval: 12, count: 10, type: 0 },
+            { start: 300, interval: 12, count: 10, type: 1 },
+            { start: 600, interval: 12, count: 10, type: 2 },
+            { start: 900, interval: 12, count: 10, type: 3 },
+            { start: 1200, interval: 12, count: 10, type: 4 },
+            { start: 1500, interval: 12, count: 10, type: 5 }
         ]
     }
 ];
