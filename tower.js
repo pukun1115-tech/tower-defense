@@ -45,7 +45,7 @@ class tower {
                             this.bulletSize,
                             this.color,
                             this.damage,
-                            this.kanntsuu
+                            this.bulletHp
                         );
                         bullets.push(b);
                     }
