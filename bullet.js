@@ -36,7 +36,7 @@ class bullet {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < this.size + e.size && !this.hairetu.has(e.id)) {
-                const dam = { damage: this.damage, x: this.x, y: this.y, time: Game.time };
+                const dam = { damage: this.damage, x: e.x, y: e.y, time: Game.time };
                 damages.push(dam);
                 this.hp--;
                 e.hp -= this.damage;
