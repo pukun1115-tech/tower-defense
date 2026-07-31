@@ -168,7 +168,7 @@ function drawGameOver() {
 
 function drawDamages() {
     for (const d of damages) {
-        ctx.fillStyle = rgba(255, 0, 0, ${d.kosa});
+        ctx.fillStyle = `rgba(255, 0, 0, ${d.kosa})`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.font = `${fontSize}px sans-serif`;
