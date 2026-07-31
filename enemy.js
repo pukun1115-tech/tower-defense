@@ -1,5 +1,5 @@
 class enemy {
-    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane, id) {
+    constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane, id, breaktime) {
         this.alive = true;//生きてる!
 
         this.x = x + 0.5;
@@ -10,7 +10,7 @@ class enemy {
 
         this.isBreaking = false;
         this.breakTimer = 0;
-        this.breakTime = 90;
+        this.breakTime = breaktime;
 
         this.money = money;
 
