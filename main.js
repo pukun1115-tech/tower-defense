@@ -167,7 +167,7 @@ function drawGameOver() {
 }
 
 function drawDamages() {
-    ctx.fillStyle = "#ff0000";
+    ctx.fillStyle = "#ff000000";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = `${fontSize}px sans-serif`;
