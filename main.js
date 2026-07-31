@@ -174,7 +174,7 @@ function drawDamages() {
     for (const d of damages) {
         ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
     }
-    damages = damages.filter(d => (d.time + 90 < Game.time));
+    damages = damages.filter(d => (d.time + 90 > Game.time));
 }
 
 function loop() {
