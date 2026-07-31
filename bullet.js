@@ -36,11 +36,8 @@ class bullet {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < this.size + e.size && !this.hairetu.has(e.id)) {
-                ctx.fillStyle = "#ff0000";
-                ctx.textBaseline = "middle";
-                ctx.textAlign = "center";
-                ctx.font = `${fontSize / 2}px sans-serif`;
-                ctx.fillText(this.damage, this.x * tileSize, this.y * tileSize);
+                const dam = { damage: this.damage, x: this.x, y: this.y, time: Game.time };
+                damages.push(dam);
                 this.hp--;
                 e.hp -= this.damage;
                 this.hairetu.add(e.id);
