@@ -10,7 +10,7 @@ class enemy {
 
         this.isBreaking = false;
         this.breakTimer = 0;
-        this.breakTime = 300;
+        this.breakTime = 90;
 
         this.money = money;
 
