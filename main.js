@@ -167,15 +167,16 @@ function drawGameOver() {
 }
 
 function drawDamages() {
-    ctx.fillStyle = "#ff000080";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.font = `${fontSize}px sans-serif`;
     for (const d of damages) {
+        ctx.fillStyle = `#ff0000${d.kosa}`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
         d.y -= 0.01;
+        d.kosa -= 1;
     }
-    damages = damages.filter(d => (d.time + 90 > Game.time));
+    damages = damages.filter(d => (d.time + 60 > Game.time));
 }
 
 function loop() {
