@@ -6,6 +6,7 @@ let tileSize;
 let menuTate;
 let lineWidth;
 let fontSize;
+let damages = [ ];
 //タップ
 let pointerX = null;
 let pointerY = null;
