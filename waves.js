@@ -166,5 +166,31 @@ const waves = [
             { start: 1200, interval: 12, count: 10, type: 4 },
             { start: 1500, interval: 12, count: 10, type: 5 }
         ]
+    },
+    {
+        //23
+        rules: [
+            { start: 1200, interval: 1, count: 1, type: 0 }
+        ]
+    },
+    {
+        //23
+        rules: [
+            { start: 0, interval: 10, count: 360, type: 6 },
+            { start: 0, interval: 10, count: 120, type: 5 }
+        ]
+    },
+    {
+        //24
+        rules: [
+            { start: 0, interval: 1, count: 120, type: 0 },
+            { start: 0, interval: 1, count: 60, type: 7 }
+        ]
+    },
+    {
+        //25
+        rules: [
+            { start: 0, interval: 1, count: 1, type: 8 }
+        ]
     }
 ];
