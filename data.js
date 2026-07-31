@@ -67,9 +67,9 @@ let bullets = [];
 let enemies = [];
 const towerTypes = {
     4: { damage: 1, color: "#ffff00", size: 0.3, range: 2, cooldown: 60, cost: 20, bulletSpeed: 0.1, bulletSize: 0.1, bulletHp: 1 },
-    5: { damage: 2, color: "#ff00ff", size: 0.3, range: 3, cooldown: 30, cost: 60, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 1 },
-    6: { damage: 5, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3, bulletSize: 0.2, bulletHp: 100 },
-    7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 300, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 5 },
+    5: { damage: 2, color: "#ff00ff", size: 0.3, range: 3, cooldown: 30, cost: 60, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 2 },
+    6: { damage: 10, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3, bulletSize: 0.2, bulletHp: 100 },
+    7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 300, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 2 },
     8: { damage: 100, color: "#ff0000", size: 0.4, range: Infinity, cooldown: 1800, cost: 500, bulletSpeed: 0.4, bulletSize: 0.3, bulletHp: 10 }
 };
 const enemyTypes = {
@@ -88,8 +88,10 @@ const enemyTypes = {
     //めちゃ足速い
     6: { hp: 10, speed: 0.1, color: "#00ffff", size: 0.1, money: 3 },
     //死んだら大量の敵を出す
-    7: { hp: 100, speed: 0.01, color: "#000000", size: 0.1, money: 2 }
-};
+    7: { hp: 100, speed: 0.01, color: "#000000", size: 0.1, money: 2 },
+    //大ボス
+    8: { hp: 1000, speed: 0.005, color: "#0000ff", size: 0.3, money: 1000 }
+}
 //その他
 const dirs = [
     { x: 1, y: 0 },//right
