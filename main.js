@@ -171,8 +171,9 @@ function drawDamages() {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = `${fontSize}px sans-serif`;
-    for (const d of damages) {
+    for (const &d of damages) {
         ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
+        d.y -= 0.01;
     }
     damages = damages.filter(d => (d.time + 90 > Game.time));
 }
