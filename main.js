@@ -158,9 +158,7 @@ function drawWave() {
     ctx.fillText("Wave" + (Game.currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
 }
 function drawGameOver() {
-    ctx.fillStyle = "#000000";
-
-    ctx.fillStyle = "#ff3333";
+    ctx.fillStyle = "#ff0000";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = `${fontSize}px sans-serif`;
@@ -168,6 +166,15 @@ function drawGameOver() {
     ctx.fillText(`wave${Game.currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
 }
 
+function drawDamages() {
+    ctx.fillStyle = "#ff0000";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = `${fontSize}px sans-serif`;
+    for (const d of damages) {
+        ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
+    }
+}
 
 function loop() {
     if (Game.gameOver) {
@@ -189,6 +196,8 @@ function loop() {
         updateTowers();
         updateBullets();
 
+        drawDamages();
+        
         drawMenu();
         updateMoney();
 
