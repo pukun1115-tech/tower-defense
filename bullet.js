@@ -33,6 +33,9 @@ class bullet {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < this.size + e.size && !this.hairetu.includes(e.id)) {
+                ctx.fillStyle = "#ff0000";
+                ctx.font = `${fontSize / 2}px sans-serif`;
+                ctx.fillText(this.damage, this.x * tileSize, this.y * tileSize);
                 this.hp--;
                 e.hp -= this.damage;
                 this.hairetu.push(e.id);
