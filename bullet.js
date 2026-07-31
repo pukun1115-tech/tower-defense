@@ -13,13 +13,13 @@ class bullet {
         this.hp = hp;
         this.alive = true;
 
-        this.hairetu = [];
+        this.hairetu = new Set();
     }
     update() {
         this.x += this.dx * this.speed;
         this.y += this.dy * this.speed;
 
-        if (this.x < 0 || this.x > yoko || this.y < 0 || this.y > tate) {
+        if (this.x <= 0 || this.x >= yoko || this.y <= 0 || this.y >= tate) {
             this.alive = false;
             return;
         }
@@ -28,11 +28,14 @@ class bullet {
                 this.alive = false;
                 return;
             }
+            if (!e.alive) {
+                continue;
+            }
             const dx = e.x - this.x;
             const dy = e.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < this.size + e.size && !this.hairetu.includes(e.id)) {
+            if (dist < this.size + e.size && !this.hairetu.has(e.id)) {
                 ctx.fillStyle = "#ff0000";
                 ctx.textBaseline = "middle";
                 ctx.textAlign = "center";
@@ -40,7 +43,7 @@ class bullet {
                 ctx.fillText(this.damage, this.x * tileSize, this.y * tileSize);
                 this.hp--;
                 e.hp -= this.damage;
-                this.hairetu.push(e.id);
+                this.hairetu.add(e.id);
             }
         }
     }
