@@ -29,16 +29,16 @@ const Game = {
 let oku = null;
 
 const moneyLevelHyou = {
-    1: { speed: 40, money: 0 },
-    2: { speed: 35, money: 20 },
+    1: { speed: 60, money: 0 },
+    2: { speed: 40, money: 20 },
     3: { speed: 30, money: 30 },
     4: { speed: 27, money: 40 },
     5: { speed: 24, money: 50 },
     6: { speed: 21, money: 60 },
-    7: { speed: 15, money: 70 },
-    8: { speed: 10, money: 80 },
-    9: { speed: 8, money: 90 },
-    10: { speed: 6, money: 100 }
+    7: { speed: 18, money: 70 },
+    8: { speed: 15, money: 80 },
+    9: { speed: 12, money: 90 },
+    10: { speed: 10, money: 100 }
 };
 const map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -65,7 +65,7 @@ let towers = [];
 let bullets = [];
 let enemies = [];
 const towerTypes = {
-    4: { damage: 1, color: "#ffff00", size: 0.3, range: 2, cooldown: 60, cost: 20, bulletSpeed: 0.1, bulletSize: 0.05, bulletHp: 1 },
+    4: { damage: 1, color: "#ffff00", size: 0.3, range: 2, cooldown: 60, cost: 20, bulletSpeed: 0.1, bulletSize: 0.1, bulletHp: 1 },
     5: { damage: 2, color: "#ff00ff", size: 0.3, range: 3, cooldown: 30, cost: 60, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 1 },
     6: { damage: 5, color: "#5522ff", size: 0.35, range: 8, cooldown: 720, cost: 100, bulletSpeed: 0.3, bulletSize: 0.2, bulletHp: 100 },
     7: { damage: 1, color: "#00ff00", size: 0.25, range: 3, cooldown: 10, cost: 300, bulletSpeed: 0.2, bulletSize: 0.1, bulletHp: 5 },
