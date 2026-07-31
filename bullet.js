@@ -41,7 +41,6 @@ class bullet {
                 this.hp--;
                 e.hp -= this.damage;
                 this.hairetu.push(e.id);
-                break;
             }
         }
     }
