@@ -68,7 +68,8 @@ function getEnemy(type, x, y, nx, ny, dir, k, id) {
         type,
         dir,
         k,
-        id
+        id,
+        t.breaktime
     );
 }
 
