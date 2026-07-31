@@ -74,23 +74,23 @@ const towerTypes = {
 };
 const enemyTypes = {
     //基本
-    0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3, money: 2 },
+    0: { hp: 5, speed: 0.02, color: "#0000ff", size: 0.3, money: 2, breaktime: 300 },
     //ちょっと強い
-    1: { hp: 15, speed: 0.015, color: "#ffcc00", size: 0.3, money: 6 },
+    1: { hp: 15, speed: 0.015, color: "#ffcc00", size: 0.3, money: 6, breaktime: 300 },
     //足が速い
-    2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2, money: 1 },
+    2: { hp: 2, speed: 0.05, color: "#00ffff", size: 0.2, money: 1, breaktime: 300 },
     //小ボス
-    3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4, money: 20 },
+    3: { hp: 100, speed: 0.005, color: "#404040", size: 0.4, money: 20, breaktime: 120 },
     //中ボス
-    4: { hp: 600, speed: 0.01, color: "#000000", size: 0.5, money: 75 },
+    4: { hp: 600, speed: 0.01, color: "#000000", size: 0.5, money: 75, breaktime: 30 },
     //強い
-    5: { hp: 100, speed: 0.02, color: "#8000ff", size: 0.3, money: 1 },
+    5: { hp: 100, speed: 0.02, color: "#8000ff", size: 0.3, money: 1, breaktime: 60 },
     //めちゃ足速い
-    6: { hp: 10, speed: 0.1, color: "#00ffff", size: 0.1, money: 3 },
+    6: { hp: 10, speed: 0.1, color: "#00ffff", size: 0.1, money: 3, breaktime: 60 },
     //死んだら大量の敵を出す
-    7: { hp: 100, speed: 0.01, color: "#000000", size: 0.1, money: 2 },
+    7: { hp: 100, speed: 0.01, color: "#000000", size: 0.1, money: 2, breaktime: 30 },
     //大ボス
-    8: { hp: 1000, speed: 0.005, color: "#0000ff", size: 0.3, money: 1000 }
+    8: { hp: 1000, speed: 0.005, color: "#0000ff", size: 0.3, money: 1000, breaktime: 30 }
 }
 //その他
 const dirs = [
