@@ -168,13 +168,13 @@ function drawGameOver() {
 
 function drawDamages() {
     for (const d of damages) {
-        ctx.fillStyle = `#ff0000${d.kosa}`;
+        ctx.fillStyle = rgba(255, 0, 0, ${d.kosa});
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
         d.y -= 0.01;
-        d.kosa -= 1;
+        d.kosa -= 0.01;
     }
     damages = damages.filter(d => (d.time + 60 > Game.time));
 }
