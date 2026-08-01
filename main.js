@@ -22,6 +22,14 @@ function drawMap() {
 
         }
     }
+    ctx.strokeStyle = "#404040";
+    ctx.lineWidth = lineWidth;
+    for (let x = 0; x <= yoko; x++) {
+        drawSenRect(x, 0, x, tate);
+    }
+    for (let y = 0; y <= tate; y++) {
+        drawSenRect(0, y, yoko, y);
+    }
 }
 
 function updateWave() {
@@ -124,8 +132,9 @@ function drawMenu() {
     drawStartButton();
 
     switch (Game.mode) {
-        case "money":
+        case "levelUp":
             drawMoneyLevelUpButton();
+            drawTowerLevelUpButton();
             break;
         case "kabe":
             drawKabe0Button();
@@ -177,13 +186,6 @@ function drawGameOver() {
     ctx.fillText(`wave${Game.currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
 }
 
-function gameOverLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    drawGameOver();
-    requestAnimationFrame(gameOverLoop);
-}
-
 function drawDamages() {
     for (const d of damages) {
         ctx.fillStyle = `rgba(255, 0, 0, ${d.kosa})`;
@@ -195,6 +197,16 @@ function drawDamages() {
         d.kosa -= 0.01;
     }
     damages = damages.filter(d => (d.time + 60 > Game.time));
+}
+
+//loop
+
+function gameOverLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGameOver();
+
+    requestAnimationFrame(gameOverLoop);
 }
 
 function loop() {
@@ -209,7 +221,6 @@ function loop() {
         }
 
         drawMap();
-        drawGrid();
         highlightCheck();
         drawHighLight();
 
@@ -238,8 +249,8 @@ function loop() {
 
             Game.time++;
         }
+        requestAnimationFrame(loop);
     }
-    requestAnimationFrame(loop);
 }
 
 resize();

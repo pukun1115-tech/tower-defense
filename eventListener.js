@@ -45,8 +45,9 @@ canvas.addEventListener("pointerup", (e) => {
             onTower8ButtonClick();
             placeCheck();
             break;
-        case "money":
+        case "levelUp":
             onMoneyLevelUpButtonClick();
+            onTowerLevelUpButtonClick();
             break;
     }
 

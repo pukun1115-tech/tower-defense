@@ -1,53 +1,62 @@
 function drawMoneyButton() {
-    drawShikakuRect(1, (tate + 4.5), 2, 1, "#dddd00");
+    drawShikakuRect(1, (tate + 4.5), 5, 1, "#dddd00");
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("お金", tileSize * 2, (tate + 5) * tileSize);
+    ctx.fillText("パワーアップ", tileSize * 3.5, (tate + 5) * tileSize);
 
-    if (Game.mode !== "money") return;
+    if (Game.mode !== "levelUp") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(tileSize, (tate + 4.5) * tileSize, 2 * tileSize, tileSize);
+    ctx.strokeRect(tileSize, (tate + 4.5) * tileSize, 5 * tileSize, tileSize);
 
 }
 
 function drawMoneyLevelUpButton() {
-    drawShikakuRect(1, tate + 0.5, 7, 1.5, "#ffffff");
+    drawShikakuRect(1, tate + 0.5, 8, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     if (Game.moneyLevel < 10) {
-        ctx.fillText("Level" + (Game.moneyLevel + 1) + "にする", 3.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(moneyLevelHyou[Game.moneyLevel + 1].money + "$", 7 * tileSize, (tate + 1.25) * tileSize);
-        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].money) {
-            drawShikakuRect(1, tate + 0.5, 7, 1.5, "#00000080");
+        ctx.fillText("お金レベルアップ", 4 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel + 1].cost + "$", 8 * tileSize, (tate + 1.25) * tileSize);
+        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].cost) {
+            drawShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
         }
     }
     else {
-        ctx.fillText("LevelMax!", 4.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText("LevelMax!", 5 * tileSize, (tate + 1.25) * tileSize);
     }
+}
+
+function drawTowerLevelUpButton() {
+    drawShikakuRect(10, tate + 0.5, 7, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("タワーレベルアップ", 13.5 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawKabeButton() {
     ctx.fillStyle = "#00dd00";
-    ctx.fillRect(tileSize * 4, (tate + 4.5) * tileSize, tileSize * 2, tileSize);
+    ctx.fillRect(tileSize * 7, (tate + 4.5) * tileSize, tileSize * 2, tileSize);
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("壁", tileSize * 5, (tate + 5) * tileSize);
+    ctx.fillText("壁", tileSize * 8, (tate + 5) * tileSize);
 
     if (Game.mode !== "kabe") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(4 * tileSize, (tate + 4.5) * tileSize, 2 * tileSize, tileSize);
+    ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 2 * tileSize, tileSize);
 }
 
 function drawKabe0Button() {
@@ -106,49 +115,49 @@ function drawKabe3Button() {
 
 function drawTowerButton() {
     ctx.fillStyle = "#0000ff";
-    ctx.fillRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+    ctx.fillRect(10 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("タワー", 8.5 * tileSize, (tate + 5) * tileSize);
+    ctx.fillText("タワー", 11.5 * tileSize, (tate + 5) * tileSize);
 
     if (Game.mode !== "tower") return;
 
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = 0.05 * tileSize;
-    ctx.strokeRect(7 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+    ctx.strokeRect(10 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 }
 
 function drawHelpButton() {
     ctx.fillStyle = "#ff0000";
-    ctx.fillRect(tileSize * 11, (tate + 4.5) * tileSize, tileSize * 3, tileSize);
+    ctx.fillRect(tileSize * 14, (tate + 4.5) * tileSize, tileSize * 3, tileSize);
 
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("情報", tileSize * 12.5, (tate + 5) * tileSize);
+    ctx.fillText("情報", tileSize * 15.5, (tate + 5) * tileSize);
 }
 
 function drawStartButton() {
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(15 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
+    ctx.fillRect(18 * tileSize, (tate + 4.5) * tileSize, 3 * tileSize, tileSize);
 
     ctx.fillStyle = "#ff0000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px Impact`;
     if (!Game.inWave) {
-        ctx.fillText("Wave" + (Game.currentWave + 2), 16.5 * tileSize, (tate + 5) * tileSize);
+        ctx.fillText("Wave" + (Game.currentWave + 2), 19.5 * tileSize, (tate + 5) * tileSize);
     }
     else {
         if (Game.start) {
-            ctx.fillText("Stop", 16.5 * tileSize, (tate + 5) * tileSize);
+            ctx.fillText("Stop", 19.5 * tileSize, (tate + 5) * tileSize);
         }
         else {
-            ctx.fillText("Start", 16.5 * tileSize, (tate + 5) * tileSize);
+            ctx.fillText("Start", 19.5 * tileSize, (tate + 5) * tileSize);
         }
     }
 }

@@ -117,21 +117,19 @@ function highlightCheck() {
 function placeCheck() {
     if (!highlightTile) return;
     if (oku === null) return;
+    if (highlightTile.type !== "y") return;
 
     if (Game.mode === "kabe") {
         switch (oku) {
             case 0:
-                if (highlightTile.type !== "y") return;
                 map[highlightTile.y][highlightTile.x] = 0;
                 break;
             case 2:
-                if (highlightTile.type !== "y") return;
                 if (Game.money < 10) return;
                 Game.money -= 10;
                 map[highlightTile.y][highlightTile.x] = 2;
                 break;
             case 3:
-                if (highlightTile.type !== "y") return;
                 if (Game.money < 15) return;
                 Game.money -= 15;
                 map[highlightTile.y][highlightTile.x] = 3;
@@ -141,12 +139,10 @@ function placeCheck() {
     }
     if (Game.mode === "tower") {
         if (oku === 3) {
-            if (highlightTile.type !== "y") return;
             Game.money += 10;
             map[highlightTile.y][highlightTile.x] = 3;
         }
         else {
-            if (highlightTile.type !== "y") return;
             const o = towerTypes[oku];
             if (Game.money < o.cost) return;
             Game.money -= o.cost;
@@ -206,17 +202,6 @@ function drawHighLight() {
     }
     else {
         drawShikakuRect(highlightTile.x, highlightTile.y, 1, 1, "#ff000060");
-    }
-}
-
-function drawGrid() {
-    ctx.strokeStyle = "#404040";
-    ctx.lineWidth = lineWidth;
-    for (let x = 0; x <= yoko; x++) {
-        drawSenRect(x, 0, x, tate);
-    }
-    for (let y = 0; y <= tate; y++) {
-        drawSenRect(0, y, yoko, y);
     }
 }
 

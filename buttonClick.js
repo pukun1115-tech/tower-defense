@@ -1,23 +1,23 @@
 function onMoneyButtonClick() {
     if (
         pointerX > 1 * tileSize &&
-        pointerX < 3 * tileSize &&
+        pointerX < 6 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        if (Game.mode === "money") {
+        if (Game.mode === "levelUp") {
             Game.mode = "menu";
         }
         else {
-            Game.mode = "money";
+            Game.mode = "levelUp";
         }
     }
 }
 
 function onKabeButtonClick() {
     if (
-        pointerX > 4 * tileSize &&
-        pointerX < 6 * tileSize &&
+        pointerX > 7 * tileSize &&
+        pointerX < 9 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
@@ -33,8 +33,8 @@ function onKabeButtonClick() {
 
 function onTowerButtonClick() {
     if (
-        pointerX > 7 * tileSize &&
-        pointerX < 10 * tileSize &&
+        pointerX > 10 * tileSize &&
+        pointerX < 13 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
@@ -49,8 +49,8 @@ function onTowerButtonClick() {
 }
 function onHelpButtonClick() {
     if (
-        pointerX > 11 * tileSize &&
-        pointerX < 14 * tileSize &&
+        pointerX > 14 * tileSize &&
+        pointerX < 17 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
@@ -60,8 +60,8 @@ function onHelpButtonClick() {
 }
 function onStartButtonClick() {
     if (
-        pointerX > 15 * tileSize &&
-        pointerX < 18 * tileSize &&
+        pointerX > 18 * tileSize &&
+        pointerX < 21 * tileSize &&
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
@@ -213,16 +213,28 @@ function onTower8ButtonClick() {
         }
     }
 }
+
 function onMoneyLevelUpButtonClick() {
     if (
         pointerX > 1 * tileSize &&
-        pointerX < 8 * tileSize &&
+        pointerX < 9 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2) * tileSize
     ) {
         if (Game.moneyLevel === 10) return;
-        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].money) return;
-        Game.money -= moneyLevelHyou[Game.moneyLevel + 1].money;
+        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].cost) return;
+        Game.money -= moneyLevelHyou[Game.moneyLevel + 1].cost;
         Game.moneyLevel++;
+    }
+}
+
+function onTowerLevelUpButtonClick() {
+    if (
+        pointerX > 10 * tileSize &&
+        pointerX < 17 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        //
     }
 }

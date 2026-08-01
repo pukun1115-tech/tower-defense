@@ -27,13 +27,24 @@
 
     右下のボタンでウェーブを始めたり一時停止できます
 
-    お金ボタンでお金がたくさん増えるようにします。
-}
+    パワーアップで装備を強化できます。
+    お金levelupでお金の増えるスピードと敵を倒したときのお金が増えます。
+    タワーlevelupを押した後タワーを選択することでタワーを強くできます。
+},
 
 情報: {
     //
-}
+},
 
 めも: {
     ヘルプでこのサイトに飛びます
+},
+
+リンク: {
+    github
+    https://github.com/pukun1115-tech/tower-defense.git
+    page
+    https://pukun1115-tech.github.io/tower-defense/
+    live server
+    http://127.0.0.1:5500/index.html
 }
