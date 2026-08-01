@@ -41,7 +41,7 @@ class enemy {
         }
 
         if (this.x === this.nextTileX && this.y === this.nextTileY) {
-            if (this.x === 24.5 && this.y === 7.5) {
+            if (this.x === (yoko - 0.5) && this.y === (tate / 2)) {
                 Game.hp--;
                 this.alive = false;
                 return;
@@ -50,8 +50,8 @@ class enemy {
             const tileX = Math.floor(this.x);
             const tileY = Math.floor(this.y);
 
-            const goalX = 24;
-            const goalY = 7;
+            const goalX = (yoko - 0.5);
+            const goalY = Math.floor(tate / 2);
 
             const path = bfs(tileX, tileY, goalX, goalY);
 

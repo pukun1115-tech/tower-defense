@@ -238,7 +238,7 @@ function loop() {
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
             ctx.font = `${fontSize * 4}px sans-serif`;
-            ctx.fillText("CLEAR", 10 * tileSize, 7.5 * tileSize);
+            ctx.fillText("CLEAR", (yoko / 2) * tileSize, (tate / 2) * tileSize);
         }
 
         if (Game.start) {
