@@ -68,7 +68,7 @@ function drawKabe0Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壊す", 2 * tileSize, (tate + 3.25) * tileSize);
 
-    if (oku !== 0) return;
+    if (Game.oku !== 0) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -87,7 +87,7 @@ function drawKabe2Button() {
     ctx.fillText("箱", 7 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("10$", 9 * tileSize, (tate + 3.25) * tileSize);
 
-    if (oku !== 2 || Game.money < 10) return;
+    if (Game.oku !== 2 || Game.money < 10) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -106,7 +106,7 @@ function drawKabe3Button() {
     ctx.fillText("土台", 12 * tileSize, (tate + 3.25) * tileSize);
     ctx.fillText("15$", 14 * tileSize, (tate + 3.25) * tileSize);
 
-    if (oku !== 3 || Game.money < 15) return;
+    if (Game.oku !== 3 || Game.money < 15) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -170,7 +170,7 @@ function drawTower3Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("壊す", 2 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 3) return;
+    if (Game.oku !== 3) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -190,7 +190,7 @@ function drawTower4Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[4].cost}$`, 7 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 4 || Game.money < towerTypes[4].cost) return;
+    if (Game.oku !== 4 || Game.money < towerTypes[4].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -210,7 +210,7 @@ function drawTower5Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[5].cost}$`, 11 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 5 || Game.money < towerTypes[5].cost) return;
+    if (Game.oku !== 5 || Game.money < towerTypes[5].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -230,7 +230,7 @@ function drawTower6Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[6].cost}$`, 15 * tileSize, (tate + 1) * tileSize);
 
-    if (oku !== 6 || Game.money < towerTypes[6].cost) return;
+    if (Game.oku !== 6 || Game.money < towerTypes[6].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -251,7 +251,7 @@ function drawTower7Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[7].cost}$`, 3 * tileSize, (tate + 3) * tileSize);
 
-    if (oku !== 7 || Game.money < towerTypes[7].cost) return;
+    if (Game.oku !== 7 || Game.money < towerTypes[7].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;
@@ -270,7 +270,7 @@ function drawTower8Button() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText(`${towerTypes[8].cost}$`, 7 * tileSize, (tate + 3) * tileSize);
 
-    if (oku !== 8 || Game.money < towerTypes[8].cost) return;
+    if (Game.oku !== 8 || Game.money < towerTypes[8].cost) return;
 
     ctx.strokeStyle = "#00ffff";
     ctx.lineWidth = 0.05 * tileSize;

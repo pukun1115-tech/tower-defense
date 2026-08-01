@@ -21,7 +21,7 @@ function onKabeButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        oku = null;
+        Game.oku = null;
         if (Game.mode === "kabe") {
             Game.mode = "menu";
         }
@@ -38,7 +38,7 @@ function onTowerButtonClick() {
         pointerY > (tate + 4.5) * tileSize &&
         pointerY < (tate + 5.5) * tileSize
     ) {
-        oku = null;
+        Game.oku = null;
         if (Game.mode === "tower") {
             Game.mode = "menu";
         }
@@ -83,11 +83,11 @@ function onKabe0ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        if (oku === 0) {
-            oku = null;
+        if (Game.oku === 0) {
+            Game.oku = null;
         }
         else {
-            oku = 0;
+            Game.oku = 0;
         }
     }
 }
@@ -98,11 +98,11 @@ function onKabe2ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        if (oku === 2) {
-            oku = null;
+        if (Game.oku === 2) {
+            Game.oku = null;
         }
         else {
-            oku = 2;
+            Game.oku = 2;
         }
     }
 }
@@ -113,11 +113,11 @@ function onKabe3ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 4) * tileSize
     ) {
-        if (oku === 3) {
-            oku = null;
+        if (Game.oku === 3) {
+            Game.oku = null;
         }
         else {
-            oku = 3;
+            Game.oku = 3;
         }
     }
 }
@@ -128,11 +128,11 @@ function onTower3ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        if (oku === 3) {
-            oku = null;
+        if (Game.oku === 3) {
+            Game.oku = null;
         }
         else {
-            oku = 3;
+            Game.oku = 3;
         }
     }
 }
@@ -143,11 +143,11 @@ function onTower4ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        if (oku === 4) {
-            oku = null;
+        if (Game.oku === 4) {
+            Game.oku = null;
         }
         else {
-            oku = 4;
+            Game.oku = 4;
         }
     }
 }
@@ -159,11 +159,11 @@ function onTower5ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        if (oku === 5) {
-            oku = null;
+        if (Game.oku === 5) {
+            Game.oku = null;
         }
         else {
-            oku = 5;
+            Game.oku = 5;
         }
     }
 }
@@ -174,11 +174,11 @@ function onTower6ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 1.5) * tileSize
     ) {
-        if (oku === 6) {
-            oku = null;
+        if (Game.oku === 6) {
+            Game.oku = null;
         }
         else {
-            oku = 6;
+            Game.oku = 6;
         }
     }
 }
@@ -189,11 +189,11 @@ function onTower7ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
-        if (oku === 7) {
-            oku = null;
+        if (Game.oku === 7) {
+            Game.oku = null;
         }
         else {
-            oku = 7;
+            Game.oku = 7;
         }
     }
 }
@@ -205,11 +205,11 @@ function onTower8ButtonClick() {
         pointerY > (tate + 2.5) * tileSize &&
         pointerY < (tate + 3.5) * tileSize
     ) {
-        if (oku === 8) {
-            oku = null;
+        if (Game.oku === 8) {
+            Game.oku = null;
         }
         else {
-            oku = 8;
+            Game.oku = 8;
         }
     }
 }

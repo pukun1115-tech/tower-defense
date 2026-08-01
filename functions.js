@@ -47,11 +47,11 @@ function highlightCheck() {
         return;
     }
     if (Game.mode === "kabe") {
-        if (oku === null) {
+        if (Game.oku === null) {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
-        if (oku === 0) {
+        if (Game.oku === 0) {
             //nの場合
             if (map[tileY][tileX] === -1 || map[tileY][tileX] === 0 || map[tileY][tileX] === 1 || map[tileY][tileX] > 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
@@ -61,14 +61,14 @@ function highlightCheck() {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
-        if (oku === 1 || oku === 2 || oku === 3) {
+        if (Game.oku === 1 || Game.oku === 2 || Game.oku === 3) {
             //ゲームの設定として
             if (map[tileY][tileX] !== 0) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
             }
             //敵の道をふさがない
-            if (oku === 3) {
+            if (Game.oku === 3) {
                 if (!canPlaceWallForEnemy(tileX, tileY)) {
                     highlightTile = { x: tileX, y: tileY, type: "n" };
                     return;
@@ -88,11 +88,11 @@ function highlightCheck() {
         return;
     }
     if (Game.mode === "tower") {
-        if (oku === null) {
+        if (Game.oku === null) {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
-        if (oku === 3) {
+        if (Game.oku === 3) {
             if (map[tileY][tileX] <= 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
@@ -100,7 +100,7 @@ function highlightCheck() {
             highlightTile = { x: tileX, y: tileY, type: "y" };
             return;
         }
-        if (oku === 4 || oku === 5 || oku === 6 || oku === 7 || oku === 8 || oku === 9 || oku === 10) {
+        if (Game.oku === 4 || Game.oku === 5 || Game.oku === 6 || Game.oku === 7 || Game.oku === 8 || Game.oku === 9 || Game.oku === 10) {
             if (map[tileY][tileX] !== 3) {
                 highlightTile = { x: tileX, y: tileY, type: "n" };
                 return;
@@ -116,11 +116,11 @@ function highlightCheck() {
 
 function placeCheck() {
     if (!highlightTile) return;
-    if (oku === null) return;
+    if (Game.oku === null) return;
     if (highlightTile.type !== "y") return;
 
     if (Game.mode === "kabe") {
-        switch (oku) {
+        switch (Game.oku) {
             case 0:
                 map[highlightTile.y][highlightTile.x] = 0;
                 break;
@@ -138,22 +138,22 @@ function placeCheck() {
         return;
     }
     if (Game.mode === "tower") {
-        if (oku === 3) {
+        if (Game.oku === 3) {
             Game.money += 10;
             map[highlightTile.y][highlightTile.x] = 3;
         }
         else {
-            const o = towerTypes[oku];
+            const o = towerTypes[Game.oku];
             if (Game.money < o.cost) return;
             Game.money -= o.cost;
-            map[highlightTile.y][highlightTile.x] = oku;
+            map[highlightTile.y][highlightTile.x] = Game.oku;
             towers.push(
                 new tower(
                     highlightTile.x,
                     highlightTile.y,
                     o.damage,
                     o.color,
-                    oku,//syurui
+                    Game.oku,//syurui
                     o.size,
                     o.range,
                     o.cooldown,
@@ -170,7 +170,7 @@ function placeCheck() {
 function canPlaceWallForEnemy(x, y) {
 
     const old = map[y][x];
-    map[y][x] = oku;
+    map[y][x] = Game.oku;
 
     for (const e of enemies) {
         if (!e.alive) continue;

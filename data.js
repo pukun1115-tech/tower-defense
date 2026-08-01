@@ -28,19 +28,18 @@ const Game = {
     oku: null,
     enemyId: 0
 };
-let oku = null;
 
 const moneyLevelHyou = {
     1: { speed: 60, cost: 0, t: 1 },
-    2: { speed: 40, cost: 20, t: 1.2 },
-    3: { speed: 30, cost: 30, t: 1.2 },
-    4: { speed: 27, cost: 40, t: 1.5 },
-    5: { speed: 24, cost: 50, t: 1.5 },
-    6: { speed: 21, cost: 60, t: 2 },
-    7: { speed: 18, cost: 70, t: 2 },
-    8: { speed: 15, cost: 80, t: 3 },
-    9: { speed: 12, cost: 90, t: 4 },
-    10: { speed: 10, cost: 100, t: 5 }
+    2: { speed: 40, cost: 20, t: 1 },
+    3: { speed: 30, cost: 30, t: 1 },
+    4: { speed: 27, cost: 40, t: 1.1 },
+    5: { speed: 24, cost: 50, t: 1.1 },
+    6: { speed: 21, cost: 60, t: 1.1 },
+    7: { speed: 18, cost: 70, t: 1.2 },
+    8: { speed: 15, cost: 80, t: 1.2 },
+    9: { speed: 12, cost: 90, t: 1.2 },
+    10: { speed: 10, cost: 100, t: 1.5 }
 };
 const map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
