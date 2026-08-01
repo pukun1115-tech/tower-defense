@@ -21,7 +21,7 @@ canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
     resize();
 
-    onMoneyButtonClick();
+    onLevelUpButtonClick();
     onKabeButtonClick();
     onTowerButtonClick();
     onHelpButtonClick();

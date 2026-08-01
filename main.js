@@ -125,7 +125,7 @@ function drawMenu() {
         drawWave();
     }
 
-    drawMoneyButton();
+    drawLevelUpButton();
     drawKabeButton();
     drawTowerButton();
     drawHelpButton();
