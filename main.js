@@ -201,7 +201,7 @@ function loop() {
         updateBullets();
 
         drawDamages();
-        
+
         drawMenu();
         updateMoney();
 
