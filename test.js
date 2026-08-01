@@ -1,3 +1,4 @@
+/*
 const arr = ["A", "B", "C"];
 arr.forEach((v, i) => {
     console.log(i, v);
@@ -5,3 +6,13 @@ arr.forEach((v, i) => {
 for (const t of arr) {
     console.log(t);
 }
+*/
+const a = [
+    {
+        //
+    },
+    {
+        //
+    }
+];
+console.log(a.length);

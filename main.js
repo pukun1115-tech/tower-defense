@@ -23,6 +23,7 @@ function drawMap() {
         }
     }
 }
+
 function updateWave() {
     if (!Game.inWave) return;
     if (!waves[Game.currentWave]) return;
@@ -49,6 +50,9 @@ function updateWave() {
 
     if (allSpawned && enemies.length === 0) {
         Game.inWave = false;
+        if (Game.currentWave + 1 === waves.length) {
+            Game.gameClear = true;
+        }
     }
 }
 
@@ -67,7 +71,7 @@ function getEnemy(type, x, y, nx, ny, dir, k, id) {
         t.money,
         type,
         dir,
-        k,
+        k,//金落とすか
         id,
         t.breaktime
     );
@@ -82,6 +86,7 @@ function updateEnemies() {
     }
     enemies = enemies.filter(e => e.alive);
 }
+
 function updateTowers() {
     for (const t of towers) {
         if (Game.start) {
@@ -91,6 +96,7 @@ function updateTowers() {
     }
     towers = towers.filter(t => t.alive);
 }
+
 function updateBullets() {
     for (const b of bullets) {
         if (Game.start) {
@@ -102,7 +108,7 @@ function updateBullets() {
 }
 
 function drawMenu() {
-    ctx.fillStyle = "#222";
+    ctx.fillStyle = "#222222";
     ctx.fillRect(0, tate * tileSize, yoko * tileSize, menuTate);
 
     drawMoney();
@@ -116,6 +122,7 @@ function drawMenu() {
     drawTowerButton();
     drawHelpButton();
     drawStartButton();
+
     switch (Game.mode) {
         case "money":
             drawMoneyLevelUpButton();
@@ -144,6 +151,7 @@ function drawMoney() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("$" + Game.money, yoko * tileSize, (tate + 0.5) * tileSize);
 }
+
 function drawHp() {
     ctx.fillStyle = "#dd0";
     ctx.textBaseline = "middle";
@@ -151,6 +159,7 @@ function drawHp() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("Hp:" + Game.hp, yoko * tileSize, (tate + 1.5) * tileSize);
 }
+
 function drawWave() {
     ctx.fillStyle = "#dd0";
     ctx.textBaseline = "middle";
@@ -158,6 +167,7 @@ function drawWave() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("Wave" + (Game.currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
 }
+
 function drawGameOver() {
     ctx.fillStyle = "#ff0000";
     ctx.textAlign = "center";
@@ -165,6 +175,13 @@ function drawGameOver() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("game over", canvas.width / 2, canvas.height / 2);
     ctx.fillText(`wave${Game.currentWave}までクリア`, canvas.width / 2, canvas.height / 2 + 2 * fontSize);
+}
+
+function gameOverLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGameOver();
+    requestAnimationFrame(gameOverLoop);
 }
 
 function drawDamages() {
@@ -205,6 +222,14 @@ function loop() {
         drawMenu();
         updateMoney();
 
+        if (Game.gameClear) {
+            ctx.fillStyle = "#00aaff";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.font = `${fontSize * 4}px sans-serif`;
+            ctx.fillText("CLEAR", 10 * tileSize, 7.5 * tileSize);
+        }
+
         if (Game.start) {
             if (Game.inWave) {
                 updateWave();
@@ -215,12 +240,6 @@ function loop() {
         }
     }
     requestAnimationFrame(loop);
-}
-function gameOverLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    drawGameOver();
-    requestAnimationFrame(gameOverLoop);
 }
 
 resize();

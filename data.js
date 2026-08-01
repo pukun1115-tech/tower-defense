@@ -6,7 +6,7 @@ let tileSize;
 let menuTate;
 let lineWidth;
 let fontSize;
-let damages = [ ];
+let damages = [];
 //タップ
 let pointerX = null;
 let pointerY = null;
@@ -18,6 +18,7 @@ const Game = {
     money: 200,
     moneyLevel: 1,
     gameOver: false,
+    gameClear: false,
     start: true,
     mode: "menu",
     time: 0,
