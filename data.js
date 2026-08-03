@@ -14,6 +14,7 @@ let isPointerDown = false;
 //
 let highlightTile = null;
 const Game = {
+    speed: 1;
     hp: 10,
     money: 200,
     moneyLevel: 1,
