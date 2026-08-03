@@ -75,15 +75,15 @@ function onStartButtonClick() {
             Game.currentWave++;
         }
         else {
-            if (Game.speed === 1) {
+            if (Game.start === false) {
+                Game.speed = 1;
+                Game.start = true;
+            }
+            else if (Game.speed === 1) {
                 Game.speed = 2;
             }
             else if (Game.speed === 2){
                 Game.start = false;
-            }
-            else {
-                Game.start = true;
-                Game.speed = 1;
             }
         }
     }
