@@ -183,7 +183,7 @@ function canPlaceWallForEnemy(x, y) {
         }
     }
 
-    const spawnPath = bfs(0, 7, 19, 7);
+    const spawnPath = bfs(0, 7, yoko - 1, Math.floor(tate / 2));
 
     if (!spawnPath) {
         map[y][x] = old;
