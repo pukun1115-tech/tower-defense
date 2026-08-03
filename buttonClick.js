@@ -78,8 +78,12 @@ function onStartButtonClick() {
             if (Game.speed === 1) {
                 Game.speed = 2;
             }
+            else if (Game.speed === 2){
+                Game.start = false;
+            }
             else {
-                Game.start = !Game.start;
+                Game.start = true;
+                Game.speed = 1;
             }
         }
     }
