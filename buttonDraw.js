@@ -154,7 +154,12 @@ function drawStartButton() {
     }
     else {
         if (Game.start) {
-            ctx.fillText("Stop", 19.5 * tileSize, (tate + 5) * tileSize);
+            if (Game.speed === 1) {
+                ctx.fillText("x2", 19.5 * tileSize, (tate + 5) * tileSize);
+            }
+            else {
+                ctx.fillText("Stop", 19.5 * tileSize, (tate + 5) * tileSize);
+            }
         }
         else {
             ctx.fillText("Start", 19.5 * tileSize, (tate + 5) * tileSize);
