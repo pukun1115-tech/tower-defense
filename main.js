@@ -214,40 +214,42 @@ function loop() {
         gameOverLoop();
     }
     else {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < Game.speed; i++) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        if (Game.hp <= 0) {
-            Game.gameOver = true;
-        }
-
-        drawMap();
-        highlightCheck();
-        drawHighLight();
-
-        updateEnemies();
-        updateTowers();
-        updateBullets();
-
-        drawDamages();
-
-        drawMenu();
-        updateMoney();
-
-        if (Game.gameClear) {
-            ctx.fillStyle = "#00aaff";
-            ctx.textBaseline = "middle";
-            ctx.textAlign = "center";
-            ctx.font = `${fontSize * 4}px sans-serif`;
-            ctx.fillText("CLEAR", (yoko / 2) * tileSize, (tate / 2) * tileSize);
-        }
-
-        if (Game.start) {
-            if (Game.inWave) {
-                updateWave();
-                Game.waveTimer++;
+            if (Game.hp <= 0) {
+                Game.gameOver = true;
             }
 
-            Game.time++;
+            drawMap();
+            highlightCheck();
+            drawHighLight();
+
+            updateEnemies();
+            updateTowers();
+            updateBullets();
+
+            drawDamages();
+
+            drawMenu();
+            updateMoney();
+
+            if (Game.gameClear) {
+                ctx.fillStyle = "#00aaff";
+                ctx.textBaseline = "middle";
+                ctx.textAlign = "center";
+                ctx.font = `${fontSize * 4}px sans-serif`;
+                ctx.fillText("CLEAR", (yoko / 2) * tileSize, (tate / 2) * tileSize);
+            }
+
+            if (Game.start) {
+                if (Game.inWave) {
+                    updateWave();
+                    Game.waveTimer++;
+                }
+
+                Game.time++;
+            }
         }
         requestAnimationFrame(loop);
     }
