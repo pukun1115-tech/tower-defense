@@ -50,7 +50,7 @@ class enemy {
             const tileX = Math.floor(this.x);
             const tileY = Math.floor(this.y);
 
-            const goalX = (yoko - 0.5);
+            const goalX = (yoko - 1);
             const goalY = Math.floor(tate / 2);
 
             const path = bfs(tileX, tileY, goalX, goalY);
