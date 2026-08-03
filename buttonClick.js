@@ -68,6 +68,7 @@ function onStartButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         if (!Game.inWave) {
+            Game.speed = 1;
             Game.waveTimer = 0;
             Game.inWave = true;
             Game.start = true;
