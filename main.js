@@ -193,8 +193,10 @@ function drawDamages() {
         ctx.textBaseline = "middle";
         ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(d.damage, d.x * tileSize, d.y * tileSize);
-        d.y -= 0.01;
-        d.kosa -= 0.01;
+        if (Game.start) {
+            d.y -= 0.01;
+            d.kosa -= 0.01;
+        }
     }
     damages = damages.filter(d => (d.time + 60 > Game.time));
 }
