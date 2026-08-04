@@ -175,7 +175,7 @@ function canPlaceWallForEnemy(x, y) {
     for (const e of enemies) {
         if (!e.alive) continue;
 
-        const path = bfs(Math.floor(e.x), Math.floor(e.y), 14, 7);
+        const path = bfs(Math.floor(e.x), Math.floor(e.y), yoko - 1, Math.floor(tate / 2));
 
         if (!path) {
             map[y][x] = old;
