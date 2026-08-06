@@ -140,6 +140,10 @@ function drawMenu() {
                 drawMoneyLevelUp0Button();
                 drawMoneyLevelUp1Button();
             }
+            if (Game.levelUpMode === "tower") {
+                drawTowerLevelUp0Button();
+                drawTowerLevelUp1Button();
+            }
             break;
         case "kabe":
             drawKabe0Button();
