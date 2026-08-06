@@ -33,6 +33,7 @@ const Game = {
 };
 
 const moneyLevelHyou = {
+    //tは撃破時お金t倍
     1: { speed: 60, cost: 0, t: 1 },
     2: { speed: 40, cost: 20, t: 1 },
     3: { speed: 30, cost: 30, t: 1 },
@@ -44,6 +45,15 @@ const moneyLevelHyou = {
     9: { speed: 12, cost: 90, t: 1.2 },
     10: { speed: 10, cost: 100, t: 1.5 }
 };
+const towerLevelHyou = {
+    //speed => 発射速度 d => 火力
+    1: { speed: 0.9, cost: 100, d: 1.1 },
+    2: { speed: 0.8, cost: 200, d: 1.2 },
+    3: { speed: 0.7, cost: 300, d: 1.3 },
+    4: { speed: 0.6, cost: 400, d: 1.4 },
+    5: { speed: 0.5, cost: 500, d: 1.5 }
+};
+
 const map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
