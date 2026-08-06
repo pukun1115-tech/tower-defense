@@ -192,7 +192,12 @@ function drawSpeed() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("x" + (Game.speed), yoko * tileSize, (tate + 2.5) * tileSize);
+    if (!Game.start) {
+        ctx.fillText("stop", yoko * tileSize, (tate + 2.5) * tileSize);
+    }
+    else {
+        ctx.fillText("x" + (Game.speed), yoko * tileSize, (tate + 2.5) * tileSize);
+    }
 }
 
 function drawGameOver() {
