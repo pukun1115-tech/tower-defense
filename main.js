@@ -122,6 +122,7 @@ function drawMenu() {
 
     drawMoney();
     drawHp();
+    drawSpeed();
     if (Game.inWave) {
         drawWave();
     }
@@ -183,7 +184,15 @@ function drawWave() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.font = `${fontSize}px sans-serif`;
-    ctx.fillText("Wave" + (Game.currentWave + 1), yoko * tileSize, (tate + 2.5) * tileSize);
+    ctx.fillText("Wave" + (Game.currentWave + 1), yoko * tileSize, (tate + 3.5) * tileSize);
+}
+
+function drawSpeed() {
+    ctx.fillStyle = "#dd0";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "right";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("x" + (Game.speed), yoko * tileSize, (tate + 2.5) * tileSize);
 }
 
 function drawGameOver() {
