@@ -36,7 +36,7 @@ function drawMoneyLevelUp0Button() {
     }
     else {
         ctx.fillText(Game.moneyLevel[0] + "=>" + (Game.moneyLevel[0] + 1), 5.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost + "$", 8 * tileSize, (tate + 1.25) * tileSize);
         if (Game.money >= moneyLevelHyou[Game.moneyLevel[0] + 1].cost) return;
         drawShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
     }
@@ -54,7 +54,7 @@ function drawMoneyLevelUp1Button() {
     }
     else {
         ctx.fillText(Game.moneyLevel[1] + "=>" + (Game.moneyLevel[1] + 1), 14.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(moneyLevelHyou[Game.moneyLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel[1] + 1].cost + "$", 17 * tileSize, (tate + 1.25) * tileSize);
         if (Game.money >= moneyLevelHyou[Game.moneyLevel[1] + 1].cost) return;
         drawShikakuRect(10, tate + 0.5, 8, 1.5, "#00000080");
     }
@@ -81,7 +81,7 @@ function drawTowerLevelUp0Button() {
     }
     else {
         ctx.fillText(Game.towerLevel[0] + "=>" + (Game.towerLevel[0] + 1), 5.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(towerLevelHyou[Game.towerLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(towerLevelHyou[Game.towerLevel[0] + 1].cost + "$", 8 * tileSize, (tate + 1.25) * tileSize);
         if (Game.money >= towerLevelHyou[Game.towerLevel[0] + 1].cost) return;
         drawShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
     }
@@ -99,7 +99,7 @@ function drawTowerLevelUp1Button() {
     }
     else {
         ctx.fillText(Game.towerLevel[1] + "=>" + (Game.towerLevel[1] + 1), 14.5 * tileSize, (tate + 1.25) * tileSize);
-        ctx.fillText(towerLevelHyou[Game.towerLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(towerLevelHyou[Game.towerLevel[1] + 1].cost + "$", 17 * tileSize, (tate + 1.25) * tileSize);
         if (Game.money >= towerLevelHyou[Game.towerLevel[1] + 1].cost) return;
         drawShikakuRect(10, tate + 0.5, 8, 1.5, "#00000080");
     }
