@@ -38,9 +38,9 @@ function onMoneyLevelUp0ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2 ) * tileSize
     ) {
-        if (Game.moneyLevel[0] == 10) return;
+        if (Game.moneyLevel[0] === 10) return;
         if (moneyLevelhyou[Game.moneyLevel[0] + 1].cost > Game.money) return;
-        Game.money -= moneyLevelHyou[Game.moneyLevel[0] + 1];
+        Game.money -= moneyLevelHyou[Game.moneyLevel[0] + 1].cost;
         Game.moneyLevel[0]++;
     }
 }
@@ -52,9 +52,9 @@ function onMoneyLevelUp1ButtonClick() {
         pointerY > (tate + 0.5) * tileSize &&
         pointerY < (tate + 2 ) * tileSize
     ) {
-        if (Game.moneyLevel[1] == 10) return;
+        if (Game.moneyLevel[1] === 10) return;
         if (moneyLevelhyou[Game.moneyLevel[1] + 1].cost > Game.money) return;
-        Game.money -= moneyLevelHyou[Game.moneyLevel[1] + 1];
+        Game.money -= moneyLevelHyou[Game.moneyLevel[1] + 1].cost;
         Game.moneyLevel[1]++;
     }
 }
