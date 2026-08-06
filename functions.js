@@ -207,6 +207,6 @@ function drawHighLight() {
 
 function updateMoney() {
     if (!Game.start) return;
-    if ((Game.time % moneyLevelHyou[Game.moneyLevel[1]].speed) !== 0) return;
+    if ((Game.time % moneyLevelHyou[Game.moneyLevel[0]].speed) !== 0) return;
     Game.money++;
 }
