@@ -1,6 +1,6 @@
 class enemy {
     constructor(x, y, nextX, nextY, hp, color, speed, size, money, syurui, dir, kane, id, breaktime) {
-        this.alive = true;//生きてる!
+        this.alive = true;
 
         this.x = x + 0.5;
         this.y = y + 0.5;
@@ -148,10 +148,9 @@ function bfsCore(startX, startY, goalX, goalY, canBreak) {
         const cur = queue.shift();//curは探索している現在のタイル
 
         if (cur.x === goalX && cur.y === goalY) {
-            // ゴールに到達 → 経路復元
+            //ゴール=>戻る
             const path = [];
             let p = cur;
-            //
             while (p) {
                 path.push(p);
                 p = parent[p.y][p.x];

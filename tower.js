@@ -1,6 +1,6 @@
 class tower {
     constructor(tileX, tileY, damage, color, syurui, size, range, cooldown, bulletSpeed, bulletSize, bulletHp) {
-        this.alive = true;//生きてる!!!
+        this.alive = true;
         this.x = tileX + 0.5;
         this.y = tileY + 0.5;
         this.damage = damage;
@@ -78,7 +78,6 @@ class tower {
     }
     draw() {
         drawCircle(this.x, this.y, this.size, this.color);
-        //死んじゃった?
         if (map[Math.floor(this.y)][Math.floor(this.x)] !== this.syurui) {
             this.alive = false;
             return;

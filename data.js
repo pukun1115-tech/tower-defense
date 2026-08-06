@@ -75,7 +75,7 @@ const map = [
 
 const yoko = 25;
 const tate = 15;
-//
+//エンティティ
 let towers = [];
 let bullets = [];
 let enemies = [];

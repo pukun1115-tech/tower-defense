@@ -40,7 +40,6 @@ function onHelpButtonClick() {
         pointerY < (tate + 5.5) * tileSize
     ) {
         window.open('help.txt', '_blank');
-        //window.open("https://github.com/pukun1115-tech/tower-defense/blob/main/help.txt", "_blank");
     }
 }
 
@@ -66,7 +65,7 @@ function onStartButtonClick() {
             else if (Game.speed === 1) {
                 Game.speed = 2;
             }
-            else if (Game.speed === 2){
+            else if (Game.speed === 2) {
                 Game.start = false;
             }
         }
