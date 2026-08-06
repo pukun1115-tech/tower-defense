@@ -58,6 +58,7 @@ function updateWave() {
 
     if (allSpawned && enemies.length === 0) {
         Game.inWave = false;
+        Game.speed = 1;
         if (Game.currentWave + 1 === waves.length) {
             Game.gameClear = true;
         }
