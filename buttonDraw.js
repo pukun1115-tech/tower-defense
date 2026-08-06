@@ -21,10 +21,10 @@ function drawMoneyLevelUpButton() {
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
-    if (Game.moneyLevel < 10) {
+    if (Game.moneyLevel[0] < 10) {
         ctx.fillText("お金レベルアップ", 4 * tileSize, (tate + 3.25) * tileSize);
-        ctx.fillText(moneyLevelHyou[Game.moneyLevel + 1].cost + "$", 8 * tileSize, (tate + 3.25) * tileSize);
-        if (Game.money < moneyLevelHyou[Game.moneyLevel + 1].cost) {
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost + "$", 8 * tileSize, (tate + 3.25) * tileSize);
+        if (Game.money < moneyLevelHyou[Game.moneyLevel[0] + 1].cost) {
             drawShikakuRect(1, tate + 2.5, 8, 1.5, "#00000080");
         }
     }
@@ -33,8 +33,26 @@ function drawMoneyLevelUpButton() {
     }
 }
 
+function drawMoneyLevelUp0Button() {
+    drawShikakuRect(1, tate + 0.5, 8, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("スピード", 3 * tileSize, (tate + 1.25) * tileSize);
+}
+
+function drawMoneyLevelUp1Button() {
+    drawShikakuRect(10, tate + 0.5, 8, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("敵撃破時", 12 * tileSize, (tate + 1.25) * tileSize);
+}
+
 function drawTowerLevelUpButton() {
-    drawShikakuRect(10, tate + 2.5, 7, 1.5, "#ffffff");
+    drawShikakuRect(10, tate + 2.5, 8, 1.5, "#ffffff");
     ctx.fillStyle = "#000000";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
