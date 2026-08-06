@@ -59,3 +59,21 @@ function drawTowerLevelUpButton() {
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("タワーレベルアップ", 13.5 * tileSize, (tate + 3.25) * tileSize);
 }
+
+function drawTowerLevelUp0Button() {
+    drawShikakuRect(1, tate + 0.5, 8, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("発射速度", 3 * tileSize, (tate + 1.25) * tileSize);
+}
+
+function drawTowerLevelUp1Button() {
+    drawShikakuRect(10, tate + 0.5, 8, 1.5, "#ffffff");
+    ctx.fillStyle = "#000000";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = `${fontSize}px sans-serif`;
+    ctx.fillText("ダメージ", 12 * tileSize, (tate + 1.25) * tileSize);
+}
