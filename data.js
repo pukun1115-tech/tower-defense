@@ -47,11 +47,12 @@ const moneyLevelHyou = {
 };
 const towerLevelHyou = {
     //speed => 発射速度 d => 火力
-    1: { speed: 0.9, cost: 100, d: 1.1 },
-    2: { speed: 0.8, cost: 200, d: 1.2 },
-    3: { speed: 0.7, cost: 300, d: 1.3 },
-    4: { speed: 0.6, cost: 400, d: 1.4 },
-    5: { speed: 0.5, cost: 500, d: 1.5 }
+    1: { speed: 1, cost: 0, d: 1 },
+    2: { speed: 0.9, cost: 100, d: 1.1 },
+    3: { speed: 0.8, cost: 200, d: 1.2 },
+    4: { speed: 0.7, cost: 300, d: 1.3 },
+    5: { speed: 0.6, cost: 400, d: 1.4 },
+    6: { speed: 0.5, cost: 500, d: 1.5 }
 };
 
 const map = [
