@@ -19,7 +19,7 @@ const Game = {
     money: 200,
     moneyLevel: [ 1, 1 ],
     towerLevel: [ 1, 1 ],
-    LevelUpMode: null,
+    levelUpMode: null,
     gameOver: false,
     gameClear: false,
     start: true,
