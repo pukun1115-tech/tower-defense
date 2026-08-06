@@ -31,10 +31,15 @@ function drawMoneyLevelUp0Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("スピード", 3 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(Game.moneyLevel[0] + "=>" + (Game.moneyLevel[0] + 1), 5 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
-    if (Game.money >= moneyLevelHyou[Game.moneyLevel[0] + 1]) return;
-    draeShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
+    if (Game.moneyLevel[0] === 10) {
+        ctx.fillText("max", 5.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+    else {
+        ctx.fillText(Game.moneyLevel[0] + "=>" + (Game.moneyLevel[0] + 1), 5.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
+        if (Game.money >= moneyLevelHyou[Game.moneyLevel[0] + 1].cost) return;
+        drawShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
+    }
 }
 
 function drawMoneyLevelUp1Button() {
@@ -44,8 +49,15 @@ function drawMoneyLevelUp1Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("敵撃破時", 12 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(Game.moneyLevel[1] + "=>" + (Game.moneyLevel[1] + 1), 14 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(moneyLevelHyou[Game.moneyLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+    if (Game.moneyLevel[1] === 10) {
+        ctx.fillText("max", 14.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+    else {
+        ctx.fillText(Game.moneyLevel[1] + "=>" + (Game.moneyLevel[1] + 1), 14.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(moneyLevelHyou[Game.moneyLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+        if (Game.money >= moneyLevelHyou[Game.moneyLevel[1] + 1].cost) return;
+        drawShikakuRect(10, tate + 0.5, 8, 1.5, "#00000080");
+    }
 }
 
 function drawTowerLevelUpButton() {
@@ -64,8 +76,15 @@ function drawTowerLevelUp0Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("発射速度", 3 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(Game.towerLevel[0] + "=>" + (Game.towerLevel[0] + 1), 5 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(towerLevelHyou[Game.towerLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
+    if (Game.towerLevel[0] === 6) {
+        ctx.fillText("max", 5.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+    else {
+        ctx.fillText(Game.towerLevel[0] + "=>" + (Game.towerLevel[0] + 1), 5.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(towerLevelHyou[Game.towerLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
+        if (Game.money >= towerLevelHyou[Game.towerLevel[0] + 1].cost) return;
+        drawShikakuRect(1, tate + 0.5, 8, 1.5, "#00000080");
+    }
 }
 
 function drawTowerLevelUp1Button() {
@@ -75,6 +94,13 @@ function drawTowerLevelUp1Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("ダメージ", 12 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(Game.towerLevel[1] + "=>" + (Game.towerLevel[1] + 1), 14 * tileSize, (tate + 1.25) * tileSize);
-    ctx.fillText(towerLevelHyou[Game.towerLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+    if (Game.towerLevel[1] === 6) {
+        ctx.fillText("max", 14.5 * tileSize, (tate + 1.25) * tileSize);
+    }
+    else {
+        ctx.fillText(Game.towerLevel[1] + "=>" + (Game.towerLevel[1] + 1), 14.5 * tileSize, (tate + 1.25) * tileSize);
+        ctx.fillText(towerLevelHyou[Game.towerLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
+        if (Game.money >= towerLevelHyou[Game.towerLevel[1] + 1].cost) return;
+        drawShikakuRect(10, tate + 0.5, 8, 1.5, "#00000080");
+    }
 }
