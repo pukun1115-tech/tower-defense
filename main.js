@@ -136,6 +136,10 @@ function drawMenu() {
         case "levelUp":
             drawMoneyLevelUpButton();
             drawTowerLevelUpButton();
+            if (Game.levelUpMode === "money") {
+                drawMoneyLevelUp0Button();
+                drawMoneyLevelUp1Button();
+            }
             break;
         case "kabe":
             drawKabe0Button();
