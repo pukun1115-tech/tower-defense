@@ -26,7 +26,7 @@ class enemy {
     update() {
         if (this.hp <= 0) {
             if (this.kane) {
-                Game.money += Math.floor(this.money * moneyLevelHyou[Game.moneyLevel].t);
+                Game.money += Math.floor(this.money * moneyLevelHyou[Game.moneyLevel[0]].t);
             }
             if (this.syurui === 7) {
                 enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
