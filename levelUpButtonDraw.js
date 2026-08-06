@@ -31,6 +31,8 @@ function drawMoneyLevelUp0Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("スピード", 3 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(Game.moneyLevel[0] + " => " + (Game.moneyLevel[0] + 1), 6 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(moneyLevelHyou[Game.moneyLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawMoneyLevelUp1Button() {
@@ -40,6 +42,8 @@ function drawMoneyLevelUp1Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("敵撃破時", 12 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(Game.moneyLevel[1] + " => " + (Game.moneyLevel[1] + 1), 15 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(moneyLevelHyou[Game.moneyLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawTowerLevelUpButton() {
@@ -58,6 +62,8 @@ function drawTowerLevelUp0Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("発射速度", 3 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(Game.towerLevel[0] + " => " + (Game.towerLevel[0] + 1), 6 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(towerLevelHyou[Game.towerLevel[0] + 1].cost, 8 * tileSize, (tate + 1.25) * tileSize);
 }
 
 function drawTowerLevelUp1Button() {
@@ -67,4 +73,6 @@ function drawTowerLevelUp1Button() {
     ctx.textAlign = "center";
     ctx.font = `${fontSize}px sans-serif`;
     ctx.fillText("ダメージ", 12 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(Game.towerLevel[1] + " => " + (Game.towerLevel[1] + 1), 15 * tileSize, (tate + 1.25) * tileSize);
+    ctx.fillText(towerLevelHyou[Game.towerLevel[1] + 1].cost, 17 * tileSize, (tate + 1.25) * tileSize);
 }

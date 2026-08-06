@@ -36,7 +36,7 @@ function onMoneyLevelUp0ButtonClick() {
         pointerX > 1 * tileSize &&
         pointerX < 9 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
-        pointerY < (tate + 2 ) * tileSize
+        pointerY < (tate + 2) * tileSize
     ) {
         if (Game.moneyLevel[0] === 10) return;
         if (moneyLevelHyou[Game.moneyLevel[0] + 1].cost > Game.money) return;
@@ -50,7 +50,7 @@ function onMoneyLevelUp1ButtonClick() {
         pointerX > 10 * tileSize &&
         pointerX < 18 * tileSize &&
         pointerY > (tate + 0.5) * tileSize &&
-        pointerY < (tate + 2 ) * tileSize
+        pointerY < (tate + 2) * tileSize
     ) {
         if (Game.moneyLevel[1] === 10) return;
         if (moneyLevelHyou[Game.moneyLevel[1] + 1].cost > Game.money) return;
@@ -72,5 +72,33 @@ function onTowerLevelUpButtonClick() {
         else {
             Game.levelUpMode = "tower";
         }
+    }
+}
+
+function onTowerLevelUp0ButtonClick() {
+    if (
+        pointerX > 1 * tileSize &&
+        pointerX < 9 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        if (Game.towerLevel[0] === 10) return;
+        if (towerLevelHyou[Game.towerLevel[0] + 1].cost > Game.money) return;
+        Game.money -= towerLevelHyou[Game.towerLevel[0] + 1].cost;
+        Game.towerLevel[0]++;
+    }
+}
+
+function onTowerLevelUp1ButtonClick() {
+    if (
+        pointerX > 10 * tileSize &&
+        pointerX < 18 * tileSize &&
+        pointerY > (tate + 0.5) * tileSize &&
+        pointerY < (tate + 2) * tileSize
+    ) {
+        if (Game.towerLevel[1] === 10) return;
+        if (towerLevelHyou[Game.towerLevel[1] + 1].cost > Game.money) return;
+        Game.money -= towerLevelHyou[Game.towerLevel[1] + 1].cost;
+        Game.towerLevel[1]++;
     }
 }

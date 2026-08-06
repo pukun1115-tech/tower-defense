@@ -52,6 +52,10 @@ canvas.addEventListener("pointerup", (e) => {
                 onMoneyLevelUp0ButtonClick();
                 onMoneyLevelUp1ButtonClick();
             }
+            if (Game.levelUpMode === "tower") {
+                onTowerLevelUp0ButtonClick();
+                onTowerLevelUp1ButtonClick();
+            }
             break;
     }
 
