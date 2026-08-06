@@ -16,7 +16,7 @@ class tower {
     }
     update() {
         this.timer++;
-        if (this.timer < Math.floor(this.cooldown * towerLevelHyou[Game.towerLevel[0]])) return;
+        if (this.timer < Math.floor(this.cooldown * towerLevelHyou[Game.towerLevel[0]].speed)) return;
         let target = null;
         let minDist = Infinity;
 
@@ -44,7 +44,7 @@ class tower {
                             this.bulletSpeed,
                             this.bulletSize,
                             this.color,
-                            Math.floor(this.damage * towerLevelHyou[Game.towerLevel[1]]),
+                            Math.floor(this.damage * towerLevelHyou[Game.towerLevel[1]].d),
                             this.bulletHp
                         );
                         bullets.push(b);
@@ -65,7 +65,7 @@ class tower {
                         this.bulletSpeed,
                         this.bulletSize,//size
                         this.color,
-                        Math.floor(this.damage * towerLevelHyou[Game.towerLevel[1]]),
+                        Math.floor(this.damage * towerLevelHyou[Game.towerLevel[1]].d),
                         this.bulletHp
                     );
                     bullets.push(b);
