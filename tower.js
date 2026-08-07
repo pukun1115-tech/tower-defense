@@ -13,6 +13,7 @@ class tower {
         this.bulletSize = bulletSize;
         this.bulletHp = bulletHp;
         this.timer = 0;
+        this.sound = new Audio('sound1.mp3');
     }
     update() {
         this.timer++;
@@ -33,6 +34,9 @@ class tower {
         }
 
         if (target) {
+            this.sound.currentTime = 0;
+            this.sound.play();
+            
             switch (this.syurui) {
                 case 6: {
                     for (const d of dirs) {
