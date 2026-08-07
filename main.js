@@ -280,5 +280,10 @@ function loop() {
     }
 }
 
-resize();
-loop();
+async function startGame() {
+    await initsound();
+    resize();
+    loop();
+}
+
+startGame();
