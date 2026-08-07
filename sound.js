@@ -35,5 +35,3 @@ function playSound(soundName) {
     // 再生開始
     source.start(0);
 }
-
-initSounds();
