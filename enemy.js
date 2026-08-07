@@ -36,6 +36,9 @@ class enemy {
                 enemies.push(getEnemy(5, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
                 enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
             }
+            if (this.sturui === 8) {
+                //
+            }
             this.alive = false;
             return;
         }
