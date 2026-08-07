@@ -13,7 +13,7 @@ class tower {
         this.bulletSize = bulletSize;
         this.bulletHp = bulletHp;
         this.timer = 0;
-        this.sound = new Audio('sound1.mp3');
+        //this.sound = new Audio('sound1.mp3');
     }
     update() {
         this.timer++;
@@ -34,8 +34,9 @@ class tower {
         }
 
         if (target) {
-            this.sound.currentTime = 0;
-            this.sound.play();
+            //this.sound.currentTime = 0;
+            //this.sound.play();
+            playSound("shoot");
             
             switch (this.syurui) {
                 case 6: {
