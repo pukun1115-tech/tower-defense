@@ -37,7 +37,13 @@ class enemy {
                 enemies.push(getEnemy(6, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
             }
             if (this.sturui === 8) {
-                //
+                for (const pos of pos1) {
+                    const x = Math.floor(this.x);
+                    const y = Math.floor(this.y);
+                    if (x + pos.x >= 0 && x + pos.x < yoko && y + pos.y >= 0 && y + pos.y < tate) {
+                        map[y + pos.y][x + pos.x] = 0;
+                    }
+                }
             }
             this.alive = false;
             return;
