@@ -281,7 +281,7 @@ function loop() {
 }
 
 async function startGame() {
-    await initsounds();
+    await initSounds();
     resize();
     loop();
 }
