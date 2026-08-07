@@ -21,7 +21,7 @@ canvas.addEventListener("pointerup", (e) => {
     e.preventDefault();
     resize();
 
-    if (!Game.gameOver) return;
+    if (Game.gameOver) return;
     
     onLevelUpButtonClick();
     onKabeButtonClick();
