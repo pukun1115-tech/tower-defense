@@ -226,8 +226,8 @@ function drawDamages() {
 
 function drawExplosions() {
     for (const e of explosions) {
-        drawCircle(e.x * tileSize, e.y * tileSize, e.size, `rgba(0, 0, 0, ${e.kosa})`);
-        drawCircle(e.x * tileSize, e.y * tileSize, e.size / 2, `rgba(255, 0, 0, ${e.kosa})`);
+        drawCircle(e.x, e.y, e.size, `rgba(0, 0, 0, ${e.kosa})`);
+        drawCircle(e.x, e.y, e.size / 2, `rgba(255, 0, 0, ${e.kosa})`);
         if (Game.start) {
             e.kosa -= 0.005;
         }

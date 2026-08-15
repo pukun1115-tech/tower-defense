@@ -26,7 +26,7 @@ const Game = {
     start: true,
     mode: "menu",
     time: 0,
-    currentWave: 7,//表示は(currentWave + 1)
+    currentWave: -1,//表示は(currentWave + 1)
     waveTimer: 0,
     inWave: false,
     oku: null,
