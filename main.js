@@ -221,7 +221,18 @@ function drawDamages() {
             d.kosa -= 0.01;
         }
     }
-    damages = damages.filter(d => (d.time + 60 > Game.time));
+    damages = damages.filter(d => (d.kosa > 0));
+}
+
+function drawExplosions() {
+    for (const e of explosions) {
+        drawCircle(e.x * tileSize, e.y * tileSize, e.size, `rgba(0, 0, 0, ${e.kosa})`);
+        drawCircle(e.x * tileSize, e.y * tileSize, e.size / 2, `rgba(255, 0, 0, ${e.kosa})`);
+        if (Game.start) {
+            e.kosa -= 0.005;
+        }
+    }
+    explosions = explosions.filter(e => (e.kosa > 0));
 }
 
 //loop
@@ -255,6 +266,7 @@ function loop() {
             updateBullets();
 
             drawDamages();
+            drawExplosions();
 
             drawMenu();
             updateMoney();

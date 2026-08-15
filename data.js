@@ -7,6 +7,7 @@ let menuTate;
 let lineWidth;
 let fontSize;
 let damages = [];
+let explosions = [];
 //タップ
 let pointerX = null;
 let pointerY = null;
@@ -25,7 +26,7 @@ const Game = {
     start: true,
     mode: "menu",
     time: 0,
-    currentWave: -1,//表示は(currentWave + 1)
+    currentWave: 7,//表示は(currentWave + 1)
     waveTimer: 0,
     inWave: false,
     oku: null,
@@ -116,8 +117,19 @@ const dirs = [
     { x: 0, y: -1 }//up
 ];
 const pos1 = [
+    { x: 0, y: 0 },
+
     { x: 0, y: 1 },
+    { x: 0, y: 2 },
     { x: -1, y: 0 },
+    { x: -2, y: 0 },
     { x: 0, y: -1 },
-    { x: 1, y: 0 }
+    { x: 0, y: -2 },
+    { x: 1, y: 0 },
+    { x: 2, y: 0 },
+
+    { x: 1, y: 1 },
+    { x: -1, y: 1 },
+    { x: -1, y: -1 },
+    { x: 1, y: -1 }
 ];
