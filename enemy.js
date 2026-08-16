@@ -29,6 +29,8 @@ class enemy {
                 Game.money += Math.floor(this.money * moneyLevelHyou[Game.moneyLevel[0]].t);
             }
             if (this.syurui === 7) {
+                const e = { x: this.x, y: this.y, size: 0.5, kosa: 0.8 };
+                explosions.push(e);
                 enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
                 enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
                 enemies.push(getEnemy(2, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));

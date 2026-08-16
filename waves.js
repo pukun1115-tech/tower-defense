@@ -202,13 +202,14 @@ const waves = [
             { start: 0, interval: 3, count: 200, type: 5 },
             { start: 0, interval: 3, count: 200, type: 6 },
             { start: 0, interval: 300, count: 2, type: 8 },
-            { start: 0, interval: 1, count: 300, type: 7 }
+            { start: 0, interval: 1, count: 300, type: 7 },
+            { start: 450, interval: 5, count: 12, type: 9 }
         ]
     },
     {
         //27
         rules: [
-            { start: 0, interval: 5, count: 12, type: 9 }
+            { start: 0, interval: 5, count: 60, type: 9 }
         ]
     }
 ];
