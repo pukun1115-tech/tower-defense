@@ -109,7 +109,7 @@ const enemyTypes = {
     //爆発
     9: { hp: 1, speed: 0.15, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 },
     //体力多い爆発
-    10: { hp: 15, speed: 0.1, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 }
+    10: { hp: 30, speed: 0.1, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 }
 };
 //その他
 const dirs = [
