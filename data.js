@@ -107,7 +107,9 @@ const enemyTypes = {
     //大ボス
     8: { hp: 10000, speed: 0.005, color: "#0000ff", size: 0.3, money: 1000, breaktime: 30 },
     //爆発
-    9: { hp: 1, speed: 0.15, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 }
+    9: { hp: 1, speed: 0.15, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 },
+    //体力多い爆発
+    10: { hp: 15, speed: 0.1, color: "#00ff00", size: 0.5, money: 0, breaktime: 0 }
 };
 //その他
 const dirs = [
