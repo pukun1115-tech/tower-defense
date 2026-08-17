@@ -29,7 +29,7 @@ class enemy {
                 Game.money += Math.floor(this.money * moneyLevelHyou[Game.moneyLevel[0]].t);
             }
             if (this.syurui === 7) {
-                const e = { x: this.x, y: this.y, size: 0.5, kosa: 0.8 };
+                const e = { x: this.x, y: this.y, size: 1, kosa: 0.8 };
                 explosions.push(e);
                 enemies.push(getEnemy(0, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
                 enemies.push(getEnemy(1, this.x - 0.5, this.y - 0.5, this.nextTileX - 0.5, this.nextTileY - 0.5, this.dir, false, Game.enemyId));
@@ -42,6 +42,19 @@ class enemy {
                 const e = { x: this.x, y: this.y, size: 2, kosa: 0.8 };
                 explosions.push(e);
                 for (const pos of pos1) {
+                    const x = Math.floor(this.x);
+                    const y = Math.floor(this.y);
+                    if (x + pos.x >= 0 && x + pos.x < yoko && y + pos.y >= 0 && y + pos.y < tate) {
+                        if (map[y + pos.y][x + pos.x] != -1) {
+                            map[y + pos.y][x + pos.x] = 0;
+                        }
+                    }
+                }
+            }
+            if (this.syurui === 10) {
+                const e = { x: this.x, y: this.y, size: 1.5, kosa: 0.8 };
+                explosions.push(e);
+                for (const pos of pos2) {
                     const x = Math.floor(this.x);
                     const y = Math.floor(this.y);
                     if (x + pos.x >= 0 && x + pos.x < yoko && y + pos.y >= 0 && y + pos.y < tate) {
