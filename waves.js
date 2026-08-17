@@ -214,6 +214,7 @@ const waves = [
     {
         //28
         rules: [
+            { start: 0, interval: 5, count: 240, type: 9 },
             { start: 0, interval: 10, count: 120, type: 10 }
         ]
     }
